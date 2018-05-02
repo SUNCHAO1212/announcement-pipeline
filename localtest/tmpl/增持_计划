@@ -1,0 +1,311 @@
+{
+	"eventInfo": {
+		"eventType": "增持_计划",
+		"triggerTerms": [
+			""
+		]
+	},
+	"selectedField": "title_content",
+	"feature": "http://www.cninfo.com.cn/cninfo-new/disclosure/fulltext/bulletin_detail/true/.*_增持_计划",
+	"selectors": {
+		"fields": [
+			{
+				"idCn": "股东名称",
+				"idTypeCn": "股东名称",
+				"textPattern": [
+					{
+						"findall": [
+							{
+								"regex": "增持(?:人|主体|方|计划人)(?:的名称)?(?:\\s+|:|为)([\u4e00-\u9fa5]+)[\\s:;,.，。；]",
+								"confidence": "1"
+							}
+						]
+					}
+				],
+				"required": "true",
+				"selector": {
+					"rules": [
+						{
+							"xpath": "//*//text()"
+						}
+					]
+				},
+				"idRoleCn": "主体信息",
+				"id": "stockholder_name"
+			},
+			{
+				"idCn": "持股数量",
+				"idTypeCn": "持股数量",
+				"textPattern": [
+					{
+						"findall": [
+							{
+								"regex": "(?:增持前|截至本公告披露日)(?:.|\\n)*?(?:合计|共)?持有[.|\\n]*?([1-9][0-9|,|，]*?万?股)",
+								"confidence": "1"
+							},
+							{
+								"regex": "[现已]持有(?:.|\\n)*?([1-9][0-9,，]*?万?股)",
+								"confidence": "1"
+							}
+						]
+					}
+				],
+				"required": "true",
+				"selector": {
+					"rules": [
+						{
+							"xpath": "//*/text()"
+						}
+					]
+				},
+				"idRoleCn": "主体信息",
+				"id": "stock_keeping_quantity"
+			},
+			{
+				"idCn": "持股比例",
+				"idTypeCn": "持股比例",
+				"textPattern": [
+					{
+						"findall": [
+							{
+								"regex": "(?:增持前|截至本公告披露日)(?:.|\\n)*?(?:合计|共)?持有[.|\\n]*?占公司总(?:.|\n)*?([1-9][0-9,.，]*?%)",
+								"confidence": "1"
+							},
+							{
+								"regex": "[已现]持有(?:.|\\n)*?占公司总(?:.|\n)*?([1-9][0-9.,，]*?%)",
+								"confidence": "1"
+							}
+						]
+					}
+				],
+				"required": "true",
+				"selector": {
+					"rules": [
+						{
+							"xpath": "//*/text()"
+						}
+					]
+				},
+				"idRoleCn": "主体信息",
+				"id": "share_proportion"
+			},
+			{
+				"idCn": "股份来源",
+				"idTypeCn": "股份来源",
+				"textPattern": [
+					{
+						"findall": [
+							{
+								"regex": "现有股份来源：([^。]+?)",
+								"confidence": "1"
+							}
+						]
+					}
+				],
+				"required": "true",
+				"selector": {
+					"rules": [
+						{
+							"xpath": "//*/text()"
+						}
+					]
+				},
+				"idRoleCn": "主体信息",
+				"id": "stock_source"
+			},
+			{
+				"idCn": "增持目的",
+				"idTypeCn": "增持目的",
+				"textPattern": [
+					{
+						"findall": [
+							{
+								"regex": "增持[\u4e00-\u9fa5]*?目的(?::|\\s+)([^。]+)",
+								"confidence": "1"
+							}
+						]
+					}
+				],
+				"required": "true",
+				"selector": {
+					"rules": [
+						{
+							"xpath": "//*/text()"
+						}
+					]
+				},
+				"idRoleCn": "计划内容",
+				"id": "overweight_purpose"
+			},
+			{
+				"idCn": "增持方式",
+				"idTypeCn": "增持方式",
+				"textPattern": [
+					{
+						"findall": [
+							{
+
+								"regex": "(?:增持方式)?(?::|\\s+)(?:.|\\n)*?(通过(?:.|\\s)+?(?:实施)?增持)(?:公司)?(?:股[份票])?",
+								"confidence": "1"
+							}
+						]
+					}
+				],
+				"required": "true",
+				"selector": {
+					"rules": [
+						{
+							"xpath": "//*/text()"
+						}
+					]
+				},
+				"idRoleCn": "计划内容",
+				"id": "overweight_approach"
+			},
+			{
+				"idCn": "增持时间",
+				"idTypeCn": "增持时间",
+				"textPattern": [
+					{
+						"findall": [
+							{
+								"regex": "增持[\u4e00-\u9fa5]*?(?:时间|期限)[:|\\s]+([^。；]+)",
+								"confidence": "1"
+							}
+						]
+					}
+				],
+				"required": "true",
+				"selector": {
+					"rules": [
+						{
+							"xpath": "//*/text()"
+						}
+					]
+				},
+				"idRoleCn": "计划内容",
+				"id": "overweight_time"
+			},
+			{
+				"idCn": "股份价格",
+				"idTypeCn": "股份价格",
+				"textPattern": [
+					{
+						"findall": [
+							{
+								"regex": "增持股份的价格:([^。]+?)",
+								"confidence": "1"
+							}
+						]
+					}
+				],
+				"required": "true",
+				"selector": {
+					"rules": [
+						{
+							"xpath": "//*/text()"
+						}
+					]
+				},
+				"idRoleCn": "计划内容",
+				"id": "stock_price"
+			},
+			{
+				"idCn": "资金安排",
+				"idTypeCn": "资金安排",
+				"textPattern": [
+					{
+						"findall": [
+							{
+								"regex": "资金(?:安排|来源)为?[：|\\s]+?([^。；，\\n]+?)",
+								"confidence": "1"
+							}
+						]
+					}
+				],
+				"required": "true",
+				"selector": {
+					"rules": [
+						{
+							"xpath": "//*/text()"
+						}
+					]
+				},
+				"idRoleCn": "计划内容",
+				"id": "fund_arrange"
+			},
+			{
+				"idCn": "公告编号",
+				"idTypeCn": "公告编号",
+				"textPattern": [
+					{
+						"findall": [
+							{
+								"regex": "(?:公告)?编号: ([^\\s])",
+								"confidence": "1"
+							}
+						]
+					}
+				],
+				"required": "true",
+				"selector": {
+					"rules": [
+						{
+							"xpath": "//*/text()"
+						}
+					]
+				},
+				"idRoleCn": "公告信息",
+				"id": "notice_id"
+			},
+			{
+				"idCn": "证券代码",
+				"idTypeCn": "证券代码",
+				"textPattern": [
+					{
+						"findall": [
+							{
+								"regex": "证券代码: ([^\\s])",
+								"confidence": "1"
+							}
+						]
+					}
+				],
+				"required": "true",
+				"selector": {
+					"rules": [
+						{
+							"xpath": "//*/text()"
+						}
+					]
+				},
+				"idRoleCn": "公告信息",
+				"id": "stock_index"
+			},
+			{
+				"idCn": "证券简称",
+				"idTypeCn": "证券简称",
+				"textPattern": [
+					{
+						"findall": [
+							{
+								"regex": "证券简称:([^\\s])",
+								"confidence": "1"
+							}
+						]
+					}
+				],
+				"required": "true",
+				"selector": {
+					"rules": [
+						{
+							"xpath": "//*/text()"
+						}
+					]
+				},
+				"idRoleCn": "公告信息",
+				"id": "stock_name"
+			}
+		]
+	}
+}

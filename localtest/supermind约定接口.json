@@ -1,0 +1,111 @@
+{
+  "nafVer": {
+    "lang": "cn",
+    "version": "v1.0"
+  },
+  "raw": "<lz_title>京东金融陈生强亮相达沃斯：让科技融通世界</lz_title><lz_content>2017年10月1日，京东金融陈生强亮相达沃斯:让科技融通世界</lz_content>",
+  "cleaned_raw": "京东金融陈生强亮相达沃斯：让科技融通世界2017年10月1日，京东金融陈生强亮相达沃斯:让科技融通世界",
+  "nafHeader": {
+    "title": "京东金融陈生强亮相达沃斯：让科技融通世界",
+    "rawHtml":"2017年10月1日，京东金融陈生强亮相达沃斯:让科技融通世界",
+    "url":"http://jjckb.xinhuanet.com/2018-01/24/c_136919938.htm",
+    "rawId": "5864b4b96c91dd1e985f70e8",
+    "uuid":"",
+    "docId": ""
+  },
+  "entities": [
+    {
+      "references": [
+        {
+          "charseq": {
+            "start": 11,
+            "end": 4
+          }
+        }
+      ],
+      "type": "专有名词",
+      "id": "e0",
+      "externalReferences": [
+        {
+          "resource": "resouces名称",
+          "reference": "uri地址"
+        }
+      ]
+    },
+    {
+      "references": [
+        {
+          "charseq": {
+            "start": 0,
+            "end": 10
+          }
+        }
+      ],
+      "type": "时间",
+      "id": "e1",
+      "externalReferences": [
+        {
+          "resource": "wiki",
+          "reference": "uri地址"
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "eventId": "1234567890",
+      "eventName": "纪律处分",
+      "location": {
+        "name": "包头",
+        "references": []
+      },
+      "externalInfo": {
+        "stockname": "华资实业",
+        "stockcode": "600191"
+      },
+      "eventTime": {
+        "mention": "今天",
+        "formatTime": "2017-08-01 00:00:00"
+      },
+      "eventType": "纪律处分",
+      "eventPolarity": "中性",
+      "eventTense": "Unspecified",
+      "eventModality": "Asserted",
+      "entities": [
+        {
+          "role": "发布者",
+          "type": "公司",
+          "name": "包头华资实业股份有限公司",
+          "externalReferences": [
+            {
+              "resource": "wiki",
+              "reference": "uri地址"
+            }
+          ]
+        },
+        {
+          "role": "公告主体",
+          "type": "公司",
+          "name": "恒泰证券股份有限公司",
+          "externalReferences": [
+            {
+              "resource": "wiki",
+              "reference": "uri地址"
+            }
+          ]
+        }
+      ],
+      "predicate": {
+        "mention": "纪律处分",
+        "externalReferences": [
+          {
+            "resource": "量知wiki",
+            "reference": "uri地址"
+          }
+        ]
+      }
+    }
+  ],
+  "crawOpt": {
+  }
+}

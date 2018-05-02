@@ -1,0 +1,134 @@
+{
+	"eventInfo": {
+		"eventType": "风险检测(通报国/原产国/产品/品牌/风险)",
+		"triggerTerms": [
+			""
+		]
+	},
+	"selectedField": "title_content",
+	"feature": "https://ec.europa.eu/consumers/consumers_safety/safety_products/rapex/alerts/.*_资讯",
+	"selectors": {
+		"fields": [
+			{
+				"idCn": "通报国",
+				"idTypeCn": "国家",
+				"textPattern": [
+					{
+						"findall": [
+							{
+								"regex": "Alert submitted by:[\\s\\S]*?([a-zA-Z']+)[\\n\\r]?",
+								"confidence": "1"
+							}
+						]
+					}
+				],
+				"required": "true",
+				"selector": {
+					"rules": [
+						{
+							"xpath": "//liangzhi_content//text()"
+						}
+					]
+				},
+				"idRoleCn": "通报国",
+				"id": "country"
+			},
+			{
+				"idCn": "原产国",
+				"idTypeCn": "国家",
+				"textPattern": [
+					{
+						"findall": [
+							{
+								"regex": "Country of origin:[\\s\\S]*?([a-zA-Z']+)[\\n\\r]?",
+								"confidence": "1"
+							}
+						]
+					}
+				],
+				"required": "false",
+				"selector": {
+					"rules": [
+						{
+							"xpath": "//*/text()"
+						}
+					]
+				},
+				"idRoleCn": "原产国",
+				"id": "country of origin"
+			},
+			{
+				"idRoleCn": "涉及产品",
+				"idTypeCn": "产品",
+				"textPattern": [
+					{
+						"findall": [
+							{
+								"regex": "Product:[\\s\\S]*?([a-zA-Z'].+?)[\\n\\r]",
+								"confidence": "1"
+							}
+						]
+					}
+				],
+				"required": "true",
+				"selector": {
+					"rules": [
+						{
+							"xpath": "//liangzhi_content//text()"
+						}
+					]
+				},
+				"idCn": "涉及产品",
+				"id": "product"
+			},
+			{
+				"idCn": "涉及品牌",
+				"idTypeCn": "品牌",
+				"textPattern": [
+					{
+						"findall": [
+							{
+								"regex": "Brand:[\\s\\S]*?([a-zA-Z'].+?)[\\n\\r]",
+								"confidence": "1"
+							}
+						]
+					}
+				],
+				"required": "true",
+				"selector": {
+					"rules": [
+						{
+							"xpath": "//*/text()"
+						}
+					]
+				},
+				"idRoleCn": "涉及品牌",
+				"id": "brand"
+			},
+			{
+				"idRoleCn": "召回原因",
+				"idTypeCn": "风险",
+				"textPattern": [
+					{
+						"findall": [
+							{
+								"regex": "level:[\\s\\S]*?([a-zA-Z]+)",
+								"confidence": "1"
+							}
+						]
+					}
+				],
+				"required": "true",
+				"selector": {
+					"rules": [
+						{
+							"xpath": "//liangzhi_content//text()"
+						}
+					]
+				},
+				"idCn": "风险",
+				"id": "risk"
+			}
+		]
+	}
+}

@@ -49,6 +49,12 @@ def merge_info(raw_info, event_info):
 
 
 def pipeline(docu):
+    if isinstance(docu, dict):
+        pass
+    elif isinstance(docu, str):
+        docu = json.loads(docu)
+    else:
+        return
     event_info = Event_Extr(docu['title'], docu['content'], docu['url'],
                             docu['eventType']['level1'], docu['eventType']['level2'])
     event_info = reformat(json.loads(event_info))
@@ -59,3 +65,4 @@ def pipeline(docu):
 if __name__ == '__main__':
     for document in coll.find():
         print(pipeline(document))
+        input()
