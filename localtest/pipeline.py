@@ -10,6 +10,8 @@ import json
 from localtest.extr import Event_Extr
 from localtest.MQ import sent2mq
 from localtest.classifier import title2label
+from localtest.mysql import update_mysql
+
 
 ROOT = os.getcwd()
 client = MongoClient('192.168.1.251')
@@ -25,14 +27,13 @@ def supermind_format(docu, event_info, labels):
     url = docu['url']
     rawId = str(docu['_id'])
     eventName = labels['level1'] + '_' + labels['level2']
-    try:
+    if event_info['证券简称'][0]['value'][0]:
         stockname = event_info['证券简称'][0]['value'][0][0]
-        stockcode = event_info['股票代码'][0]['value'][0][0]
-    except Exception as e:
-        print(e)
-        # stockname = event_info['证券简称'][0]['value'][0]
-        # stockcode = event_info['股票代码'][0]['value'][0]
+    else:
         stockname = ''
+    if event_info['证券代码'][0]['value'][0]:
+        stockcode = event_info['证券代码'][0]['value'][0][0]
+    else:
         stockcode = ''
     formatTime = docu['publishTime']
     eventType = labels['level1'] + '_' + labels['level2']
@@ -140,22 +141,9 @@ def reformat(input_dict):
     return output_list
 
 
-# def merge_info(raw_info, event_info):
-#     all_info = event_info
-#     all_info['html'] = {
-#         "value": [
-#             [
-#                 raw_info['html']
-#             ]
-#         ],
-#         "idTypeCn": "html",
-#         "idRoleCn": "召回原因",
-#         "required": "true"
-#     }
-#     return all_info
-
-
 def pipeline(docu):
+    # 更新sql时间
+    # update_mysql()
     labels = title2label(docu['title'])
     if labels['level1'] == '其他' or labels['level2'] == '其他':
         return False
@@ -167,5 +155,6 @@ def pipeline(docu):
 
 if __name__ == '__main__':
     for document in coll.find():
-        print(pipeline(document))
+        res = json.loads(pipeline(document))
+        print(res['events'][0]['entities'][6])
         input()

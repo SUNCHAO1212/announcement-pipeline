@@ -4,24 +4,43 @@
 import pika
 import json
 
-MQ_HOST2 = '120.55.180.243'
-MQ_PORT2 = 5672
-# MQ_HOST2 = '192.168.1.251'
-# MQ_PORT2 = 5672
-USER2 = 'guest'
-PASSWORD2 = 'guest'
-WRITE_QUEUE_NAME2 = 'hzguojian-info-queue'
-EXCHANGE_NAME2 = 'hzguojian-info-exchange'
-credentials2 = pika.PlainCredentials(USER2, PASSWORD2)
-connection2 = pika.BlockingConnection(pika.ConnectionParameters(MQ_HOST2, MQ_PORT2, '/', credentials2))
-channel_produce2 = connection2.channel()
-channel_produce2.exchange_declare(exchange=EXCHANGE_NAME2, exchange_type='direct', durable=True,
-                                  auto_delete=True)
-channel_produce2.queue_declare(queue=WRITE_QUEUE_NAME2, durable=True)
-channel_produce2.queue_bind(exchange=EXCHANGE_NAME2, queue=WRITE_QUEUE_NAME2)
-
+MQ_IN_HOST = '192.168.1.251'
+MQ_IN_PORT = 5672
+MQ_OUT_HOST = '192.168.1.251'
+MQ_OUT_PORT = 5672
+USER = 'guest'
+PASSWORD = 'guest'
+WRITE_QUEUE_NAME = 'caitong-write-queue'
+READ_QUEUE_NAME = 'caitong-read-queue'
+credentials = pika.PlainCredentials(USER, PASSWORD)
+# sender
+connection_sender = pika.BlockingConnection(pika.ConnectionParameters(MQ_OUT_HOST, MQ_OUT_PORT, '/', credentials))
+channel_sender = connection_sender.channel()
+channel_sender.queue_declare(queue=WRITE_QUEUE_NAME)
 
 def sent2mq(ee):
-    channel_produce2.basic_publish(exchange='',
-                                   routing_key=WRITE_QUEUE_NAME2,
-                                   body=json.dumps(ee, ensure_ascii=False))
+    # ee=json.dumps(ee, ensure_ascii=False)
+    channel_sender.basic_publish(exchange='',
+                                   routing_key=WRITE_QUEUE_NAME,
+                                   body=ee)
+
+
+# receiver
+connection_receiver = pika.BlockingConnection(pika.ConnectionParameters(MQ_IN_HOST, MQ_IN_PORT, '/', credentials))
+channel_receiver = connection_receiver.channel()
+channel_receiver.queue_declare(queue=READ_QUEUE_NAME)
+
+
+def callback(ch, method, propertities,body):
+    print(" [x] Received %r" % body)
+    sent2mq(body)
+
+
+channel_receiver.basic_consume(callback,
+                      queue=READ_QUEUE_NAME,  # 队列名
+                      no_ack=True)  # 不通知已经收到，如果连接中断可能消息丢失
+print(' [*] Waiting for message. To exit press CTRL+C')
+channel_receiver.start_consuming()
+
+
+
