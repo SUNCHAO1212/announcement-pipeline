@@ -8,15 +8,14 @@ from pymongo import MongoClient
 import os
 import json
 from localtest.extr import Event_Extr
-from localtest.MQ import sent2mq
+# from localtest.MQ import sent2mq
 from localtest.classifier import title2label
-from localtest.mysql import update_mysql
 
 
 ROOT = os.getcwd()
 client = MongoClient('192.168.1.251')
 db = client.SecurityAnnouncement
-coll = db.test
+coll = db.underweight_plan
 
 
 def supermind_format(docu, event_info, labels):
@@ -25,7 +24,8 @@ def supermind_format(docu, event_info, labels):
     html = docu['rawHtml']
     title = docu['title']
     url = docu['url']
-    rawId = str(docu['_id'])
+    # rawId = str(docu['_id'])
+    rawId = docu['rawId']
     eventName = labels['level1'] + '_' + labels['level2']
     if event_info['证券简称'][0]['value'][0]:
         stockname = event_info['证券简称'][0]['value'][0][0]
@@ -37,6 +37,7 @@ def supermind_format(docu, event_info, labels):
         stockcode = ''
     formatTime = docu['publishTime']
     eventType = labels['level1'] + '_' + labels['level2']
+    crawOpt = docu['crawOpt']
     all_info = {
         "nafVer": {
             "lang": "cn",
@@ -104,8 +105,7 @@ def supermind_format(docu, event_info, labels):
                 }
             }
         ],
-        "crawOpt": {
-        }
+        "crawOpt": crawOpt
     }
     return all_info
 
@@ -142,8 +142,10 @@ def reformat(input_dict):
 
 
 def pipeline(docu):
-    # 更新sql时间
-    # update_mysql()
+    # print("Run pipeline.")
+    docu = json.loads(docu)
+    docu = json.loads(docu)
+    # docu['_id'] = str(docu['_id'])
     labels = title2label(docu['title'])
     if labels['level1'] == '其他' or labels['level2'] == '其他':
         return False
@@ -154,7 +156,9 @@ def pipeline(docu):
 
 
 if __name__ == '__main__':
+    i = 1
     for document in coll.find():
-        res = json.loads(pipeline(document))
-        print(res['events'][0]['entities'][6])
+        res = json.loads(pipeline(json.dumps(document)))
+        print(i, res['events'][0]['entities'][14])
+        i += 1
         input()
