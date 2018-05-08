@@ -11,7 +11,7 @@
 		"fields": [
 		    {
 				"idCn": "股东名称",
-				"idTypeCn": "股东名称",
+				"idTypeCn": "主体信息",
 				"textPattern": [
 					{
 						"findall": [
@@ -34,12 +34,12 @@
 						}
 					]
 				},
-				"idRoleCn": "主体情况",
+				"idRoleCn": "股东名称",
 				"id": "Name"
 			},
 			{
 				"idCn": "持股数量",
-				"idTypeCn": "持股数量",
+				"idTypeCn": "主体信息",
 				"textPattern": [
 					{
 						"findall": [
@@ -62,12 +62,12 @@
 						}
 					]
 				},
-				"idRoleCn": "主体情况",
+				"idRoleCn": "持股数量",
 				"id": "Stock quantity"
 			},
 			{
 				"idCn": "持股比例",
-				"idTypeCn": "持股比例",
+				"idTypeCn": "主体信息",
 				"textPattern": [
 					{
 						"findall": [
@@ -86,12 +86,12 @@
 						}
 					]
 				},
-				"idRoleCn": "主体情况",
+				"idRoleCn": "持股比例",
 				"id": "Stock ratio"
 			},
 			{
 				"idCn": "股份来源",
-				"idTypeCn": "股份来源",
+				"idTypeCn": "主体信息",
 				"textPattern": [
 					{
 						"findall": [
@@ -114,12 +114,12 @@
 						}
 					]
 				},
-				"idRoleCn": "主体情况",
+				"idRoleCn": "股份来源",
 				"id": "Stock source"
 			},
 			{
 				"idCn": "计划减持数量",
-				"idTypeCn": "计划减持数量",
+				"idTypeCn": "事件信息",
 				"textPattern": [
 					{
 						"findall": [
@@ -142,12 +142,12 @@
 						}
 					]
 				},
-				"idRoleCn": "计划内容",
+				"idRoleCn": "计划减持数量",
 				"id": "Planned reduction number"
 			},
 			{
 				"idCn": "计划减持比例",
-				"idTypeCn": "计划减持比例",
+				"idTypeCn": "事件信息",
 				"textPattern": [
 					{
 						"findall": [
@@ -170,12 +170,12 @@
 						}
 					]
 				},
-				"idRoleCn": "计划内容",
+				"idRoleCn": "计划减持比例",
 				"id": "Planned reduction raito"
 			},
 			{
 				"idCn": "减持期间",
-				"idTypeCn": "减持期间",
+				"idTypeCn": "事件信息",
 				"textPattern": [
 					{
 						"findall": [
@@ -198,12 +198,12 @@
 						}
 					]
 				},
-				"idRoleCn": "计划内容",
+				"idRoleCn": "减持期间",
 				"id": "Period of reduction"
 			},
 			{
 				"idCn": "减持方式",
-				"idTypeCn": "减持方式",
+				"idTypeCn": "事件信息",
 				"textPattern": [
 					{
 						"findall": [
@@ -227,12 +227,12 @@
 						}
 					]
 				},
-				"idRoleCn": "计划内容",
+				"idRoleCn": "减持方式",
 				"id": "Method of reduction"
 			},
 			{
 				"idCn": "减持价格",
-				"idTypeCn": "减持价格",
+				"idTypeCn": "事件信息",
 				"textPattern": [
 					{
 						"findall": [
@@ -251,12 +251,12 @@
 						}
 					]
 				},
-				"idRoleCn": "计划内容",
+				"idRoleCn": "减持价格",
 				"id": "Price range of reduction"
 			},
 			{
 				"idCn": "减持股份来源",
-				"idTypeCn": "减持股份来源",
+				"idTypeCn": "事件信息",
 				"textPattern": [
 					{
 						"findall": [
@@ -275,12 +275,12 @@
 						}
 					]
 				},
-				"idRoleCn": "计划内容",
+				"idRoleCn": "减持股份来源",
 				"id": "Stock source of reduction"
 			},
 			{
 				"idCn": "减持原因",
-				"idTypeCn": "减持原因",
+				"idTypeCn": "事件信息",
 				"textPattern": [
 					{
 						"findall": [
@@ -303,12 +303,12 @@
 						}
 					]
 				},
-				"idRoleCn": "计划内容",
+				"idRoleCn": "减持原因",
 				"id": "Reason of reduction"
 			},
 			{
 				"idCn": "公告编号",
-				"idTypeCn": "公告编号",
+				"idTypeCn": "公告信息",
 				"textPattern": [
 					{
 						"findall": [
@@ -327,12 +327,12 @@
 						}
 					]
 				},
-				"idRoleCn": "公告信息",
+				"idRoleCn": "公告编号",
 				"id": "Bulletin number"
 			},
 			{
 				"idCn": "发布日期",
-				"idTypeCn": "发布日期",
+				"idTypeCn": "公告信息",
 				"textPattern": [
 					{
 						"findall": [
@@ -351,12 +351,12 @@
 						}
 					]
 				},
-				"idRoleCn": "公告信息",
+				"idRoleCn": "发布日期",
 				"id": "Published date"
 			},
 			{
 				"idCn": "证券代码",
-				"idTypeCn": "证券代码",
+				"idTypeCn": "公告信息",
 				"textPattern": [
 					{
 						"findall": [
@@ -380,7 +380,7 @@
 			},
 			{
 				"idCn": "证券简称",
-				"idTypeCn": "证券简称",
+				"idTypeCn": "公告信息",
 				"textPattern": [
 					{
 						"findall": [
@@ -399,7 +399,7 @@
 						}
 					]
 				},
-				"idRoleCn": "公告信息",
+				"idRoleCn": "证券简称",
 				"id": "Stock abbreviation"
 			}
 

@@ -8,25 +8,33 @@ from pymongo import MongoClient
 import os
 import json
 from localtest.extr import Event_Extr
-# from localtest.MQ import sent2mq
 from localtest.classifier import title2label
-
+from localtest.PDFtables import pdf_table
 
 ROOT = os.getcwd()
 client = MongoClient('192.168.1.251')
 db = client.SecurityAnnouncement
-coll = db.underweight_plan
+
 
 
 def supermind_format(docu, event_info, labels):
+    # 表格分类
+    tables = pdf_table(docu['rawHtml'])
+    entities = reformat(event_info, tables)
 
-    raw = docu['extraInfo']['rawTxt']
+    raw = docu['crawOpt']['rawTxt']
     html = docu['rawHtml']
     title = docu['title']
     url = docu['url']
-    # rawId = str(docu['_id'])
     rawId = docu['rawId']
-    eventName = labels['level1'] + '_' + labels['level2']
+    formatTime = docu['publishTime']
+    crawOpt = docu['crawOpt']
+
+    # TODO 重命名 eventType
+    eventType = '股东' + labels['level1'] + labels['level2'] + '事件'
+    eventName = '股东' + labels['level1'] + labels['level2'] + '事件'
+
+    # TODO 直接获得
     if event_info['证券简称'][0]['value'][0]:
         stockname = event_info['证券简称'][0]['value'][0][0]
     else:
@@ -35,9 +43,7 @@ def supermind_format(docu, event_info, labels):
         stockcode = event_info['证券代码'][0]['value'][0][0]
     else:
         stockcode = ''
-    formatTime = docu['publishTime']
-    eventType = labels['level1'] + '_' + labels['level2']
-    crawOpt = docu['crawOpt']
+
     all_info = {
         "nafVer": {
             "lang": "cn",
@@ -93,7 +99,7 @@ def supermind_format(docu, event_info, labels):
                 "eventPolarity": "",
                 "eventTense": "Unspecified",
                 "eventModality": "Asserted",
-                "entities": reformat(event_info),
+                "entities": entities,
                 "predicate": {
                     "mention": "",
                     "externalReferences": [
@@ -110,7 +116,7 @@ def supermind_format(docu, event_info, labels):
     return all_info
 
 
-def entity_format(entity_role, entity_type, entity_name):
+def entity_format(entity_role, entity_type, entity_name, externalReferances):
     if entity_name:
         name = entity_name[0]
     else:
@@ -119,46 +125,62 @@ def entity_format(entity_role, entity_type, entity_name):
         "role": entity_role,
         "type": entity_type,
         "name": name,
-        "externalReferences": [
-            {
-                "resource": "",
-                "reference": ""
-            }
-        ]
+        "externalReferences": externalReferances
     }
     return entity
 
 
-def reformat(input_dict):
+def reformat(input_dict, tables):
     output_list = []
     for k in input_dict:
         value_list = input_dict[k][0]['value'][0]
         id_type = input_dict[k][0]['idTypeCn']
         role = input_dict[k][0]['idRoleCn']
-        # print(k, value_list, id_type, role)
-        output_list.append(entity_format(role, id_type, value_list))
+        if id_type in tables:
+            externalReferences = [
+                {
+                    "resource": "local_file",
+                    "reference": tables[id_type]
+                }
+            ]
+        else:
+            externalReferences = [
+                {
+                    "resource": "",
+                    "reference": ""
+                }
+            ]
+        output_list.append(entity_format(role, id_type, value_list, externalReferences))
 
     return output_list
 
 
 def pipeline(docu):
-    # print("Run pipeline.")
+    # 两层json ?
     docu = json.loads(docu)
     docu = json.loads(docu)
-    # docu['_id'] = str(docu['_id'])
+    # 公告分类
     labels = title2label(docu['title'])
     if labels['level1'] == '其他' or labels['level2'] == '其他':
         return False
-    event_info = Event_Extr(docu['title'], docu['extraInfo']['rawTxt'], docu['url'],
+
+    # TODO 取消'extraInfo'改为'crawOpt'
+    event_info = Event_Extr(docu['title'], docu['crawOpt']['rawTxt'], docu['url'],
                             labels['level1'], labels['level2'])
     result = supermind_format(docu, json.loads(event_info), labels)
     return json.dumps(result, ensure_ascii=False)
 
 
 if __name__ == '__main__':
+    # coll = db.underweight_plan
+    coll = db.test
     i = 1
     for document in coll.find():
-        res = json.loads(pipeline(json.dumps(document)))
-        print(i, res['events'][0]['entities'][14])
+        # print(document['_id'], type(document['_id']))
+        document['rawId'] = str(document['_id'])
+        del document['_id']
+
+        res = json.loads(pipeline(json.dumps(json.dumps(document))))
+        print(i, res)
         i += 1
         input()

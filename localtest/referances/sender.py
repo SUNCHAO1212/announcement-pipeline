@@ -16,7 +16,8 @@ db = client.SecurityAnnouncement
 coll = db.underweight_plan
 for document in coll.find():
     document['_id'] = str(document['_id'])
-    message = json.dumps(document, ensure_ascii=False)
+    document['rawId'] = document['_id']
+    message = json.dumps(json.dumps(document, ensure_ascii=False))
     # message = document
     channel.basic_publish(exchange='',
                           routing_key='caitong-read-queue',   # 指定队列的关键字为，这里是队列的名字

@@ -11,7 +11,7 @@ import json
 import re
 import codecs
 from collections import defaultdict
-from event_extr.event_extr import event_extr_main
+from localtest.event_extr.event_extr import event_extr_main
 
 zhaohui_list = [
     "http://www.cqn.com.cn/ms/content/.*",

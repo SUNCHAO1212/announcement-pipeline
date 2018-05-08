@@ -43,7 +43,7 @@ def Event_Extr(title,content,url,column,topic):
             events = defaultdict(list)
             for k,v in event_extr["event"].items():
                 if "idTypeCn" in v:
-                    events[v["idTypeCn"]].append(v)
+                    events[v["idRoleCn"]].append(v)
 
             # events["type"] = js["topic"]
 

@@ -2,25 +2,29 @@
 #!/usr/bin/env python3
 
 import pika
-import json
-from pipeline import pipeline
-from localtest.mysql import update_mysql
+from localtest.pipeline import pipeline
+from localtest.mysql import get_mysql_queues
 
 
-MQ_IN_HOST = '192.168.1.251'
-MQ_IN_PORT = 5672
-MQ_OUT_HOST = '192.168.1.251'
-MQ_OUT_PORT = 5672
+MQ_HOST = '192.168.1.251'
+MQ_PORT = 5672
 USER = 'guest'
 PASSWORD = 'guest'
-WRITE_QUEUE_NAME = 'dev-supermind-knowledge-queue'
-READ_QUEUE_NAME = 'caitong-read-queue'
-# EXCHANGE_NAME = 'dev-supermind-exchange'
 credentials = pika.PlainCredentials(USER, PASSWORD)
-#
-update_mysql()
-# sender
-channel_producer = pika.BlockingConnection(pika.ConnectionParameters(MQ_OUT_HOST, MQ_OUT_PORT, '/', credentials))
+
+# 更新SQL时间，获得队列名
+queues_dict = get_mysql_queues()
+if queues_dict:
+    WRITE_QUEUE_NAME = queues_dict['write']
+    READ_QUEUE_NAME = queues_dict['read']
+    EXCHANGE_NAME = queues_dict['exchange']
+else:
+    WRITE_QUEUE_NAME = 'dev-supermind-knowledge-queue'
+    READ_QUEUE_NAME = 'caitong-read-queue'
+    EXCHANGE_NAME = 'dev-supermind-exchange'
+
+# producer
+channel_producer = pika.BlockingConnection(pika.ConnectionParameters(MQ_HOST, MQ_PORT, '/', credentials))
 channel_producer = channel_producer.channel()
 channel_producer.queue_declare(queue=WRITE_QUEUE_NAME, durable=True)
 
@@ -33,8 +37,8 @@ def sent2mq(ee):
                                    body=ee)
 
 
-# receiver
-connection_consumer = pika.BlockingConnection(pika.ConnectionParameters(MQ_IN_HOST, MQ_IN_PORT, '/', credentials))
+# consumer
+connection_consumer = pika.BlockingConnection(pika.ConnectionParameters(MQ_HOST, MQ_PORT, '/', credentials))
 channel_consumer = connection_consumer.channel()
 channel_consumer.queue_declare(queue=READ_QUEUE_NAME)
 

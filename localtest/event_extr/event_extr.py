@@ -9,7 +9,7 @@ import os
 import re
 from collections import defaultdict
 
-from caitongPipeline.functions.event_extr.event_engine import EventPickles
+from localtest.event_extr.event_engine import EventPickles
 
 TMPL_PATH = 'tmpl/'
 file=codecs.open('temple.txt','w','utf8')
