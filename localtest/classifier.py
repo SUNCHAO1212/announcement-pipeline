@@ -4,17 +4,25 @@ import re
 def title2label(title):
 
     labels = {} 
+    # classes = {
+    #    r"增持":{
+    #         r"计划":"",
+    #         r"进展":"",
+    #         r"结果":"",
+    #    },
+    #    r"减持":{
+    #         r"计划":"",
+    #         r"进展":"",
+    #         r"结果":"",
+    #    },
+    # }
     classes = {
-       r"增持":{
-            r"计划":"",
-            r"进展":"",
-                r"结果":"",
-       },
-       r"减持":{
-            r"计划":"",
-            r"进展":"",
-            r"结果":"",
-       },
+        "减持": {
+            "计划": "",
+        },
+        "增持": {
+            "计划": "",
+        },
     }
     classes_list = list(classes.keys())
     for pattern_str in classes_list :			#尝试匹配level1分类，即["增持","减持"]

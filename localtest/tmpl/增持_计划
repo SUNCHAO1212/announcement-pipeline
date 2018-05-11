@@ -6,7 +6,7 @@
 		]
 	},
 	"selectedField": "title_content",
-	"feature": "http://www.cninfo.com.cn/cninfo-new/disclosure/fulltext/bulletin_detail/true/.*_增持_计划",
+	"feature": "http://www.cninfo.com.cn/.*_增持_计划",
 	"selectors": {
 		"fields": [
 			{
@@ -16,7 +16,7 @@
 					{
 						"findall": [
 							{
-								"regex": "增持(?:人|主体|方|计划人)[的]?(?:名称)?(?:\\s+|:|为|：)([\u4e00-\u9fa5]+)",
+								"regex": "增持(?:人|主体|方|计划人)(?:的名称)?(?:\\s+|:|为)([\u4e00-\u9fa5]+)[\\s:;,.，。；]",
 								"confidence": "1"
 							}
 						]
@@ -120,7 +120,7 @@
 					{
 						"findall": [
 							{
-								"regex": "增持[\u4e00-\u9fa5]*?(?:原因|目的)(?:：|:|\\s+)([^。]+)",
+								"regex": "增持[\u4e00-\u9fa5]*?目的(?::|\\s+)([^。]+)",
 								"confidence": "1"
 							}
 						]
@@ -147,10 +147,6 @@
 
 								"regex": "(?:增持方式)?(?::|\\s+)(?:.|\\n)*?(通过(?:.|\\s)+?(?:实施)?增持)(?:公司)?(?:股[份票])?",
 								"confidence": "1"
-							},
-							{
-								"regex": "增持方式[：:]([\u4e00-\u9fa5]+)?",
-								"confidence": "1"
 							}
 						]
 					}
@@ -173,7 +169,7 @@
 					{
 						"findall": [
 							{
-								"regex": "增持[\u4e00-\u9fa5]*?(?:时间|期限)[：:\\s]+([^。；]+)",
+								"regex": "增持[\u4e00-\u9fa5]*?(?:时间|期限)[:|\\s]+([^。；]+)",
 								"confidence": "1"
 							}
 						]
@@ -197,7 +193,7 @@
 					{
 						"findall": [
 							{
-								"regex": "增持股份的价格:([^。]+?)",
+								"regex": "增持股份的价格:([^。]+)",
 								"confidence": "1"
 							}
 						]
@@ -219,7 +215,6 @@
 				"idTypeCn": "资金安排",
 				"textPattern": [
 					{
-
 						"findall": [
 							{
 								"regex": "资金(?:安排|来源)为?[：|\\s]+?([^。；，\\n]+?)",

@@ -6,7 +6,7 @@
 		]
 	},
 	"selectedField": "title_content",
-	"feature": "http://www.cninfo.com.cn/cninfo-new/disclosure/fulltext/bulletin_detail/true/.*_减持_计划",
+	"feature": "http://www.cninfo.com.cn/.*_减持_计划",
 	"selectors": {
 		"fields": [
 		    {
@@ -44,7 +44,7 @@
 					{
 						"findall": [
 							{
-								"regex": "持[有]?[\u4e00-\u9fa5]*(?:股票|股份|流通股)\\s*?([0-9,]+\\s*?股)",
+								"regex": "持有[\u4e00-\u9fa5]*(?:股票|股份|流通股)\\s*?([0-9,]+\\s*?股)",
 								"confidence": "1"
 							},
 							{
@@ -208,11 +208,6 @@
 					{
 						"findall": [
 							{
-
-								"regex": "(?:减持方式)?(?::|\\s+)(?:.|\\n)*?(通过(?:.|\\s)+?(?:实施)?减持)(?:公司)?(?:股[份票])?",
-								"confidence": "1"
-							},
-							{
 								"regex": "减持方式[：:]([\u4e00-\u9fa5]+)?",
 								"confidence": "1"
 							}
@@ -305,104 +300,7 @@
 				},
 				"idRoleCn": "减持原因",
 				"id": "Reason of reduction"
-			},
-			{
-				"idCn": "公告编号",
-				"idTypeCn": "公告信息",
-				"textPattern": [
-					{
-						"findall": [
-							{
-								"regex": "公告编号：([临\\s0-9\\-]+号?)",
-								"confidence": "1"
-							}
-						]
-					}
-				],
-				"required": "true",
-				"selector": {
-					"rules": [
-						{
-							"xpath": "//*//text()"
-						}
-					]
-				},
-				"idRoleCn": "公告编号",
-				"id": "Bulletin number"
-			},
-			{
-				"idCn": "发布日期",
-				"idTypeCn": "公告信息",
-				"textPattern": [
-					{
-						"findall": [
-							{
-								"regex": "([0-9〇一二三四五六七八九]+\\s*?年[0-9〇一二三四五六七八九\\s]+月[0-9〇一二三四五六七八九\\s]+日)",
-								"confidence": "1"
-							}
-						]
-					}
-				],
-				"required": "true",
-				"selector": {
-					"rules": [
-						{
-							"xpath": "//*//text()"
-						}
-					]
-				},
-				"idRoleCn": "发布日期",
-				"id": "Published date"
-			},
-			{
-				"idCn": "证券代码",
-				"idTypeCn": "公告信息",
-				"textPattern": [
-					{
-						"findall": [
-							{
-								"regex": "(?:股票代码|证券代码|股份代號)：([0-9]+)",
-								"confidence": "1"
-							}
-						]
-					}
-				],
-				"required": "true",
-				"selector": {
-					"rules": [
-						{
-							"xpath": "//*//text()"
-						}
-					]
-				},
-				"idRoleCn": "证券代码",
-				"id": "Stock code"
-			},
-			{
-				"idCn": "证券简称",
-				"idTypeCn": "公告信息",
-				"textPattern": [
-					{
-						"findall": [
-							{
-								"regex": "(?:股票简称|证券简称)：((?:ST)?\\s*?[\u4e00-\u9fa5]+)",
-								"confidence": "1"
-							}
-						]
-					}
-				],
-				"required": "true",
-				"selector": {
-					"rules": [
-						{
-							"xpath": "//*//text()"
-						}
-					]
-				},
-				"idRoleCn": "证券简称",
-				"id": "Stock abbreviation"
 			}
-
 		]
 	}
 }

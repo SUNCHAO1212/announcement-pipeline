@@ -26,14 +26,14 @@ else:
 # producer
 channel_producer = pika.BlockingConnection(pika.ConnectionParameters(MQ_HOST, MQ_PORT, '/', credentials))
 channel_producer = channel_producer.channel()
-channel_producer.queue_declare(queue=WRITE_QUEUE_NAME, durable=True)
+channel_producer.queue_declare(queue='local-supermind-knowledge-queue', durable=True)
 
 
 def sent2mq(ee):
     # ee=json.dumps(ee, ensure_ascii=False)
     print(" [x] Sent %s" % ee)
     channel_producer.basic_publish(exchange='',
-                                   routing_key=WRITE_QUEUE_NAME,
+                                   routing_key='local-supermind-knowledge-queue',
                                    body=ee)
 
 
