@@ -13,7 +13,7 @@ channel.queue_declare(queue='caitong-read-queue')  # 如果队列没有创建，
 
 client = MongoClient('192.168.1.251')
 db = client.SecurityAnnouncement
-coll = db.underweight_plan
+coll = db.overweight_plan
 for document in coll.find():
     document['_id'] = str(document['_id'])
     document['rawId'] = document['_id']

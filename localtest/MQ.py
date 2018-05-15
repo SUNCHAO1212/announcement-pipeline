@@ -19,9 +19,9 @@ if queues_dict:
     READ_QUEUE_NAME = queues_dict['read']
     EXCHANGE_NAME = queues_dict['exchange']
 else:
-    WRITE_QUEUE_NAME = 'dev-supermind-knowledge-queue'
+    WRITE_QUEUE_NAME = 'local-supermind-knowledge-queue'
     READ_QUEUE_NAME = 'caitong-read-queue'
-    EXCHANGE_NAME = 'dev-supermind-exchange'
+    EXCHANGE_NAME = 'local-supermind-exchange'
 
 # producer
 channel_producer = pika.BlockingConnection(pika.ConnectionParameters(MQ_HOST, MQ_PORT, '/', credentials))

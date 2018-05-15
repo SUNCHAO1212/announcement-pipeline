@@ -22,6 +22,7 @@ def mongo_data():
             print('no table')
         # input()
 
+
 # TODO 改成读文件方式
 tables = {
     '主体信息': [],
@@ -34,8 +35,8 @@ table2_list = ['减持数量', '减持比例', '减持方式', '减持期间', '
 table3_list = ['']
 
 
-def pdf_table(html):
-
+def pdf_table(html, labels={}):
+    """ 根据文档类别选择不同的表格筛选特征词 """
     bs = BeautifulSoup(html, 'lxml')
     # print(bs.prettify())
     tables = bs.find_all('lz')

@@ -19,10 +19,7 @@ def title2label(title):
     classes = {
         "减持": {
             "计划": "",
-        },
-        "增持": {
-            "计划": "",
-        },
+        }
     }
     classes_list = list(classes.keys())
     for pattern_str in classes_list :			#尝试匹配level1分类，即["增持","减持"]
