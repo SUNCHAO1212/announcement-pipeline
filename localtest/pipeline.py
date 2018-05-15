@@ -8,6 +8,8 @@ from pymongo import MongoClient
 import os
 import json
 import copy
+import time
+import hashlib
 
 from localtest.extr import Event_Extr
 from localtest.classifier import title2label
@@ -30,15 +32,22 @@ def supermind_format(docu, events, labels):
     url = docu['url']
     rawId = docu['rawId']
     crawOpt = docu['crawOpt']
+    # uuid: pipeline名 + url MD5
+    pipeline_name = 'local_guquanbiandong'
+    string = pipeline_name + docu['url']
+    hl = hashlib.md5()
+    hl.update(string.encode(encoding='utf-8'))
+    uuid = hl.hexdigest()
     # 事件信息
     event_type = '股东' + labels['level1'] + labels['level2'] + '事件'
-    format_time = docu['publishTime']
+    mention_time = docu['publishTime']
     stock_code = docu['crawOpt']['secCode']
     stock_name = docu['crawOpt']['secName']
     for event in events:
         event['externalInfo']['stockname'] = stock_code
         event['externalInfo']['stockcode'] = stock_name
-        event['eventTime']['formatTime'] = format_time
+        event['eventTime']['mention'] = mention_time
+        event['eventTime']['formatTime'] = time.strftime('%Y-%m-%d %H:%M:%S', time.strptime(mention_time, '%Y-%m-%d'))
         for entity in event['entities']:
             entity['type'] = event_type
     all_info = {
@@ -53,7 +62,7 @@ def supermind_format(docu, events, labels):
             "rawHtml": html,
             "url": url,
             "rawId": rawId,
-            "uuid": "",
+            "uuid": uuid,
             "docId": ""
         },
         "entities": [
@@ -186,6 +195,9 @@ def event_integrate(entities, event_type):
                         e['name'] = entity['value'][0][0]
                     break
     if rest_entities[0]:
+        # TODO 通过某种策略舍弃多余的事件
+        if len(rest_entities[0]) < 4:
+            return events
         return events + event_integrate(rest_entities, event_type)
     else:
         return events
@@ -211,7 +223,7 @@ def multi_event_extr(sent_lists, docu, labels):
     all_entities = []
     for i, sent in enumerate(sent_lists):
         temp_list = []
-        infos = Event_Extr(docu['title'], sent, docu['url'], labels['level1'], labels['level2'])
+        infos = Event_Extr(docu['title'], sent, docu['url'], labels['level1']+labels['level2'], docu['crawOpt']['secName'])
         infos = json.loads(infos)
         # TODO 无模版容错
         for k in infos:
@@ -253,39 +265,37 @@ def pipeline(docu):
 
 
 if __name__ == '__main__':
-    import re
-    jianchi_pattern = re.compile('^.*减持.*计划[的]公告$')
+
     client = MongoClient('192.168.1.251')
     db = client.SecurityAnnouncement
-    coll = db.underweight_plan
-    # coll = db.test2
-    cnt = 0
-    # ^.*减持.*计划[的]公告$
-    for document in coll.find():
-        cnt += 1
-        if not jianchi_pattern.match(document['title']):
-            continue
+    coll = db.test2
+
+    url = 'http://www.cninfo.com.cn/finalpage/2017-04-29/1203428679.PDF'
+    # for index, document in enumerate(coll.find({'title':{'$regex':'^.*减持.*计划公告$'}})):
+    for document in coll.find({'crawOpt.secName':'创力集团', 'title':{'$regex':'^.*减持.*计划的?公告$'}}):
+
         print(document['title'], document['url'])
 
-        print(cnt)
         # print(document['_id'], type(document['_id']))
         document['rawId'] = str(document['_id'])
         del document['_id']
         # # temp
-        temp = json.dumps(document)
-        temp = json.dumps(temp)
-        # temp = json.dumps(temp)
-        temp = pipeline(temp)
-        if temp:
-            res = json.loads(temp)
-            for event in res['events']:
-                for entity in event['entities']:
-                    print(entity['role'], entity['name'])
-                print('\n')
-            print(res)
-        else:
-            pass
-
+        try:
+            temp = json.dumps(document)
+            temp = json.dumps(temp)
+            # temp = json.dumps(temp)
+            temp = pipeline(temp)
+            if temp:
+                res = json.loads(temp)
+                for event in res['events']:
+                    for entity in event['entities']:
+                        print(entity['role'], entity['name'])
+                    print('\n')
+                print(res)
+            else:
+                pass
+        except Exception as e:
+            print(e)
         # res = json.loads(pipeline(json.dumps(json.dumps(document))))
 
         # input()
