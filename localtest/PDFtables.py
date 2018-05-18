@@ -4,9 +4,7 @@
 
 from pymongo import MongoClient
 from bs4 import BeautifulSoup
-import re
-import ahocorasick
-import codecs
+import os
 
 
 def mongo_data():
@@ -24,13 +22,17 @@ def mongo_data():
 
 
 # TODO 改成读文件方式
-tables = {
+table_classifier = {
     '主体信息': [],
     '减持计划': [],
     '增持计划': [],
 }
-# with open()
-table1_list = ['股东身份', '持股数量', '持股比例', '股东身份', '股份来源', '股份数量', '所持股份总数']
+# PATH = os.getcwd()
+# for
+# with open('files/table_classifier/主体信息') as f:
+#     for line in f:
+
+table1_list = ['股东身份', '持股数量', '持股比例', '股份来源', '股份数量', '所持股份总数']
 table2_list = ['减持数量', '减持比例', '减持方式', '减持期间', '价格区间', '减持原因', '减持']
 table3_list = ['']
 
@@ -69,6 +71,7 @@ if __name__ == '__main__':
     #         print(tables)
     #     else:
     #         print('no table')
+
     list1 = []
     with open('files/table_classifier/主体信息') as f:
         for line in f:

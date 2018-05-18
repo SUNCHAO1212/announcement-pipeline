@@ -12,7 +12,7 @@ import time
 import numpy as np
 from scrapy import Selector
 
-from localtest.LzPdf2Html.LzPdf2Html.find_roi import *
+from localtest.LzPdf2Html.find_roi import *
 
 logging.config.fileConfig('logging_info.ini')
 logger = logging.getLogger('LzPDFParse')
@@ -24,9 +24,11 @@ xfpat = re.compile('x([\da-z\.]+)')
 yfpat = re.compile('y([\da-z\.]+)')
 hpat = re.compile('(h[\da-z]+)')
 wpat = re.compile('(w[\da-z]+)')
-tableheadpat = re.compile('<lz class="table-.+?">')
+tableheadpat = re.compile('<lz data-tab="table-.+?">')
 divc = re.compile('^<div class="c .+?">')
 divt = re.compile('^')
+
+just_digit_pat = re.compile('^\d+$')
 
 DEBUG = True
 
@@ -184,13 +186,17 @@ def formatHtmlNotTable(tmphtml):
     buf = []
 
     for idy, r in enumerate(myarray):
-        buf.append('<div>')
         tmpbuf = []
         for idx, c in enumerate(r):
             if c == 1.0:
                 tmpbuf.append(tmp[(id2y[idy], id2x[idx])])
-        buf.append(' '.join(tmpbuf))
-        buf.append('</div>')
+        tmpbufvalue = ' '.join(tmpbuf)
+
+        # 去掉pdf的页码标记
+        if not just_digit_pat.match(tmpbufvalue):
+            buf.append('<div>')
+            buf.append(tmpbufvalue)
+            buf.append('</div>')
 
     return ''.join(buf)
 
@@ -247,7 +253,7 @@ def formatHtml(tmphtml, extra_info):
     svgx = extra_info['rl'][0]
     svgy = extra_info['rl'][1]
 
-    buf = ['<svg xmlns="http://www.w3.org/2000/svg" width="' + extra_info[
+    buf = ['<div><svg xmlns="http://www.w3.org/2000/svg" width="' + extra_info[
         'w'] + '" height="' + extra_info[
                'h'] + '" style="font-size:8px;" version="1.1">']
     buf.append('<rect width="' + extra_info[
@@ -261,7 +267,7 @@ def formatHtml(tmphtml, extra_info):
                 affinex = id2x[idx] - float(svgx)
                 buf.append(
                     '<text x =' + str(affinex) + ' dy=' + str(affiney) + ' >' + tmp[(id2y[idy], id2x[idx])] + '</text>')
-    buf.append('</svg>')
+    buf.append('</svg></div>')
 
     return ''.join(buf)
 
@@ -293,7 +299,7 @@ def create_new_html(tmpdir, lzcssparse, topic=None):
     # 按页进行解析，因为position会重置
     for i, hx in enumerate(hxs.xpath('//div[contains(@id,"pf")]')):
 
-        print('page', i)
+        # print('page', i)
         new_lz_html = []
 
         notTableHtml = []
@@ -342,7 +348,7 @@ def create_new_html(tmpdir, lzcssparse, topic=None):
 
         for hhx in hx.xpath('./div/div'):
             precurdiv = hhx.extract()
-            print(precurdiv)
+            # print(precurdiv)
 
             # print('curdiv', curdiv)
             # print('divcss',divcss)
@@ -366,13 +372,15 @@ def create_new_html(tmpdir, lzcssparse, topic=None):
                         # print('=', tables)
                         if tables:
                             if notTableHtml:
-                                new_lz_html.append(formatHtmlNotTable(''.join(notTableHtml)))
+                                other_div = formatHtmlNotTable(''.join(notTableHtml))
+                                if other_div:
+                                    new_lz_html.append(other_div)
                                 notTableHtml = []
 
                             for k, v in tables.items():
                                 # print('<div class="table-' + str(i) + '-' + str(k) + '">' + ''.join(v) + '</div>')
                                 new_lz_html.append(
-                                    '<lz class="table-' + str(i) + '-' + str(k) + '">' + formatHtml(''.join(v),
+                                    '<lz data-tab="table-' + str(i) + '-' + str(k) + '">' + formatHtml(''.join(v),
                                                                                                     extra_tables_info[
                                                                                                         k]) + '</lz>')
 
@@ -386,7 +394,9 @@ def create_new_html(tmpdir, lzcssparse, topic=None):
                     notTableHtml.append(curdiv)
 
         if notTableHtml:
-            new_lz_html.append(formatHtmlNotTable(''.join(notTableHtml)))
+            other_div = formatHtmlNotTable(''.join(notTableHtml))
+            if other_div:
+                new_lz_html.append(other_div)
             notTableHtml = []
 
         # 考虑表格在末尾的情况
@@ -394,21 +404,45 @@ def create_new_html(tmpdir, lzcssparse, topic=None):
             for k, v in tables.items():
                 # print('<div class="table-' + str(i) + '-' + str(k) + '">' + ''.join(v) + '</div>')
                 new_lz_html.append(
-                    '<lz class="table-' + str(i) + '-' + str(k) + '">' + formatHtml(''.join(v), extra_tables_info[
+                    '<lz data-tab="table-' + str(i) + '-' + str(k) + '">' + formatHtml(''.join(v), extra_tables_info[
                         k]) + '</lz>')
 
             tables.clear()
 
         if not new_lz_html:
-            logger.error('pdf:{}可能是图片'.format(tmpdir))
-            raise RuntimeError('粗分析pdf转html失败！！')
+            raise RuntimeError('pdf:{}可能是图片'.format(tmpdir))
 
-        if all_lz_html and new_lz_html[0].startswith('<lz class="table-') and all_lz_html[-1].endswith('</lz>'):
+        if all_lz_html and new_lz_html[0].startswith('<lz data-tab="table-') and all_lz_html[-1].endswith('</lz>'):
             all_lz_html[-1] = all_lz_html[-1][:-5]
             new_lz_html[0] = tableheadpat.sub('', new_lz_html[0])
-            # print('合并单元格!!{}-{}'.format(i - 1, i))
+            print('合并单元格!!{}-{}'.format(i - 1, i))
         all_lz_html.append(''.join(new_lz_html))
     return ''.join(all_lz_html)
+
+
+def extractColumns(tmpdir, lzhtmlparse):
+    buf = lzhtmlparse
+    level1_tags_pat = re.compile('<div>(第[一二三四五六七八九十]+节.+?)</div>')
+    level2_tags_pat = re.compile('<div>([一二三四五六七八九十]+、.+?)</div>')
+
+    tags_pats = [level1_tags_pat, level2_tags_pat]
+
+    findRes = {}
+
+    for tags_pat in tags_pats:
+        for idx, res in enumerate(tags_pat.findall(buf)):
+            findRes[res] = '<div class="Section">' + res + '</div>'
+
+    for k, v in findRes.items():
+        buf = buf.replace('<div>' + k + '</div>', v)
+
+    if DEBUG:
+        with codecs.open(tmpdir + '.html', 'wb', 'utf8') as f:
+            f.write(buf)
+
+    print(buf)
+
+    return buf
 
 
 def lz_pdf2html(filepath, topic=None):
@@ -425,7 +459,7 @@ def lz_pdf2html(filepath, topic=None):
         t = time.time()
         ret = getPdf2htmlex(filepath, tmpdir)
         if ret != 0:
-            raise RuntimeError('粗分析pdf转html失败！！')
+            raise RuntimeError('pdf2htmlEx分析pdf转html失败！！')
         logger.info('完成粗分析pdf转html:{}/{}=>耗时:{}'.format(filepath, topic, time.time() - t))
 
         logger.info('开始提取大纲:{}/{}'.format(filepath, topic))
@@ -443,10 +477,15 @@ def lz_pdf2html(filepath, topic=None):
         lzhtmlparse = create_new_html(tmpdir, lzcssparse)
         logger.info('完成开始解析整体html:{}/{}=>耗时:{}'.format(filepath, topic, time.time() - t))
 
-        logger.info('合并最终html文件:{}/{}'.format(filepath, topic))
+        # logger.info('合并最终html文件:{}/{}'.format(filepath, topic))
+        # t = time.time()
+        # finalhtml1 = getfinalhtml(tmpdir, lzhtmlparse, lzoutlineparse)
+        # logger.info('完成最终html文件:{},topic:{}=>耗时:{}'.format(filepath, topic, time.time() - t))
+
+        logger.info('识别目录:{}/{}'.format(filepath, topic))
         t = time.time()
-        finalhtml = getfinalhtml(tmpdir, lzhtmlparse, lzoutlineparse)
-        logger.info('完成最终html文件:{},topic:{}=>耗时:{}'.format(filepath, topic, time.time() - t))
+        finalhtml = extractColumns(tmpdir, lzhtmlparse)
+        logger.info('识别目录文件:{},topic:{}=>耗时:{}'.format(filepath, topic, time.time() - t))
 
         if not DEBUG:
             shutil.rmtree(tmpdir)
@@ -462,15 +501,15 @@ def lz_pdf2html(filepath, topic=None):
 
 
 if __name__ == '__main__':
-    # all_lz_html = lz_pdf2html('/myJob/liangzhi/myapps/juchaonianbao/mydownload/1204504416.PDF')
+    all_lz_html = lz_pdf2html('/home/sunchao/code/project/local-test/localtest/LzPdf2Html/demo/1202695002.PDF')
     # print(all_lz_html)
 
     # 扫描文件夹，
-    for root, _, filenames in os.walk('/home/sunchao/code/project/local-test/localtest/download'):
-        for filename in filenames:
-            filepath = os.path.join(root, filename)
-            finalhtml = lz_pdf2html(filepath)
-            if finalhtml:
-                tmpdir = filepath.split('/')[-1].split('.')[0]
-                with codecs.open(os.path.join(PREFIX, tmpdir + '.html'), 'wb', 'utf8') as f:
-                    f.write(finalhtml)
+    # for root, _, filenames in os.walk('/myJob/liangzhi/myapps/juchaonianbao/mydownload'):
+    #     for filename in filenames:
+    #         filepath = os.path.join(root, filename)
+    #         finalhtml = lz_pdf2html(filepath)
+    #         if finalhtml:
+    #             tmpdir = filepath.split('/')[-1].split('.')[0]
+    #             with codecs.open(os.path.join(PREFIX, tmpdir + '.html'), 'wb', 'utf8') as f:
+    #                 f.write(finalhtml)

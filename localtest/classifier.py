@@ -19,6 +19,9 @@ def title2label(title):
     classes = {
         "减持": {
             "计划": "",
+        },
+        "增持": {
+            "计划": "",
         }
     }
     classes_list = list(classes.keys())

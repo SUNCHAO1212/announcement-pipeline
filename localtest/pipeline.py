@@ -41,13 +41,16 @@ def supermind_format(docu, events, labels):
     # 事件信息
     event_type = '股东' + labels['level1'] + labels['level2'] + '事件'
     mention_time = docu['publishTime']
+    format_time = time.strftime('%Y-%m-%d %H:%M:%S', time.strptime(mention_time, '%Y-%m-%d'))
     stock_code = docu['crawOpt']['secCode']
     stock_name = docu['crawOpt']['secName']
+    event_name = stock_name + '_' + event_type + '_' + time.strftime('%Y%m%d', time.strptime(mention_time, '%Y-%m-%d'))
     for event in events:
-        event['externalInfo']['stockname'] = stock_code
-        event['externalInfo']['stockcode'] = stock_name
+        event['eventName'] = event_name
+        event['externalInfo']['stockname'] = stock_name
+        event['externalInfo']['stockcode'] = stock_code
         event['eventTime']['mention'] = mention_time
-        event['eventTime']['formatTime'] = time.strftime('%Y-%m-%d %H:%M:%S', time.strptime(mention_time, '%Y-%m-%d'))
+        event['eventTime']['formatTime'] = format_time
         for entity in event['entities']:
             entity['type'] = event_type
     all_info = {
@@ -212,13 +215,6 @@ def multi_event_extr(sent_lists, docu, labels):
     """
     # TODO 合并完整事件
     event_type = '股东' + labels['level1'] + labels['level2'] + '事件'
-    # stockname = 'test'
-    # stockcode = 'test'
-    # formatTime = 'test'
-    # events = []
-    # mainbody = copy.deepcopy(event)
-    # events.append(copy.deepcopy(new_event(event_type)))
-
     # 按顺序保留句子信息
     all_entities = []
     for i, sent in enumerate(sent_lists):
@@ -256,7 +252,6 @@ def pipeline(docu):
     # 分句信息抽取 todo
     # sentences = sent_filter(docu['crawOpt']['rawTxt'])
     sentences = sent_filter(docu['rawHtml'])
-    # sentences = sent_filter(docu['rawHtml'])
     event_info = multi_event_extr(sentences, docu, labels)
 
     # 重组格式
@@ -272,7 +267,7 @@ if __name__ == '__main__':
 
     url = 'http://www.cninfo.com.cn/finalpage/2017-04-29/1203428679.PDF'
     # for index, document in enumerate(coll.find({'title':{'$regex':'^.*减持.*计划公告$'}})):
-    for document in coll.find({'crawOpt.secName':'创力集团', 'title':{'$regex':'^.*减持.*计划的?公告$'}}):
+    for document in coll.find({'crawOpt.secName':'赛轮金宇', 'title':{'$regex':'^[^(?:完成)]*增持(?:股份)?计划的公告$'}}):
 
         print(document['title'], document['url'])
 

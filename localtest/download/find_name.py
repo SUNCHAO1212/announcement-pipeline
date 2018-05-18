@@ -8,7 +8,7 @@ db = client.SecurityAnnouncement
 coll_from = db.test2
 
 data = {}
-for docu in db.test2.find({'title':{'$regex':'^.*减持.*计划的?公告$'}}):
+for docu in db.test2.find({'title':{'$regex':'^.*增持.*计划的?公告$'}}):
     try:
         if docu['crawOpt']['secName'] in data:
             data[docu['crawOpt']['secName']] += 1
@@ -16,6 +16,7 @@ for docu in db.test2.find({'title':{'$regex':'^.*减持.*计划的?公告$'}}):
             data[docu['crawOpt']['secName']] = 1
     except Exception as e:
         pass
+
 
 for k in data:
     if data[k] > 1:
