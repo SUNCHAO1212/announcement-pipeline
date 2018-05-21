@@ -19,6 +19,7 @@ from localtest.sentence_filter import sent_filter
 
 ROOT = os.getcwd()
 SCHEMA_PATH = 'files/schema'
+PIPELINE_NAME = 'local_guquanbiandong'
 
 
 def supermind_format(docu, events, labels):
@@ -30,11 +31,10 @@ def supermind_format(docu, events, labels):
     html = docu['rawHtml']
     title = docu['title']
     url = docu['url']
-    rawId = docu['rawId']
-    crawOpt = docu['crawOpt']
+    raw_id = docu['rawId']
+    craw_opt = docu['crawOpt']
     # uuid: pipeline名 + url MD5
-    pipeline_name = 'local_guquanbiandong'
-    string = pipeline_name + docu['url']
+    string = PIPELINE_NAME + docu['url']
     hl = hashlib.md5()
     hl.update(string.encode(encoding='utf-8'))
     uuid = hl.hexdigest()
@@ -53,6 +53,7 @@ def supermind_format(docu, events, labels):
         event['eventTime']['formatTime'] = format_time
         for entity in event['entities']:
             entity['type'] = event_type
+
     all_info = {
         "nafVer": {
             "lang": "cn",
@@ -64,7 +65,7 @@ def supermind_format(docu, events, labels):
             "title": title,
             "rawHtml": html,
             "url": url,
-            "rawId": rawId,
+            "rawId": raw_id,
             "uuid": uuid,
             "docId": ""
         },
@@ -89,23 +90,9 @@ def supermind_format(docu, events, labels):
             }
         ],
         "events": events,
-        "crawOpt": crawOpt
+        "crawOpt": craw_opt
     }
     return all_info
-
-
-# def entity_format(entity_role, entity_type, entity_name, externalReferences):
-#     if entity_name:
-#         name = entity_name[0]
-#     else:
-#         name = ''
-#     entity = {
-#         "role": entity_role,
-#         "type": entity_type,
-#         "name": name,
-#         "externalReferences": externalReferences
-#     }
-#     return entity
 
 
 def add_table_info(events, tables):
@@ -145,10 +132,9 @@ def new_event(event_type):
     with open(os.path.join(ROOT, SCHEMA_PATH, event_type)) as f:
         schema = json.loads(f.read())
     entities = new_entities(schema)
-    # TODO 事件字段填充
     event = {
             "eventId": "1234567890",
-            "eventName": event_type,
+            "eventName": "",
             "location": {
                 "name": "",
                 "references": []
@@ -213,7 +199,6 @@ def multi_event_extr(sent_lists, docu, labels):
     :param labels:
     :return: all events without table information
     """
-    # TODO 合并完整事件
     event_type = '股东' + labels['level1'] + labels['level2'] + '事件'
     # 按顺序保留句子信息
     all_entities = []
@@ -247,10 +232,10 @@ def pipeline(docu):
     # 公告分类
     labels = title2label(docu['title'])
     if labels['level1'] == '其他' or labels['level2'] == '其他':
+        print("文档未能找到合理分类：{}，{}".format(docu['title'], docu['url']))
         return False
 
-    # 分句信息抽取 todo
-    # sentences = sent_filter(docu['crawOpt']['rawTxt'])
+    # 分句信息抽取
     sentences = sent_filter(docu['rawHtml'])
     event_info = multi_event_extr(sentences, docu, labels)
 
@@ -265,26 +250,23 @@ if __name__ == '__main__':
     db = client.SecurityAnnouncement
     coll = db.test2
 
-    url = 'http://www.cninfo.com.cn/finalpage/2017-04-29/1203428679.PDF'
-    # for index, document in enumerate(coll.find({'title':{'$regex':'^.*减持.*计划公告$'}})):
-    for document in coll.find({'crawOpt.secName':'赛轮金宇', 'title':{'$regex':'^[^(?:完成)]*增持(?:股份)?计划的公告$'}}):
+    temp_url = 'http://www.cninfo.com.cn/finalpage/2015-05-04/1200962085.PDF'
+    for index, document in enumerate(coll.find({'url':temp_url})):
+    # for document in coll.find({'crawOpt.secName':'赛轮金宇', 'title':{'$regex':'^[^(?:完成)]*增持(?:股份)?计划的公告$'}}):
 
         print(document['title'], document['url'])
-
-        # print(document['_id'], type(document['_id']))
         document['rawId'] = str(document['_id'])
         del document['_id']
         # # temp
         try:
             temp = json.dumps(document)
             temp = json.dumps(temp)
-            # temp = json.dumps(temp)
             temp = pipeline(temp)
             if temp:
                 res = json.loads(temp)
-                for event in res['events']:
-                    for entity in event['entities']:
-                        print(entity['role'], entity['name'])
+                for outer_event in res['events']:
+                    for outer_entity in outer_event['entities']:
+                        print(outer_entity['role'], outer_entity['name'])
                     print('\n')
                 print(res)
             else:

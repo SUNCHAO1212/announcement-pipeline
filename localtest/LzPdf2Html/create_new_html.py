@@ -102,6 +102,12 @@ def getCss(tmpdir):
 
 
 def dealDivC(hhx, precurdiv, lzcss):
+    """
+    :param hhx:
+    :param precurdiv:
+    :param lzcss:
+    :return:
+    """
     newdiv = []
 
     divcss = ''.join(hhx.xpath('./@class').extract()).strip()
@@ -432,6 +438,13 @@ def extractColumns(tmpdir, lzhtmlparse):
     for tags_pat in tags_pats:
         for idx, res in enumerate(tags_pat.findall(buf)):
             findRes[res] = '<div class="Section">' + res + '</div>'
+
+    # TODO 多级段落
+    second_tags_pat = [re.compile('<div>([（][一二三四五六七八九十]+[）].+?)</div>'), ]
+    for tags_pat in second_tags_pat:
+        for idx, res in enumerate(tags_pat.findall(buf)):
+            findRes[res] = '<div class="Second-Section">' + res + '</div>'
+    # /TODO
 
     for k, v in findRes.items():
         buf = buf.replace('<div>' + k + '</div>', v)

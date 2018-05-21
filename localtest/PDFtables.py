@@ -1,10 +1,11 @@
 # -*- coding:UTF-8 -*-
 #!/usr/bin/env python3
 
+import os
+import re
 
 from pymongo import MongoClient
 from bs4 import BeautifulSoup
-import os
 
 
 def mongo_data():
@@ -21,39 +22,43 @@ def mongo_data():
         # input()
 
 
-# TODO 改成读文件方式
 table_classifier = {
     '主体信息': [],
     '减持计划': [],
     '增持计划': [],
 }
-# PATH = os.getcwd()
-# for
-# with open('files/table_classifier/主体信息') as f:
-#     for line in f:
-
-table1_list = ['股东身份', '持股数量', '持股比例', '股份来源', '股份数量', '所持股份总数']
-table2_list = ['减持数量', '减持比例', '减持方式', '减持期间', '价格区间', '减持原因', '减持']
-table3_list = ['']
 
 
-def pdf_table(html, labels={}):
-    """ TODO 根据文档类别选择不同的表格筛选特征词 """
+ROOT = os.getcwd()
+TABLE_PATH = 'files/table_classifier'
+for key in table_classifier:
+    with open(os.path.join(ROOT, TABLE_PATH, key)) as f:
+        for line in f:
+            table_classifier[key].append(line.strip())
+
+
+def pdf_table(html, labels={'level1': '减持', 'level2': '计划'}):
+    """
+    :param html: 含有表格的html，表格形式：<lz data-tab="table-i-j">
+    :param labels: 类别信息
+    :return:
+    """
     bs = BeautifulSoup(html, 'lxml')
     # print(bs.prettify())
     tables = bs.find_all('lz')
-    # res2 = bs.find_all(class_=re.compile('table.*'))
+    # tables = bs.find_all(class_=re.compile('table.*'))
     result = {}
     for table in tables:
         # print(table.text)
         # print(table.prettify())
-        for item2 in table2_list:
+        label = labels['level1'] + labels['level2']
+        for item2 in table_classifier[label]:
             if item2 in table.text:
                 str2 = 'data-tab="' + table.attrs['data-tab'] + '"'
-                result['减持计划'] = str2
+                result[label] = str2
                 break
         else:
-            for item1 in table1_list:
+            for item1 in table_classifier['主体信息']:
                 if item1 in table.text:
                     str1 = 'data-tab="' + table.attrs['data-tab'] + '"'
                     result['主体信息'] = str1
@@ -64,16 +69,16 @@ def pdf_table(html, labels={}):
 if __name__ == '__main__':
     # mongo_data()
 
-    # with open('referances/减持计划样例1.html') as f:
-    #     html = f.read()
-    #     tables = pdf_table(html)
-    #     if tables:
-    #         print(tables)
-    #     else:
-    #         print('no table')
+    with open('referances/减持计划样例1.html') as f:
+        html = f.read()
+        outer_tables = pdf_table(html)
+        if outer_tables:
+            print(outer_tables)
+        else:
+            print('no table')
 
-    list1 = []
-    with open('files/table_classifier/主体信息') as f:
-        for line in f:
-            list1.append(line.strip())
-    print(list1)
+    # list1 = []
+    # with open('files/table_classifier/主体信息') as f:
+    #     for line in f:
+    #         list1.append(line.strip())
+    # print(list1)
