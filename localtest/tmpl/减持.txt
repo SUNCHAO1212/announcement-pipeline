@@ -6,7 +6,7 @@
 		]
 	},
 	"selectedField": "title_content",
-	"feature": "http://www.cninfo.com.cn/.*_减持_计划",
+	"feature": "http://www.cninfo.com.cn/.*_减持进展_证券简称",
 	"selectors": {
 		"fields": [
 		    {

@@ -95,6 +95,7 @@ def html_section_v2(html, class_='"Section"'):
     pt = re.compile('(<div class={}>.*?</div>)'.format(class_))
     split_tag = pt.findall(html)
     sents = []
+    sents_dict = {}
     last_tag = ''
     for i, tag in enumerate(split_tag):
         if i == 0:
@@ -102,21 +103,34 @@ def html_section_v2(html, class_='"Section"'):
         else:
             former, html = html.split(tag)
             sents.append(last_tag+former)
+            # change data structure
+            sents_dict[last_tag] = former
         last_tag = tag
     else:
+        sents_dict[last_tag] = html
         sents.append(last_tag+html)
 
     if class_ == '"Section"':
-        res = []
-        for sent in sents:
-            res.append(html_section_v2(sent, class_='"Second-Section"'))
-        return res
-    elif class_ == '"Second-Section"':
-        if sents:
-            return sents
-        else:
-            return [html]
+        # res = []
+        # for sent in sents:
+        #     res.append(html_section_v2(sent, class_='"Second-Section"'))
+        # return res
 
+        # change data structure
+        res_dict = {}
+        for k in sents_dict:
+            res_dict[k] = html_section_v2(sents_dict[k], class_='"Second-Section"')
+        return res_dict
+    elif class_ == '"Second-Section"':
+        # if sents:
+        #     return sents
+        # else:
+        #     return [html]
+
+        if sents_dict:
+            return sents_dict
+        else:
+            return html
 
 if __name__ == '__main__':
     # client = MongoClient('192.168.1.251')
@@ -132,7 +146,12 @@ if __name__ == '__main__':
     #         print(j, s)
     #     input()
 
-    with open('referances/减持计划样例2.html') as f:
+    with open('referances/减持计划样例3（多事件）.html') as f:
         html = f.read()
         result = html_section_v2(html)
-        print(result)
+        for key, value in result.items():
+            if isinstance(value, dict):
+                for k, v in value.items():
+                    print(k,v)
+            else:
+                print(key, value)

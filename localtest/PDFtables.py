@@ -66,19 +66,34 @@ def pdf_table(html, labels={'level1': '减持', 'level2': '计划'}):
     return result
 
 
+def kaggle_pdf(html):
+    bs = BeautifulSoup(html, 'lxml')
+    # print(bs.prettify())
+    tables = bs.find_all('table')
+    # tables = bs.find_all(class_=re.compile('table.*'))
+    result = {}
+    print(tables)
+    for table in tables:
+        print(table.text)
+        print(table.prettify())
+    return result
+
+
 if __name__ == '__main__':
     # mongo_data()
 
-    with open('referances/减持计划样例1.html') as f:
+    # with open('referances/减持计划样例3（多事件）.html') as f:
+    #     html = f.read()
+    #     outer_tables = pdf_table(html)
+    #     if outer_tables:
+    #         print(outer_tables)
+    #     else:
+    #         print('no table')
+
+    with open('referances/31346.html') as f:
         html = f.read()
-        outer_tables = pdf_table(html)
+        outer_tables = kaggle_pdf(html)
         if outer_tables:
             print(outer_tables)
         else:
             print('no table')
-
-    # list1 = []
-    # with open('files/table_classifier/主体信息') as f:
-    #     for line in f:
-    #         list1.append(line.strip())
-    # print(list1)

@@ -181,7 +181,9 @@ def event_integrate(entities, event_type):
                     if e['name']:
                         rest_entities[0].append(entity)
                     else:
+                        # TODO 合并策略：现在只取第一条，需要多条对应。不要改格式
                         e['name'] = entity['value'][0][0]
+                        # e['name'] = entity['value'][0]
                     break
     if rest_entities[0]:
         # TODO 通过某种策略舍弃多余的事件
@@ -251,8 +253,8 @@ if __name__ == '__main__':
     coll = db.test2
 
     temp_url = 'http://www.cninfo.com.cn/finalpage/2015-05-04/1200962085.PDF'
-    for index, document in enumerate(coll.find({'url':temp_url})):
-    # for document in coll.find({'crawOpt.secName':'赛轮金宇', 'title':{'$regex':'^[^(?:完成)]*增持(?:股份)?计划的公告$'}}):
+    # for index, document in enumerate(coll.find({'url':temp_url})):
+    for document in coll.find({'crawOpt.secCode':'300379', 'title':{'$regex':'.*减持计划的公告$'}}):
 
         print(document['title'], document['url'])
         document['rawId'] = str(document['_id'])
