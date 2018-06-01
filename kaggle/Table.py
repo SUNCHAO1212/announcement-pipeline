@@ -17,13 +17,15 @@ def clean_sent(sent):
 class Table:
     def __init__(self, html_table):
         self.html = html_table
+        self.info_number = 0
         self.len_row, self.len_col = self.table_size()
         self.array = self.save_array()
-        self.value_start = 0
         self.dict = self.get_key_value()
 
     def table_size(self):
         trs = self.html.tbody.find_all('tr')
+        # trs = self.html.find_all('tr')
+
         len_row = len(trs)
         tr = trs[0]
         tds = tr.find_all('td')
@@ -38,6 +40,8 @@ class Table:
         for i in range(self.len_row):
             array.append(copy.deepcopy([None]*self.len_col))
         trs = self.html.tbody.find_all('tr')
+        # trs = self.html.find_all('tr')
+
         for i_tr, tr in enumerate(trs):
             tds = tr.find_all('td')
             for i_td, td in enumerate(tds):
@@ -90,10 +94,11 @@ class Table:
 
     def get_key_value(self):
         keys = copy.deepcopy(self.array[0])
+        value_start = 0
         for index in range(self.len_row):
             keys_set = set(keys)
             if len(keys_set) == self.len_col:
-                self.value_start = index + 1
+                value_start = index + 1
                 break
                 # return keys
             else:
@@ -103,6 +108,7 @@ class Table:
         temp_dict = {}
         for i, key in enumerate(keys):
             temp_dict[key] = []
-            for row in range(self.value_start, self.len_row):
+            for row in range(value_start, self.len_row):
                 temp_dict[key].append(self.array[row][i])
+        self.info_number = self.len_row - value_start
         return temp_dict

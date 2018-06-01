@@ -1,0 +1,186 @@
+{
+	"eventInfo": {
+		"eventType": "重大合同",
+		"triggerTerms": [
+			""
+		]
+	},
+	"selectedField": "title_content",
+	"feature": "http://www.cninfo.com.cn/.*_重大合同",
+	"selectors": {
+		"fields": [
+		    {
+				"idCn": "甲方",
+				"idTypeCn": "重大合同微公告",
+				"textPattern": [
+					{
+						"findall": [
+						    {
+								"regex": "招标人[:：]([\u4e00-\u9fa5]+)",
+								"confidence": "1"
+							}
+						]
+					}
+				],
+				"required": "false",
+				"selector": {
+					"rules": [
+						{
+							"xpath": "//*/text()"
+						}
+					]
+				},
+				"idRoleCn": "甲方",
+				"id": "First party"
+			},
+			{
+				"idCn": "乙方",
+				"idTypeCn": "重大合同微公告",
+				"textPattern": [
+					{
+						"findall": [
+							{
+								"regex": "特此公告[。\\s]*?([\u4e00-\u9fa5]+)[\\s]*?董事会",
+								"confidence": "1"
+							}
+						]
+					}
+				],
+				"required": "false",
+				"selector": {
+					"rules": [
+						{
+							"xpath": "//*/text()"
+						}
+					]
+				},
+				"idRoleCn": "乙方",
+				"id": "Second party"
+			},
+			{
+				"idCn": "项目名称",
+				"idTypeCn": "重大合同微公告",
+				"textPattern": [
+					{
+						"findall": [
+							{
+								"regex": "项目(?:名称[:：]|为)[\\s]*?([\u4e00-\u9fa5（）]+)[\\s]*?[”。0-9]",
+								"confidence": "1"
+							},
+							{
+								"regex": "(?:《|“|关于)([\u4e00-\u9fa5（）]+(?:项目|招标活动))",
+								"confidence": "1"
+							}
+						]
+					}
+				],
+				"required": "false",
+				"selector": {
+					"rules": [
+						{
+							"xpath": "//*/text()"
+						}
+					]
+				},
+				"idRoleCn": "项目名称",
+				"id": "Project name"
+			},
+			{
+				"idCn": "合同名称",
+				"idTypeCn": "重大合同微公告",
+				"textPattern": [
+					{
+						"findall": [
+							{
+								"regex": "备查文件[:：]《(.*?)》",
+								"confidence": "1"
+							}
+						]
+					}
+				],
+				"required": "true",
+				"selector": {
+					"rules": [
+						{
+							"xpath": "//*//text()"
+						}
+					]
+				},
+				"idRoleCn": "合同名称",
+				"id": "Contract name"
+			},
+			{
+				"idCn": "合同金额上限",
+				"idTypeCn": "重大合同微公告",
+				"textPattern": [
+					{
+						"findall": [
+							{
+								"regex": "",
+								"confidence": "1"
+							}
+						]
+					}
+				],
+				"required": "true",
+				"selector": {
+					"rules": [
+						{
+							"xpath": "//*//text()"
+						}
+					]
+				},
+				"idRoleCn": "合同金额上限",
+				"id": "Upper limit of contract amount"
+			},
+			{
+				"idCn": "合同金额下限",
+				"idTypeCn": "重大合同微公告",
+				"textPattern": [
+					{
+						"findall": [
+							{
+								"regex": "",
+								"confidence": "1"
+							}
+						]
+					}
+				],
+				"required": "true",
+				"selector": {
+					"rules": [
+						{
+							"xpath": "//*//text()"
+						}
+					]
+				},
+				"idRoleCn": "合同金额下限",
+				"id": "Lower limit of contract amount"
+			},
+			{
+				"idCn": "联合体成员",
+				"idTypeCn": "重大合同微公告",
+				"textPattern": [
+					{
+						"findall": [
+							{
+								"regex": "",
+								"confidence": "1"
+							}
+						]
+					}
+				],
+				"required": "true",
+				"selector": {
+					"rules": [
+						{
+							"xpath": "//*//text()"
+						}
+					]
+				},
+				"idRoleCn": "联合体成员",
+				"id": "Member of the Consortium"
+			}
+		]
+	}
+}

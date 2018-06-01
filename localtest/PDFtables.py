@@ -72,10 +72,17 @@ def kaggle_pdf(html):
     tables = bs.find_all('table')
     # tables = bs.find_all(class_=re.compile('table.*'))
     result = {}
-    print(tables)
+    # print(tables)
+
     for table in tables:
-        print(table.text)
-        print(table.prettify())
+        # print(table.text)
+        # print(table.prettify())
+        trs = table.find_all('tr')
+        for i_tr, tr in enumerate(trs):
+            tds = tr.find_all('td')
+            for i_td, td in enumerate(tds):
+                print(td.text)
+
     return result
 
 
@@ -90,10 +97,10 @@ if __name__ == '__main__':
     #     else:
     #         print('no table')
 
-    with open('referances/31346.html') as f:
+    with open('referances/1205008030222222.html') as f:
         html = f.read()
         outer_tables = kaggle_pdf(html)
-        if outer_tables:
-            print(outer_tables)
-        else:
-            print('no table')
+        # if outer_tables:
+        #     print(outer_tables)
+        # else:
+        #     print('no table')

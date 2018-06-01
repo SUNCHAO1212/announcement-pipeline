@@ -15,18 +15,20 @@ def get_tables(html):
     for i_table, table in enumerate(tables):
         # print(table.prettify())
         table_info = Table(table)
-        table_info.show_array()
-        print(table_info.dict)
-        print('')
+        table_info.show_table()
+        # print(table_info.dict)
+        # print('')
 
     return False
 
 
 def main():
 
-    with open('data/31346.html') as f:
+    with open('data/1205008030222222.html') as f:
         html = f.read()
         tables = get_tables(html)
+        for table in tables:
+            table.show_array()
 
 
 if __name__ == '__main__':

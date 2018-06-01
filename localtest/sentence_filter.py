@@ -132,6 +132,7 @@ def html_section_v2(html, class_='"Section"'):
         else:
             return html
 
+
 if __name__ == '__main__':
     # client = MongoClient('192.168.1.251')
     # db = client.SecurityAnnouncement

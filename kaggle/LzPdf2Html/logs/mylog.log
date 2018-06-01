@@ -1,0 +1,25 @@
+[ERROR|2018-05-02 14:20:35] [MainThread|create_new_html|lz_pdf2html|459] - 错误解析完成:/myJob/liangzhi/myapps/juchaonianbao/mydownload/1204504416.PDF,pdf:myResultHtml/1204504416可能是图片
+[ERROR|2018-05-02 14:22:50] [MainThread|create_new_html|lz_pdf2html|459] - 错误解析完成:/myJob/liangzhi/myapps/juchaonianbao/mydownload/1204511142.PDF,粗分析pdf转html失败！！
+[ERROR|2018-05-02 14:24:56] [MainThread|create_new_html|lz_pdf2html|459] - 错误解析完成:/myJob/liangzhi/myapps/juchaonianbao/mydownload/1204543310.PDF,粗分析pdf转html失败！！
+[ERROR|2018-05-02 14:24:57] [MainThread|create_new_html|lz_pdf2html|459] - 错误解析完成:/myJob/liangzhi/myapps/juchaonianbao/mydownload/1204600093.PDF,粗分析pdf转html失败！！
+[ERROR|2018-05-02 14:27:39] [MainThread|create_new_html|lz_pdf2html|459] - 错误解析完成:/myJob/liangzhi/myapps/juchaonianbao/mydownload/1204505788.PDF,粗分析pdf转html失败！！
+[ERROR|2018-05-02 14:30:09] [MainThread|create_new_html|lz_pdf2html|459] - 错误解析完成:/myJob/liangzhi/myapps/juchaonianbao/mydownload/1204506052.PDF,粗分析pdf转html失败！！
+[ERROR|2018-05-02 14:32:26] [MainThread|create_new_html|lz_pdf2html|459] - 错误解析完成:/myJob/liangzhi/myapps/juchaonianbao/mydownload/1204512727.PDF,粗分析pdf转html失败！！
+[ERROR|2018-05-02 18:26:32] [MainThread|create_new_html|lz_pdf2html|459] - 错误解析完成:/myJob/liangzhi/2018/LzMyTools/ParsePDF/badcase/中铁工业：关于公司股东增持公司股份暨增持计划的公告.PDF,粗分析pdf转html失败！！
+[ERROR|2018-05-02 18:27:16] [MainThread|create_new_html|lz_pdf2html|459] - 错误解析完成:/myJob/liangzhi/2018/LzMyTools/ParsePDF/badcase/中铁工业：关于公司股东增持公司股份暨增持计划的公告.PDF,pdf2htmlEx分析pdf转html失败！！
+[ERROR|2018-05-02 18:28:03] [MainThread|create_new_html|lz_pdf2html|459] - 错误解析完成:/myJob/liangzhi/2018/LzMyTools/ParsePDF/badcase/中铁工业：关于公司股东增持公司股份暨增持计划的公告.PDF,pdf2htmlEx分析pdf转html失败！！
+[ERROR|2018-05-02 18:28:27] [MainThread|create_new_html|lz_pdf2html|459] - 错误解析完成:/myJob/liangzhi/2018/LzMyTools/ParsePDF/badcase/中铁工业：关于公司股东增持公司股份暨增持计划的公告.PDF,pdf2htmlEx分析pdf转html失败！！
+[ERROR|2018-05-02 18:28:45] [MainThread|create_new_html|lz_pdf2html|459] - 错误解析完成:/myJob/liangzhi/2018/LzMyTools/ParsePDF/badcase/中铁工业：关于公司股东增持公司股份暨增持计划的公告.PDF,pdf2htmlEx分析pdf转html失败！！
+[ERROR|2018-05-16 14:35:08] [MainThread|create_new_html|lz_pdf2html|488] - 错误解析完成:/myJob/liangzhi/2018/LzMyTools/LzPdf2Html/demo/1204351865.PDF,too many values to unpack (expected 2)
+[ERROR|2018-05-16 14:35:36] [MainThread|create_new_html|lz_pdf2html|488] - 错误解析完成:/myJob/liangzhi/2018/LzMyTools/LzPdf2Html/demo/1204351865.PDF,too many values to unpack (expected 2)
+[ERROR|2018-05-16 14:39:31] [MainThread|create_new_html|lz_pdf2html|492] - 错误解析完成:/myJob/liangzhi/2018/LzMyTools/LzPdf2Html/demo/1204351865.PDF,too many values to unpack (expected 2)
+[ERROR|2018-05-16 14:40:00] [MainThread|create_new_html|lz_pdf2html|492] - 错误解析完成:/myJob/liangzhi/2018/LzMyTools/LzPdf2Html/demo/1204351865.PDF,too many values to unpack (expected 2)
+[ERROR|2018-05-16 14:40:15] [MainThread|create_new_html|lz_pdf2html|492] - 错误解析完成:/myJob/liangzhi/2018/LzMyTools/LzPdf2Html/demo/1204351865.PDF,too many values to unpack (expected 2)
+[ERROR|2018-05-16 14:40:35] [MainThread|create_new_html|lz_pdf2html|492] - 错误解析完成:/myJob/liangzhi/2018/LzMyTools/LzPdf2Html/demo/1204351865.PDF,too many values to unpack (expected 2)
+[ERROR|2018-05-16 14:41:05] [MainThread|create_new_html|lz_pdf2html|492] - 错误解析完成:/myJob/liangzhi/2018/LzMyTools/LzPdf2Html/demo/1204351865.PDF,'str' object has no attribute 'group'
+[ERROR|2018-05-16 14:41:19] [MainThread|create_new_html|lz_pdf2html|492] - 错误解析完成:/myJob/liangzhi/2018/LzMyTools/LzPdf2Html/demo/1204351865.PDF,replace() argument 2 must be str, not dict
+[ERROR|2018-05-29 14:35:26] [MainThread|create_new_html|lz_pdf2html|512] - 错误解析完成:/home/sunchao/code/project/local-test/localtest/LzPdf2Html/demo/1202695002.PDF,pdf2htmlEx分析pdf转html失败！！
+[ERROR|2018-05-29 14:57:34] [MainThread|create_new_html|lz_pdf2html|513] - 错误解析完成:kaggle/data/重大合同_1153.pdf,pdf2htmlEx分析pdf转html失败！！
+[ERROR|2018-05-29 14:58:14] [MainThread|create_new_html|lz_pdf2html|513] - 错误解析完成:kaggle/data/重大合同_1153.pdf,pdf2htmlEx分析pdf转html失败！！
+[ERROR|2018-05-29 14:58:44] [MainThread|create_new_html|lz_pdf2html|513] - 错误解析完成:kaggle/data/1153.pdf,pdf2htmlEx分析pdf转html失败！！
+[ERROR|2018-05-29 14:59:56] [MainThread|create_new_html|lz_pdf2html|513] - 错误解析完成:重大合同_data/1153.pdf,pdf2htmlEx分析pdf转html失败！！

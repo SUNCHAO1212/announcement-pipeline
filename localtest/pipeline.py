@@ -4,12 +4,13 @@
 
 from __future__ import absolute_import, unicode_literals, print_function
 
-from pymongo import MongoClient
+
 import os
 import json
 import copy
 import time
 import hashlib
+from pymongo import MongoClient
 
 from localtest.extr import Event_Extr
 from localtest.classifier import title2label
