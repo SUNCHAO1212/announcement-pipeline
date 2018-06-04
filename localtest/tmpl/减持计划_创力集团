@@ -6,7 +6,7 @@
 		]
 	},
 	"selectedField": "title_content",
-	"feature": "http://www.cninfo.com.cn/.*_减持计划_创力集团",
+	"feature": "http://www.cninfo.com.cn/.*_股东减持计划事件_创力集团",
 	"selectors": {
 		"fields": [
 		    {

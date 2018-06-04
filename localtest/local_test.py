@@ -47,7 +47,5 @@ if __name__ == '__main__':
     # for root, _, filenames in os.walk('/home/sunchao/code/project/local-test/localtest/download'):
     #     for filename in filenames:
     #         upload(filename)
-    if {}:
-        print('yes')
-    else:
-        print('no')
+
+    print("setence".split())

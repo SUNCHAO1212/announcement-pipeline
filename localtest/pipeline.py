@@ -23,7 +23,7 @@ SCHEMA_PATH = 'files/schema'
 PIPELINE_NAME = 'local_guquanbiandong'
 
 
-def supermind_format(docu, events, labels):
+def supermind_format(docu, events, event_type):
     # 表格分类信息
     tables = pdf_table(docu['rawHtml'])
     events = add_table_info(events, tables)
@@ -40,7 +40,7 @@ def supermind_format(docu, events, labels):
     hl.update(string.encode(encoding='utf-8'))
     uuid = hl.hexdigest()
     # 事件信息
-    event_type = '股东' + labels['level1'] + labels['level2'] + '事件'
+    # event_type = '股东' + labels['level1'] + labels['level2'] + '事件'
     mention_time = docu['publishTime']
     format_time = time.strftime('%Y-%m-%d %H:%M:%S', time.strptime(mention_time, '%Y-%m-%d'))
     stock_code = docu['crawOpt']['secCode']
@@ -52,8 +52,8 @@ def supermind_format(docu, events, labels):
         event['externalInfo']['stockcode'] = stock_code
         event['eventTime']['mention'] = mention_time
         event['eventTime']['formatTime'] = format_time
-        for entity in event['entities']:
-            entity['type'] = event_type
+        # for entity in event['entities']:
+        #     entity['type'] = event_type
 
     all_info = {
         "nafVer": {
@@ -195,19 +195,19 @@ def event_integrate(entities, event_type):
         return events
 
 
-def multi_event_extr(sent_lists, docu, labels):
+def multi_event_extr(sent_lists, docu, event_type):
     """
     :param sent_lists:
     :param docu:
-    :param labels:
+    :param event_type:
     :return: all events without table information
     """
-    event_type = '股东' + labels['level1'] + labels['level2'] + '事件'
+    # event_type = '股东' + labels['level1'] + labels['level2'] + '事件'
     # 按顺序保留句子信息
     all_entities = []
     for i, sent in enumerate(sent_lists):
         temp_list = []
-        infos = Event_Extr(docu['title'], sent, docu['url'], labels['level1']+labels['level2'], docu['crawOpt']['secName'])
+        infos = Event_Extr(docu['title'], sent, docu['url'], event_type, docu['crawOpt']['secName'])
         infos = json.loads(infos)
         # TODO 无模版容错
         for k in infos:
@@ -233,17 +233,18 @@ def pipeline(docu):
     docu = json.loads(docu)
     docu = json.loads(docu)
     # 公告分类
-    labels = title2label(docu['title'])
-    if labels['level1'] == '其他' or labels['level2'] == '其他':
-        print("文档未能找到合理分类：{}，{}".format(docu['title'], docu['url']))
-        return False
+    # labels = title2label(docu['title'])
+    # if labels['level1'] == '其他' or labels['level2'] == '其他':
+    #     print("文档未能找到合理分类：{}，{}".format(docu['title'], docu['url']))
+    #     return False
+    event_type = title2label(docu['title'])
 
     # 分句信息抽取
     sentences = sent_filter(docu['rawHtml'])
-    event_info = multi_event_extr(sentences, docu, labels)
+    event_info = multi_event_extr(sentences, docu, event_type)
 
     # 重组格式
-    result = supermind_format(docu, event_info, labels)
+    result = supermind_format(docu, event_info, event_type)
     return json.dumps(result, ensure_ascii=False)
 
 
@@ -251,11 +252,12 @@ if __name__ == '__main__':
 
     client = MongoClient('192.168.1.251')
     db = client.SecurityAnnouncement
-    coll = db.test2
+    # coll = db.test2
+    coll = db.jianchijihua
 
     temp_url = 'http://www.cninfo.com.cn/finalpage/2015-05-04/1200962085.PDF'
-    # for index, document in enumerate(coll.find({'url':temp_url})):
-    for document in coll.find({'crawOpt.secCode':'300379', 'title':{'$regex':'.*减持计划的公告$'}}):
+    for index, document in enumerate(coll.find()):
+    # for document in coll.find({'crawOpt.secCode':'300379', 'title':{'$regex':'.*减持计划的公告$'}}):
 
         print(document['title'], document['url'])
         document['rawId'] = str(document['_id'])

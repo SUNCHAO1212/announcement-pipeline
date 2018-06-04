@@ -6,7 +6,7 @@
 		]
 	},
 	"selectedField": "title_content",
-	"feature": "http://www.cninfo.com.cn/.*_减持计划_信雅达",
+	"feature": "http://www.cninfo.com.cn/.*_股东减持计划事件_信雅达",
 	"selectors": {
 		"fields": [
 		    {

@@ -6,7 +6,7 @@
 		]
 	},
 	"selectedField": "title_content",
-	"feature": "http://www.cninfo.com.cn/.*_减持计划_龙宇燃油",
+	"feature": "http://www.cninfo.com.cn/.*_股东减持计划事件_龙宇燃油",
 	"selectors": {
 		"fields": [
 		    {
