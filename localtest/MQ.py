@@ -1,10 +1,10 @@
 # -*- coding:UTF-8 -*-
 #!/usr/bin/env python3
 
+
 import pika
 from localtest.pipeline import pipeline
 from localtest.mysql import get_mysql_queues
-
 
 MQ_HOST = '192.168.1.251'
 MQ_PORT = 5672

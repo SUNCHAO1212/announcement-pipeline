@@ -4,31 +4,35 @@
     <list default="true" id="0cb5f1a3-1bac-489e-8d8e-9dd0fe9d1a59" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/caitongPipeline/mongo.py" afterPath="$PROJECT_DIR$/caitongPipeline/mongo.py" />
+      <change beforePath="$PROJECT_DIR$/kaggle/InformationExtraction.py" afterPath="$PROJECT_DIR$/kaggle/InformationExtraction.py" />
+      <change beforePath="$PROJECT_DIR$/kaggle/LzPdf2Html/logs/mylog.log" afterPath="$PROJECT_DIR$/kaggle/LzPdf2Html/logs/mylog.log" />
+      <change beforePath="$PROJECT_DIR$/kaggle/README.md" afterPath="$PROJECT_DIR$/kaggle/README.md" />
+      <change beforePath="$PROJECT_DIR$/kaggle/Table.py" afterPath="$PROJECT_DIR$/kaggle/Table.py" />
+      <change beforePath="$PROJECT_DIR$/kaggle/myResultHtml/股东增减持_1268061/base.min.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/kaggle/myResultHtml/股东增减持_1268061/compatibility.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/kaggle/myResultHtml/股东增减持_1268061/f2.woff" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/kaggle/myResultHtml/股东增减持_1268061/f3.woff" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/kaggle/myResultHtml/股东增减持_1268061/f4.woff" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/kaggle/myResultHtml/股东增减持_1268061/f5.woff" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/kaggle/myResultHtml/股东增减持_1268061/fancy.min.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/kaggle/myResultHtml/股东增减持_1268061/lz.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/kaggle/myResultHtml/股东增减持_1268061/lz.css.parse" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/kaggle/myResultHtml/股东增减持_1268061/lz.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/kaggle/myResultHtml/股东增减持_1268061/lz.outline" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/kaggle/myResultHtml/股东增减持_1268061/lz.outline.parse" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/kaggle/myResultHtml/股东增减持_1268061/pdf2htmlEX-64x64.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/kaggle/myResultHtml/股东增减持_1268061/pdf2htmlEX.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/kaggle/temple.txt" afterPath="$PROJECT_DIR$/kaggle/temple.txt" />
+      <change beforePath="$PROJECT_DIR$/localtest/MQ.py" afterPath="$PROJECT_DIR$/localtest/MQ.py" />
       <change beforePath="$PROJECT_DIR$/localtest/classifier.py" afterPath="$PROJECT_DIR$/localtest/classifier.py" />
+      <change beforePath="$PROJECT_DIR$/localtest/download/filter_docu.py" afterPath="$PROJECT_DIR$/localtest/download/filter_docu.py" />
+      <change beforePath="$PROJECT_DIR$/localtest/download/find_name.py" afterPath="$PROJECT_DIR$/localtest/download/find_name.py" />
+      <change beforePath="$PROJECT_DIR$/localtest/files/schema/write_schema.py" afterPath="$PROJECT_DIR$/localtest/files/schema/write_schema.py" />
       <change beforePath="$PROJECT_DIR$/localtest/local_test.py" afterPath="$PROJECT_DIR$/localtest/local_test.py" />
       <change beforePath="$PROJECT_DIR$/localtest/pipeline.py" afterPath="$PROJECT_DIR$/localtest/pipeline.py" />
+      <change beforePath="$PROJECT_DIR$/localtest/sentence_filter.py" afterPath="$PROJECT_DIR$/localtest/sentence_filter.py" />
       <change beforePath="$PROJECT_DIR$/localtest/temple.txt" afterPath="$PROJECT_DIR$/localtest/temple.txt" />
-      <change beforePath="$PROJECT_DIR$/localtest/tmpl/减持计划_万林股份" afterPath="$PROJECT_DIR$/localtest/tmpl/减持计划_万林股份" />
-      <change beforePath="$PROJECT_DIR$/localtest/tmpl/减持计划_东方通" afterPath="$PROJECT_DIR$/localtest/tmpl/减持计划_东方通" />
-      <change beforePath="$PROJECT_DIR$/localtest/tmpl/减持计划_中文在线" afterPath="$PROJECT_DIR$/localtest/tmpl/减持计划_中文在线" />
-      <change beforePath="$PROJECT_DIR$/localtest/tmpl/减持计划_信雅达" afterPath="$PROJECT_DIR$/localtest/tmpl/减持计划_信雅达" />
-      <change beforePath="$PROJECT_DIR$/localtest/tmpl/减持计划_兰石重装" afterPath="$PROJECT_DIR$/localtest/tmpl/减持计划_兰石重装" />
-      <change beforePath="$PROJECT_DIR$/localtest/tmpl/减持计划_创力集团" afterPath="$PROJECT_DIR$/localtest/tmpl/减持计划_创力集团" />
-      <change beforePath="$PROJECT_DIR$/localtest/tmpl/减持计划_华远地产" afterPath="$PROJECT_DIR$/localtest/tmpl/减持计划_华远地产" />
-      <change beforePath="$PROJECT_DIR$/localtest/tmpl/减持计划_口子窖" afterPath="$PROJECT_DIR$/localtest/tmpl/减持计划_口子窖" />
-      <change beforePath="$PROJECT_DIR$/localtest/tmpl/减持计划_我武生物_模板1" afterPath="$PROJECT_DIR$/localtest/tmpl/减持计划_我武生物_模板1" />
-      <change beforePath="$PROJECT_DIR$/localtest/tmpl/减持计划_星光农机" afterPath="$PROJECT_DIR$/localtest/tmpl/减持计划_星光农机" />
-      <change beforePath="$PROJECT_DIR$/localtest/tmpl/减持计划_海利生物" afterPath="$PROJECT_DIR$/localtest/tmpl/减持计划_海利生物" />
-      <change beforePath="$PROJECT_DIR$/localtest/tmpl/减持计划_百利科技" afterPath="$PROJECT_DIR$/localtest/tmpl/减持计划_百利科技" />
-      <change beforePath="$PROJECT_DIR$/localtest/tmpl/减持计划_石大胜华" afterPath="$PROJECT_DIR$/localtest/tmpl/减持计划_石大胜华" />
-      <change beforePath="$PROJECT_DIR$/localtest/tmpl/减持计划_福鞍股份" afterPath="$PROJECT_DIR$/localtest/tmpl/减持计划_福鞍股份" />
-      <change beforePath="$PROJECT_DIR$/localtest/tmpl/减持计划_绿城水务" afterPath="$PROJECT_DIR$/localtest/tmpl/减持计划_绿城水务" />
-      <change beforePath="$PROJECT_DIR$/localtest/tmpl/减持计划_绿盟科技" afterPath="$PROJECT_DIR$/localtest/tmpl/减持计划_绿盟科技" />
-      <change beforePath="$PROJECT_DIR$/localtest/tmpl/减持计划_莎普爱思" afterPath="$PROJECT_DIR$/localtest/tmpl/减持计划_莎普爱思" />
-      <change beforePath="$PROJECT_DIR$/localtest/tmpl/减持计划_蒙草生态" afterPath="$PROJECT_DIR$/localtest/tmpl/减持计划_蒙草生态" />
-      <change beforePath="$PROJECT_DIR$/localtest/tmpl/减持计划_金利华电" afterPath="$PROJECT_DIR$/localtest/tmpl/减持计划_金利华电" />
-      <change beforePath="$PROJECT_DIR$/localtest/tmpl/减持计划_高能环境" afterPath="$PROJECT_DIR$/localtest/tmpl/减持计划_高能环境" />
-      <change beforePath="$PROJECT_DIR$/localtest/tmpl/减持计划_龙宇燃油" afterPath="$PROJECT_DIR$/localtest/tmpl/减持计划_龙宇燃油" />
+      <change beforePath="$PROJECT_DIR$/localtest/tmpl/股权质押.json" afterPath="$PROJECT_DIR$/localtest/tmpl/股权质押.json" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -41,17 +45,22 @@
     <SUITE FILE_PATH="coverage/local_test$GetUserListByBS4.coverage" NAME="GetUserListByBS4 Coverage Results" MODIFIED="1526957247900" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/kaggle" />
     <SUITE FILE_PATH="coverage/local_test$pipeline__3_.coverage" NAME="pipeline (3) Coverage Results" MODIFIED="1525242929179" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/caitongPipeline" />
     <SUITE FILE_PATH="coverage/local_test$sentence_filter.coverage" NAME="sentence_filter Coverage Results" MODIFIED="1526880600126" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/localtest" />
-    <SUITE FILE_PATH="coverage/local_test$find_name.coverage" NAME="find_name Coverage Results" MODIFIED="1526439275712" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/localtest/download" />
-    <SUITE FILE_PATH="coverage/local_test$local_test.coverage" NAME="local_test Coverage Results" MODIFIED="1527835953138" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/localtest" />
-    <SUITE FILE_PATH="coverage/local_test$write_schema.coverage" NAME="write_schema Coverage Results" MODIFIED="1527646196719" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/kaggle/reference" />
-    <SUITE FILE_PATH="coverage/local_test$MQ.coverage" NAME="MQ Coverage Results" MODIFIED="1527653344458" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/localtest" />
+    <SUITE FILE_PATH="coverage/local_test$find_name.coverage" NAME="find_name Coverage Results" MODIFIED="1528423051725" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/localtest/download" />
+    <SUITE FILE_PATH="coverage/local_test$update_lib.coverage" NAME="update_lib Coverage Results" MODIFIED="1528343574307" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/caitongPipeline" />
+    <SUITE FILE_PATH="coverage/local_test$local_test.coverage" NAME="local_test Coverage Results" MODIFIED="1528255097166" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/localtest" />
+    <SUITE FILE_PATH="coverage/local_test$Table__1_.coverage" NAME="Table (1) Coverage Results" MODIFIED="1528441565121" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/localtest" />
+    <SUITE FILE_PATH="coverage/local_test$write_schema.coverage" NAME="write_schema Coverage Results" MODIFIED="1528436887089" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/localtest/files/schema" />
+    <SUITE FILE_PATH="coverage/local_test$MQ.coverage" NAME="MQ Coverage Results" MODIFIED="1528443673111" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/localtest" />
     <SUITE FILE_PATH="coverage/local_test$pipeline__2_.coverage" NAME="pipeline (2) Coverage Results" MODIFIED="1524823374345" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/caitongPipeline" />
     <SUITE FILE_PATH="coverage/local_test$PDFtables.coverage" NAME="PDFtables Coverage Results" MODIFIED="1527494454264" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/localtest" />
-    <SUITE FILE_PATH="coverage/local_test$InformationExtraction.coverage" NAME="InformationExtraction Coverage Results" MODIFIED="1527652736021" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/kaggle" />
+    <SUITE FILE_PATH="coverage/local_test$InformationExtraction.coverage" NAME="InformationExtraction Coverage Results" MODIFIED="1528248675258" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/kaggle" />
+    <SUITE FILE_PATH="coverage/local_test$ShareholdingChange.coverage" NAME="ShareholdingChange Coverage Results" MODIFIED="1528250213456" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/kaggle" />
     <SUITE FILE_PATH="coverage/local_test$sender.coverage" NAME="sender Coverage Results" MODIFIED="1526368616690" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/localtest/referances" />
     <SUITE FILE_PATH="coverage/local_test$main.coverage" NAME="main Coverage Results" MODIFIED="1524722578491" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/localtest" />
     <SUITE FILE_PATH="coverage/local_test$kouliuzhaohui.coverage" NAME="kouliuzhaohui Coverage Results" MODIFIED="1525334387603" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/localtest/referances" />
     <SUITE FILE_PATH="coverage/local_test$receiver.coverage" NAME="receiver Coverage Results" MODIFIED="1526368599338" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/localtest/referances" />
+    <SUITE FILE_PATH="coverage/local_test$change_name.coverage" NAME="change_name Coverage Results" MODIFIED="1528188868164" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/caitongPipeline" />
+    <SUITE FILE_PATH="coverage/local_test$Table.coverage" NAME="Table Coverage Results" MODIFIED="1528440051101" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/kaggle" />
     <SUITE FILE_PATH="coverage/local_test$create_new_html.coverage" NAME="create_new_html Coverage Results" MODIFIED="1527577185694" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/kaggle/LzPdf2Html" />
     <SUITE FILE_PATH="coverage/local_test$pdf2html.coverage" NAME="pdf2html Coverage Results" MODIFIED="1524726125648" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/localtest" />
     <SUITE FILE_PATH="coverage/local_test$port.coverage" NAME="port Coverage Results" MODIFIED="1528081718485" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/caitongPipeline" />
@@ -59,55 +68,68 @@
     <SUITE FILE_PATH="coverage/local_test$readPDFtable.coverage" NAME="readPDFtable Coverage Results" MODIFIED="1527494171894" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/kaggle" />
     <SUITE FILE_PATH="coverage/local_test$extr.coverage" NAME="extr Coverage Results" MODIFIED="1527573416174" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/kaggle" />
     <SUITE FILE_PATH="coverage/local_test$mysql.coverage" NAME="mysql Coverage Results" MODIFIED="1525421476235" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/localtest" />
-    <SUITE FILE_PATH="coverage/local_test$pipeline.coverage" NAME="pipeline Coverage Results" MODIFIED="1528104364446" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/localtest" />
+    <SUITE FILE_PATH="coverage/local_test$pipeline.coverage" NAME="pipeline Coverage Results" MODIFIED="1528443663485" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/localtest" />
     <SUITE FILE_PATH="coverage/local_test$event_extr_test.coverage" NAME="event_extr_test Coverage Results" MODIFIED="1527565561825" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/kaggle/event_extr" />
     <SUITE FILE_PATH="coverage/local_test$pipeline__1_.coverage" NAME="pipeline (1) Coverage Results" MODIFIED="1524808900036" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/localtest" />
     <SUITE FILE_PATH="coverage/local_test$localtest.coverage" NAME="localtest Coverage Results" MODIFIED="1524821003155" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/localtest" />
-    <SUITE FILE_PATH="coverage/local_test$filter_docu.coverage" NAME="filter_docu Coverage Results" MODIFIED="1526884630988" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/localtest/download" />
-    <SUITE FILE_PATH="coverage/local_test$mongo.coverage" NAME="mongo Coverage Results" MODIFIED="1527830297683" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/caitongPipeline" />
+    <SUITE FILE_PATH="coverage/local_test$filter_docu.coverage" NAME="filter_docu Coverage Results" MODIFIED="1528442117629" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/localtest/download" />
     <SUITE FILE_PATH="coverage/local_test$port2.coverage" NAME="port2 Coverage Results" MODIFIED="1528081713911" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/caitongPipeline" />
+    <SUITE FILE_PATH="coverage/local_test$mongo.coverage" NAME="mongo Coverage Results" MODIFIED="1528422616344" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/caitongPipeline" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="pipeline.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/localtest/pipeline.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="50" column="40" lean-forward="false" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="40" />
+            <state relative-caret-position="212">
+              <caret line="259" column="27" lean-forward="false" selection-start-line="259" selection-start-column="27" selection-end-line="259" selection-end-column="27" />
               <folding>
                 <element signature="e#48#120#0" expanded="true" />
+                <element signature="e#2757#3155#0" expanded="false" />
+                <element signature="e#3188#3640#0" expanded="false" />
+                <element signature="e#3674#4673#0" expanded="false" />
+                <element signature="e#4723#5635#0" expanded="false" />
+                <element signature="e#5694#6453#0" expanded="false" />
+                <element signature="e#7619#7627#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="减持.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/localtest/tmpl/减持.txt">
+      <file leaf-file-name="MQ.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/localtest/MQ.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="12" column="26" lean-forward="false" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+            <state relative-caret-position="152">
+              <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="股权质押.json" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/localtest/tmpl/股权质押.json">
+      <file leaf-file-name="filter_docu.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/localtest/download/filter_docu.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="41">
-              <caret line="8" column="28" lean-forward="false" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+            <state relative-caret-position="266">
+              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Table.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/localtest/Table.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="221" column="22" lean-forward="false" selection-start-line="221" selection-start-column="22" selection-end-line="221" selection-end-column="22" />
               <folding>
-                <element signature="e#201#732#0" expanded="false" />
-                <element signature="e#737#1235#0" expanded="false" />
-                <element signature="e#1240#1629#0" expanded="false" />
-                <element signature="e#1634#2091#0" expanded="false" />
-                <element signature="e#2096#2492#0" expanded="false" />
-                <element signature="e#2497#2894#0" expanded="false" />
-                <element signature="e#2899#3369#0" expanded="false" />
-                <element signature="e#3374#3759#0" expanded="false" />
-                <element signature="e#3764#4148#0" expanded="false" />
-                <element signature="e#4153#4536#0" expanded="false" />
-                <element signature="e#4541#4921#0" expanded="false" />
+                <element signature="e#910#1225#0" expanded="false" />
+                <element signature="e#1261#3175#0" expanded="false" />
+                <element signature="e#3211#3416#0" expanded="false" />
+                <element signature="e#3452#3769#0" expanded="false" />
+                <element signature="e#3808#4552#0" expanded="false" />
+                <element signature="e#4598#5110#0" expanded="false" />
+                <element signature="e#5158#6072#0" expanded="false" />
+                <element signature="e#6104#6724#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -124,19 +146,8 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>data-tab</find>
-      <find>Extr</find>
-      <find>level1_sents</find>
-      <find>持股数量</find>
-      <find>方式</find>
-      <find>数量</find>
-      <find>print(</find>
-      <find>col_len</find>
-      <find>key</find>
-      <find>self.dict</find>
       <find>value_start</find>
       <find>self.number</find>
-      <find>info_number</find>
       <find>table</find>
       <find>Not</find>
       <find>一</find>
@@ -154,6 +165,17 @@
       <find>labels</find>
       <find>减持计划</find>
       <find>label</find>
+      <find>主体信息</find>
+      <find>filename</find>
+      <find>所持股份</find>
+      <find>股份限售情况</find>
+      <find>累计质押</find>
+      <find>质押期限</find>
+      <find>info_number</find>
+      <find>SCHEMA_PATH</find>
+      <find>dict</find>
+      <find>schema</find>
+      <find>raw</find>
     </findStrings>
     <replaceStrings>
       <replace>temp</replace>
@@ -175,6 +197,7 @@
       <replace>temp_dict</replace>
       <replace>self.info_number</replace>
       <replace>股东减持计划事件</replace>
+      <replace>事件信息</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -183,34 +206,15 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/localtest/tmpl/减持.txt" />
-        <option value="$PROJECT_DIR$/localtest/download/filter_docu.py" />
-        <option value="$PROJECT_DIR$/kaggle/User.py" />
-        <option value="$PROJECT_DIR$/kaggle/GetUserListByBS4.py" />
-        <option value="$PROJECT_DIR$/kaggle/reference/论文" />
-        <option value="$PROJECT_DIR$/kaggle/README.md" />
-        <option value="$PROJECT_DIR$/localtest/files/schema/股东减持计划事件" />
-        <option value="$PROJECT_DIR$/kaggle/schema" />
-        <option value="$PROJECT_DIR$/kaggle/readPDFtable.py" />
-        <option value="$PROJECT_DIR$/kaggle/Table.py" />
-        <option value="$PROJECT_DIR$/localtest/PDFtables.py" />
-        <option value="$PROJECT_DIR$/kaggle/event_extr/event_engine.py" />
-        <option value="$PROJECT_DIR$/kaggle/event_extr/event_extr_test.py" />
         <option value="$PROJECT_DIR$/kaggle/tmpl/5a4eecf7bc01bf0a6179b45b_2018-01-05-03-31-30.txt" />
         <option value="$PROJECT_DIR$/kaggle/event_extr/event_extr.py" />
         <option value="$PROJECT_DIR$/kaggle/LzPdf2Html/logging_info.ini" />
-        <option value="$PROJECT_DIR$/localtest/sentence_filter.py" />
         <option value="$PROJECT_DIR$/kaggle/LzPdf2Html/create_new_html.py" />
         <option value="$PROJECT_DIR$/kaggle/extr.py" />
-        <option value="$PROJECT_DIR$/localtest/MQ.py" />
         <option value="$PROJECT_DIR$/kaggle/reference/write_schema.py" />
         <option value="$PROJECT_DIR$/kaggle/tmpl/重大合同.txt" />
-        <option value="$PROJECT_DIR$/kaggle/InformationExtraction.py" />
-        <option value="$PROJECT_DIR$/caitongPipeline/mongo.py" />
-        <option value="$PROJECT_DIR$/localtest/local_test.py" />
         <option value="$PROJECT_DIR$/caitongPipeline/port.py" />
         <option value="$PROJECT_DIR$/caitongPipeline/port2.py" />
-        <option value="$PROJECT_DIR$/localtest/classifier.py" />
         <option value="$PROJECT_DIR$/localtest/tmpl/减持计划_万林股份" />
         <option value="$PROJECT_DIR$/localtest/tmpl/减持计划_东方通" />
         <option value="$PROJECT_DIR$/localtest/tmpl/减持计划_中文在线" />
@@ -232,8 +236,27 @@
         <option value="$PROJECT_DIR$/localtest/tmpl/减持计划_金利华电" />
         <option value="$PROJECT_DIR$/localtest/tmpl/减持计划_高能环境" />
         <option value="$PROJECT_DIR$/localtest/tmpl/减持计划_龙宇燃油" />
-        <option value="$PROJECT_DIR$/localtest/pipeline.py" />
         <option value="$PROJECT_DIR$/localtest/tmpl/股权质押.txt" />
+        <option value="$PROJECT_DIR$/caitongPipeline/change_name.py" />
+        <option value="$PROJECT_DIR$/kaggle/README.md" />
+        <option value="$PROJECT_DIR$/kaggle/SubIEClass.py" />
+        <option value="$PROJECT_DIR$/kaggle/ShareholdingChange.py" />
+        <option value="$PROJECT_DIR$/localtest/classifier.py" />
+        <option value="$PROJECT_DIR$/kaggle/InformationExtraction.py" />
+        <option value="$PROJECT_DIR$/localtest/local_test.py" />
+        <option value="$PROJECT_DIR$/localtest/sentence_filter.py" />
+        <option value="$PROJECT_DIR$/localtest/tmpl/股权质押.json" />
+        <option value="$PROJECT_DIR$/caitongPipeline/update_lib.py" />
+        <option value="$PROJECT_DIR$/caitongPipeline/mongo.py" />
+        <option value="$PROJECT_DIR$/localtest/download/find_name.py" />
+        <option value="$PROJECT_DIR$/kaggle/data/股权质押/1.html" />
+        <option value="$PROJECT_DIR$/localtest/files/schema/write_schema.py" />
+        <option value="$PROJECT_DIR$/kaggle/Table.py" />
+        <option value="$PROJECT_DIR$/localtest/MQ.py" />
+        <option value="$PROJECT_DIR$/localtest/download/filter_docu.py" />
+        <option value="$PROJECT_DIR$/localtest/files/schema/股东股权质押事件" />
+        <option value="$PROJECT_DIR$/localtest/pipeline.py" />
+        <option value="$PROJECT_DIR$/localtest/Table.py" />
       </list>
     </option>
   </component>
@@ -288,6 +311,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -300,7 +324,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -310,18 +333,18 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/kaggle/data/重大合同" />
-      <recent name="$PROJECT_DIR$/kaggle" />
+      <recent name="$PROJECT_DIR$/kaggle/data/股权质押" />
       <recent name="$PROJECT_DIR$/kaggle/data" />
-      <recent name="$PROJECT_DIR$/localtest/tmpl" />
-      <recent name="$PROJECT_DIR$/localtest/referances" />
+      <recent name="$PROJECT_DIR$/caitongPipeline/data" />
+      <recent name="$PROJECT_DIR$/caitongPipeline" />
+      <recent name="$PROJECT_DIR$/kaggle/data/重大合同" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/localtest" />
+      <recent name="$PROJECT_DIR$/caitongPipeline" />
       <recent name="$PROJECT_DIR$/localtest/tmpl" />
       <recent name="$PROJECT_DIR$/kaggle/data/重大合同" />
       <recent name="$PROJECT_DIR$/kaggle/data" />
-      <recent name="$PROJECT_DIR$/kaggle" />
-      <recent name="$PROJECT_DIR$/kaggle/tmpl" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -336,8 +359,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.pipeline">
-    <configuration name="local_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.MQ">
+    <configuration name="MQ" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -350,26 +373,64 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="local-test" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/localtest/local_test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/localtest/MQ.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="mongo" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="Table (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/caitongPipeline" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/localtest" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="local-test" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/caitongPipeline/mongo.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/localtest/Table.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="Table" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/kaggle" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="local-test" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/kaggle/Table.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="filter_docu" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/localtest/download" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="local-test" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/localtest/download/filter_docu.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -394,58 +455,20 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="port" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/caitongPipeline" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="local-test" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/caitongPipeline/port.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="port2" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/caitongPipeline" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="local-test" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/caitongPipeline/port2.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.mongo" />
-      <item index="1" class="java.lang.String" itemvalue="Python.local_test" />
-      <item index="2" class="java.lang.String" itemvalue="Python.port" />
-      <item index="3" class="java.lang.String" itemvalue="Python.port2" />
-      <item index="4" class="java.lang.String" itemvalue="Python.pipeline" />
+      <item index="0" class="java.lang.String" itemvalue="Python.pipeline" />
+      <item index="1" class="java.lang.String" itemvalue="Python.Table" />
+      <item index="2" class="java.lang.String" itemvalue="Python.Table (1)" />
+      <item index="3" class="java.lang.String" itemvalue="Python.filter_docu" />
+      <item index="4" class="java.lang.String" itemvalue="Python.MQ" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.pipeline" />
-        <item index="1" class="java.lang.String" itemvalue="Python.port" />
-        <item index="2" class="java.lang.String" itemvalue="Python.port2" />
-        <item index="3" class="java.lang.String" itemvalue="Python.local_test" />
-        <item index="4" class="java.lang.String" itemvalue="Python.mongo" />
+        <item index="0" class="java.lang.String" itemvalue="Python.MQ" />
+        <item index="1" class="java.lang.String" itemvalue="Python.pipeline" />
+        <item index="2" class="java.lang.String" itemvalue="Python.filter_docu" />
+        <item index="3" class="java.lang.String" itemvalue="Python.Table (1)" />
+        <item index="4" class="java.lang.String" itemvalue="Python.Table" />
       </list>
     </recent_temporary>
   </component>
@@ -483,7 +506,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32904884" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34575835" sideWeight="0.49737436" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32904884" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22730683" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20780195" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -535,7 +558,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/kaggle/InformationExtraction.py</url>
-          <line>106</line>
+          <line>108</line>
           <option name="timeStamp" value="272" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -544,14 +567,39 @@
           <option name="timeStamp" value="281" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/kaggle/Table.py</url>
-          <line>21</line>
-          <option name="timeStamp" value="282" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/kaggle/event_extr/event_extr_test.py</url>
           <line>56</line>
           <option name="timeStamp" value="289" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/caitongPipeline/change_name.py</url>
+          <line>49</line>
+          <option name="timeStamp" value="310" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/kaggle/InformationExtraction.py</url>
+          <line>34</line>
+          <option name="timeStamp" value="316" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/kaggle/ShareholdingChange.py</url>
+          <line>19</line>
+          <option name="timeStamp" value="317" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/kaggle/ShareholdingChange.py</url>
+          <line>11</line>
+          <option name="timeStamp" value="319" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/localtest/sentence_filter.py</url>
+          <line>57</line>
+          <option name="timeStamp" value="323" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/localtest/download/find_name.py</url>
+          <line>29</line>
+          <option name="timeStamp" value="327" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -561,286 +609,15 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="309" />
+      <option name="time" value="356" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/kaggle/LzPdf2Html/myResultHtml/1202695002.html" />
-    <entry file="file://$PROJECT_DIR$/kaggle/LzPdf2Html/find_roi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="131" column="44" lean-forward="false" selection-start-line="131" selection-start-column="43" selection-end-line="131" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kaggle/LzPdf2Html/logging_info.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="33" column="19" lean-forward="false" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2017.3/system/python_stubs/-1196401860/builtins.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="4616" column="8" lean-forward="false" selection-start-line="4616" selection-start-column="8" selection-end-line="4616" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/codecs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="308" column="0" lean-forward="false" selection-start-line="308" selection-start-column="0" selection-end-line="308" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/localtest/sentence_filter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="91" column="0" lean-forward="true" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
-          <folding>
-            <element signature="e#1139#1182#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/localtest/PDFtables.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="75" column="0" lean-forward="true" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kaggle/LzPdf2Html/create_new_html.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="448" column="0" lean-forward="false" selection-start-line="448" selection-start-column="0" selection-end-line="448" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kaggle/data/1205008030222222.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" column="2930" lean-forward="false" selection-start-line="10" selection-start-column="2930" selection-end-line="10" selection-end-column="2930" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kaggle/extr.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="32" column="31" lean-forward="true" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kaggle/schema">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kaggle/schema/write_schema.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="16" lean-forward="true" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/localtest/files/schema/股东减持计划事件">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="22" lean-forward="true" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kaggle/schema/schema.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="19" column="14" lean-forward="false" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/localtest/MQ.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="54" column="16" lean-forward="true" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kaggle/event_extr/event_extr.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kaggle/myResultHtml/重大合同_1153.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="395" lean-forward="false" selection-start-line="0" selection-start-column="395" selection-end-line="0" selection-end-column="395" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/caitongPipeline/port2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="22" column="7" lean-forward="false" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/caitongPipeline/port.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="20" lean-forward="true" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/localtest/local_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/caitongPipeline/mongo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="24" lean-forward="false" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kaggle/tmpl/重大合同.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="79" column="20" lean-forward="false" selection-start-line="79" selection-start-column="20" selection-end-line="79" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kaggle/InformationExtraction.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="51" column="10" lean-forward="false" selection-start-line="51" selection-start-column="10" selection-end-line="51" selection-end-column="10" />
-          <folding>
-            <element signature="e#48#59#0" expanded="false" />
-            <element signature="e#1710#3089#0" expanded="false" />
-            <element signature="e#3133#3181#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/localtest/classifier.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="519">
-          <caret line="44" column="31" lean-forward="true" selection-start-line="44" selection-start-column="31" selection-end-line="44" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/localtest/tmpl/减持计划_绿城水务">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="8" column="52" lean-forward="false" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/localtest/tmpl/减持计划_绿盟科技">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="8" column="52" lean-forward="false" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/localtest/tmpl/减持计划_蒙草生态">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="8" column="52" lean-forward="false" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/localtest/tmpl/减持计划_龙宇燃油">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="8" column="55" lean-forward="false" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/localtest/tmpl/减持计划_高能环境">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="8" column="52" lean-forward="false" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/localtest/tmpl/减持计划_金利华电">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="8" column="52" lean-forward="false" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/localtest/tmpl/减持计划_莎普爱思">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="8" column="52" lean-forward="false" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/localtest/tmpl/减持计划_福鞍股份">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="8" column="52" lean-forward="false" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/localtest/tmpl/减持计划_万林股份">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="50" lean-forward="false" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/localtest/tmpl/减持计划_东方通">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="52" lean-forward="false" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/localtest/tmpl/减持计划_中文在线">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="8" column="52" lean-forward="false" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/localtest/tmpl/减持计划_兰石重装">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="93">
           <caret line="8" column="52" lean-forward="false" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/localtest/tmpl/减持计划_创力集团">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="8" column="52" lean-forward="false" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -848,7 +625,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="65">
           <caret line="5" column="9" lean-forward="true" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -856,7 +632,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="63">
           <caret line="8" column="52" lean-forward="false" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -864,7 +639,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="93">
           <caret line="8" column="52" lean-forward="false" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -872,7 +646,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3078">
           <caret line="162" column="48" lean-forward="false" selection-start-line="162" selection-start-column="44" selection-end-line="162" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -880,7 +653,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
           <caret line="8" column="50" lean-forward="false" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -888,7 +660,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="93">
           <caret line="8" column="52" lean-forward="false" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -896,15 +667,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="93">
           <caret line="8" column="52" lean-forward="false" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/localtest/tmpl/减持计划_信雅达">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="8" column="52" lean-forward="false" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -920,7 +682,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-410">
           <caret line="27" column="16" lean-forward="true" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -928,17 +689,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/localtest/pipeline.py">
+    <entry file="file://$PROJECT_DIR$/localtest/files/schema/股东增持计划事件">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="50" column="40" lean-forward="false" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="40" />
-          <folding>
-            <element signature="e#48#120#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/localtest/files/schema/股东减持计划事件">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="22" lean-forward="true" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -946,26 +710,414 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
           <caret line="12" column="26" lean-forward="false" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kaggle/extr.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="23" column="8" lean-forward="true" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/caitongPipeline/data/[临时公告]股权质押：英文:标题" />
+    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/site-packages/pdfminer/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/site-packages/pdfminer/pdfinterp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="688" column="25" lean-forward="false" selection-start-line="688" selection-start-column="19" selection-end-line="688" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/site-packages/pdfminer/pdfparser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="18" column="25" lean-forward="true" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/site-packages/pdfminer/pdftypes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="25" column="24" lean-forward="true" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/site-packages/pdfminer/psparser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="11" column="27" lean-forward="false" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kaggle/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="262">
+            <caret line="50" column="6" lean-forward="true" selection-start-line="50" selection-start-column="6" selection-end-line="50" selection-end-column="6" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kaggle/schema/schema.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kaggle/LzPdf2Html/create_new_html.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-871">
+          <caret line="455" column="4" lean-forward="false" selection-start-line="455" selection-start-column="4" selection-end-line="455" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/caitongPipeline/change_name.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="52" column="26" lean-forward="false" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
+          <folding>
+            <element signature="e#48#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/localtest/tushare_all_stocks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="15" column="23" lean-forward="true" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+          <folding>
+            <element signature="e#49#69#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/localtest/classifier.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="46" column="5" lean-forward="false" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kaggle/ShareholdingChange.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <element signature="e#47#56#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/localtest/tmpl/股权质押.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="41">
-          <caret line="8" column="28" lean-forward="false" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+        <state relative-caret-position="342">
+          <caret line="18" column="108" lean-forward="false" selection-start-line="18" selection-start-column="108" selection-end-line="18" selection-end-column="108" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/localtest/sentence_filter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="59" column="0" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kaggle/readPDFtable.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding>
-            <element signature="e#201#732#0" expanded="false" />
-            <element signature="e#737#1235#0" expanded="false" />
-            <element signature="e#1240#1629#0" expanded="false" />
-            <element signature="e#1634#2091#0" expanded="false" />
-            <element signature="e#2096#2492#0" expanded="false" />
-            <element signature="e#2497#2894#0" expanded="false" />
-            <element signature="e#2899#3369#0" expanded="false" />
-            <element signature="e#3374#3759#0" expanded="false" />
-            <element signature="e#3764#4148#0" expanded="false" />
-            <element signature="e#4153#4536#0" expanded="false" />
-            <element signature="e#4541#4921#0" expanded="false" />
+            <element signature="e#49#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/localtest/local_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/localtest/tmpl/减持计划_中文在线">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="8" column="52" lean-forward="false" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/localtest/tmpl/减持计划_信雅达">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="8" column="52" lean-forward="false" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/caitongPipeline/update_lib.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="32" column="13" lean-forward="true" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/caitongPipeline/mongo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="24" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/localtest/tmpl/减持计划_创力集团">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="9" column="18" lean-forward="true" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kaggle/InformationExtraction.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="29" />
+          <folding>
+            <element signature="e#1077#1749#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/localtest/tmpl/减持计划_东方通">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="9" lean-forward="true" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/localtest/download/find_name.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/localtest/PDFtables.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-361">
+          <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="47" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kaggle/data/股权质押/1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="0" column="11495" lean-forward="false" selection-start-line="0" selection-start-column="11495" selection-end-line="0" selection-end-column="11495" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#h2#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#h1#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#4;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#5;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#6;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#7;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#8;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#1;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#0;n#td#1;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#2;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#0;n#td#2;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#1;n#td#2;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#3;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#0;n#td#3;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#1;n#td#3;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#4;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#0;n#td#4;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#1;n#td#4;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#5;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#0;n#td#5;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#1;n#td#5;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#6;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#0;n#td#6;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#1;n#td#6;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#7;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#0;n#td#7;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#1;n#td#7;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#tr#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#0;n#tr#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#0;n#td#0;n#tr#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#1;n#tr#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#0;n#td#1;n#tr#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#1;n#td#1;n#tr#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#2;n#tr#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#0;n#td#2;n#tr#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#1;n#td#2;n#tr#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#3;n#tr#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#0;n#td#3;n#tr#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#1;n#td#3;n#tr#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#4;n#tr#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#0;n#td#4;n#tr#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#1;n#td#4;n#tr#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#5;n#tr#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#0;n#td#5;n#tr#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#1;n#td#5;n#tr#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#6;n#tr#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#0;n#td#6;n#tr#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#1;n#td#6;n#tr#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#7;n#tr#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#0;n#td#7;n#tr#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#1;n#td#7;n#tr#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#tr#2;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#0;n#tr#2;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#0;n#td#0;n#tr#2;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#1;n#td#0;n#tr#2;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#1;n#tr#2;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#0;n#td#1;n#tr#2;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#1;n#td#1;n#tr#2;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#2;n#tr#2;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#0;n#td#2;n#tr#2;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#3;n#tr#2;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#0;n#td#3;n#tr#2;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#tr#3;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#0;n#tr#3;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#0;n#td#0;n#tr#3;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#1;n#tr#3;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#0;n#td#1;n#tr#3;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#10;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#11;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#12;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#h2#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#14;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#15;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/localtest/files/schema/write_schema.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/localtest/files/schema/股东股权质押临时公告事件">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kaggle/Table.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="217" column="0" lean-forward="false" selection-start-line="217" selection-start-column="0" selection-end-line="218" selection-end-column="35" />
+          <folding>
+            <element signature="e#48#57#0" expanded="true" />
+            <element signature="e#910#1225#0" expanded="false" />
+            <element signature="e#1261#3062#0" expanded="false" />
+            <element signature="e#3098#3303#0" expanded="false" />
+            <element signature="e#3339#3656#0" expanded="false" />
+            <element signature="e#3695#4439#0" expanded="false" />
+            <element signature="e#5045#5959#0" expanded="false" />
+            <element signature="e#5103#5938#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="308" column="0" lean-forward="false" selection-start-line="308" selection-start-column="0" selection-end-line="308" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/localtest/download/filter_docu.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/localtest/pipeline.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="259" column="27" lean-forward="false" selection-start-line="259" selection-start-column="27" selection-end-line="259" selection-end-column="27" />
+          <folding>
+            <element signature="e#48#120#0" expanded="true" />
+            <element signature="e#2757#3155#0" expanded="false" />
+            <element signature="e#3188#3640#0" expanded="false" />
+            <element signature="e#3674#4673#0" expanded="false" />
+            <element signature="e#4723#5635#0" expanded="false" />
+            <element signature="e#5694#6453#0" expanded="false" />
+            <element signature="e#7619#7627#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/localtest/files/schema/股东股权质押事件">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/localtest/MQ.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/localtest/Table.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="221" column="22" lean-forward="false" selection-start-line="221" selection-start-column="22" selection-end-line="221" selection-end-column="22" />
+          <folding>
+            <element signature="e#910#1225#0" expanded="false" />
+            <element signature="e#1261#3175#0" expanded="false" />
+            <element signature="e#3211#3416#0" expanded="false" />
+            <element signature="e#3452#3769#0" expanded="false" />
+            <element signature="e#3808#4552#0" expanded="false" />
+            <element signature="e#4598#5110#0" expanded="false" />
+            <element signature="e#5158#6072#0" expanded="false" />
+            <element signature="e#6104#6724#0" expanded="false" />
           </folding>
         </state>
       </provider>

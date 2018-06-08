@@ -38,10 +38,10 @@ def title2label(title):
                 if sub_pattern.search(title) :
                     labels['level2'] = sub_pattern_str
  
-    if not 'level1' in labels:
+    if 'level1' not in labels:
         labels['level1'] = '其他'
         labels['level2'] = '其他'
-    if not 'level2' in labels:
+    if 'level2' not in labels:
         labels['level2'] = '其他'
 
     # return labels

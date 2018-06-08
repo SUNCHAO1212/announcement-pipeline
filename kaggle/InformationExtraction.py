@@ -1,5 +1,5 @@
 # -*- coding:UTF-8 -*-
-#!/usr/bin/env python3
+# !/usr/bin/env python3
 
 
 import json
@@ -15,25 +15,27 @@ SCHEMA_FILE = 'schema/schema.json'
 
 
 class InformationExtraction:
-
-    with open(SCHEMA_FILE) as f:
-        schema = json.loads(f.read())
-
+    # 定义基本属性
+    schema = {}
+    html = ''
     table_pat = re.compile('<table.+?</table>')
+    section_pats = []
+    url = ''
+    all_info = {}
 
-    level1_tags_pat = re.compile('<div>([一二三四五六七八九十]+、.+?)</div>')
-    level2_tags_pat = re.compile('<div>([1234567890]+、.+?)</div>')
-    level3_tags_pat = re.compile('<div>(（[一二三四五六七八九十]+）.+?)</div>')
-
-    tags_pats = [level1_tags_pat, level2_tags_pat, level3_tags_pat]
-
-    def __init__(self, filename, lable='重大合同'):
-
-        self.html = self.pdf2html(filename)
-        self.label = lable
+    def __init__(self, pdf, label='重大合同'):
+        with open(SCHEMA_FILE) as f:
+            self.schema = json.loads(f.read())
+        self.html = self.pdf2html(pdf)
+        self.label = label
+        self.get_section_pats()
         self.url = 'http://www.cninfo.com.cn/xxx'
-        # self.sections, self.section_depth = self.get_section()
-        self.all_info = self.extraction()
+
+    def get_section_pats(self):
+        level1_tags_pat = re.compile('<div>([一二三四五六七八九十]+、.+?)</div>')
+        level2_tags_pat = re.compile('<div>([1234567890]+、.+?)</div>')
+        level3_tags_pat = re.compile('<div>(（[一二三四五六七八九十]+）.+?)</div>')
+        self.section_pats = [level1_tags_pat, level2_tags_pat, level3_tags_pat]
 
     def extraction(self):
 
@@ -59,7 +61,7 @@ class InformationExtraction:
         html = re.sub(self.table_pat, '', self.html)
         find_res = {}
         section_levels = []
-        for tag_idx, tags_pat in enumerate(self.tags_pats):
+        for tag_idx, tags_pat in enumerate(self.section_pats):
             for idx, res in enumerate(tags_pat.findall(html)):
                 find_res[res] = '<div class="Section{}">{}</div>'.format(tag_idx, res)
 
@@ -91,8 +93,8 @@ class InformationExtraction:
         # self.section_depth = len(sorted_key_list)
         return sections, len(sorted_key_list)
 
-    def pdf2html(self, filename):
-        html = lz_pdf2html(filename)
+    def pdf2html(self, pdf):
+        html = lz_pdf2html(pdf)
         return html
 
     @staticmethod

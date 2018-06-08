@@ -4,28 +4,44 @@
 
 import re
 import copy
+import os
+import json
+
+from bs4 import BeautifulSoup
+
+SCHEMA_PATH = '/home/sunchao/code/project/local-test/localtest/files/schema'
 
 
+# 表格内文本清洗
 space = re.compile('\s')
-
-
 def clean_sent(sent):
     sent = space.sub('', sent.strip())
     return sent
 
 
 class Table:
-    def __init__(self, html_table):
+    html = ''
+    event_type = ''
+    len_row = 0
+    len_col = 0
+    info_number = 0
+    array = []
+    dic = {}
+    schema = {}
+    events = []
+
+    def __init__(self, html_table, event_type):
         self.html = html_table
-        self.info_number = 0
+        self.event_type = event_type
         self.len_row, self.len_col = self.table_size()
         self.array = self.save_array()
-        self.dict = self.get_key_value()
+        self.dic = self.get_key_value()
+        with open(os.path.join(SCHEMA_PATH, event_type)) as f:
+            self.schema = json.loads((f.read()))
+        self.events = self.events()
 
     def table_size(self):
-        trs = self.html.tbody.find_all('tr')
-        # trs = self.html.find_all('tr')
-
+        trs = self.html.find_all('tr')
         len_row = len(trs)
         tr = trs[0]
         tds = tr.find_all('td')
@@ -39,32 +55,35 @@ class Table:
         array = []
         for i in range(self.len_row):
             array.append(copy.deepcopy([None]*self.len_col))
-        trs = self.html.tbody.find_all('tr')
-        # trs = self.html.find_all('tr')
+        trs = self.html.find_all('tr')
 
         for i_tr, tr in enumerate(trs):
             tds = tr.find_all('td')
             for i_td, td in enumerate(tds):
                 if td.attrs:
-                    for key in td.attrs:
-                        if key == 'rowspan':
-                            for i in range(int(td.attrs[key])):
-                                for j in range(i_td, self.len_col):
-                                    if array[i_tr + i][j] is None:
-                                        array[i_tr + i][j] = clean_sent(td.text)
-                                        break
-                                    else:
-                                        pass
-                        elif key == 'colspan':
-                            for i in range(int(td.attrs[key])):
-                                for j in range(i_td + i, self.len_col):
-                                    if array[i_tr][j] is None:
-                                        array[i_tr][j] = clean_sent(td.text)
-                                        break
-                                    else:
-                                        pass
-                        else:
-                            print("Not span key.The key is: {}".format(key))
+                    if 'rowspan' in td.attrs:
+                        for i in range(int(td.attrs['rowspan'])):
+                            for j in range(i_td, self.len_col):
+                                if array[i_tr + i][j] is None:
+                                    array[i_tr + i][j] = clean_sent(td.text)
+                                    break
+                                else:
+                                    pass
+                    elif 'colspan' in td.attrs:
+                        for i in range(int(td.attrs['colspan'])):
+                            for j in range(i_td + i, self.len_col):
+                                if array[i_tr][j] is None:
+                                    array[i_tr][j] = clean_sent(td.text)
+                                    break
+                                else:
+                                    pass
+                    else:
+                        for j in range(i_td, self.len_col):
+                            if array[i_tr][j] is None:
+                                array[i_tr][j] = clean_sent(td.text)
+                                break
+                            else:
+                                pass
                 else:
                     for j in range(i_td, self.len_col):
                         if array[i_tr][j] is None:
@@ -112,3 +131,94 @@ class Table:
                 temp_dict[key].append(self.array[row][i])
         self.info_number = self.len_row - value_start
         return temp_dict
+
+    def new_entities(self, schema):
+        entities = []
+        for sub_schema in schema:
+            for role in schema[sub_schema]:
+                entity = {
+                    "role": role,
+                    "type": sub_schema,
+                    "name": '',
+                    "externalReferences": [
+                        {
+                            "resource": "",
+                            "reference": ""
+                        }
+                    ]
+                }
+                entities.append(entity)
+        return entities
+
+    def new_event(self, event_type):
+
+        entities = self.new_entities(self.schema)
+        event = {
+            "eventId": "1234567890",
+            "eventName": "",
+            "location": {
+                "name": "",
+                "references": []
+            },
+            "externalInfo": {
+                "stockname": '',
+                "stockcode": ''
+            },
+            "eventTime": {
+                "mention": "",
+                "formatTime": ''
+            },
+            "eventType": event_type,
+            "eventPolarity": "",
+            "eventTense": "Unspecified",
+            "eventModality": "Asserted",
+            "entities": entities,
+            "predicate": {
+                "mention": "",
+                "externalReferences": [
+                    {
+                        "resource": "",
+                        "reference": ""
+                    }
+                ]
+            }
+        }
+        return event
+
+    def events(self):
+        events = []
+
+        for i in range(self.info_number):
+            event = self.new_event(self.event_type)
+            for key, value in self.dic.items():
+                trans_key = self.trans(key)
+                if trans_key:
+                    for entity in event['entities']:
+                        if trans_key == entity['role']:
+                            entity['name'] = self.dic[key][i]
+                            break
+                        else:
+                            pass
+                else:
+                    print('Key error: ', key)
+            events.append(event)
+
+        return events
+
+    def trans(self, key):
+        return key
+
+
+def table_events(html):
+    bs = BeautifulSoup(html, 'lxml')
+    tables = bs.find_all('table')
+    for table in tables:
+        # print(table.prettify())
+        table_example = Table(table, '股东股权质押事件')
+        # table_example.show_array()
+        return table_example.events
+
+if __name__ == '__main__':
+    with open('data/股权质押/1.html') as f:
+        html = f.read()
+        table_events(html)

@@ -49,14 +49,14 @@ def sent_filter(html):
     temp = temp.split('三、')[-1]
     sents.append(temp.split('四、')[0])
 
-    res = []
-    for i, sent in enumerate(sents):
-        if input_filter(sent):
-            res.append(clean_sent(sent))
-        else:
-            pass
-
-    return res
+    # res = []
+    # for i, sent in enumerate(sents):
+    #     if input_filter(sent):
+    #         res.append(clean_sent(sent))
+    #     else:
+    #         pass
+    # return sents
+    return [html]
 
 
 # def html_section(html, class_='Section'):

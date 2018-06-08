@@ -23,3 +23,9 @@
 [ERROR|2018-05-29 14:58:14] [MainThread|create_new_html|lz_pdf2html|513] - 错误解析完成:kaggle/data/重大合同_1153.pdf,pdf2htmlEx分析pdf转html失败！！
 [ERROR|2018-05-29 14:58:44] [MainThread|create_new_html|lz_pdf2html|513] - 错误解析完成:kaggle/data/1153.pdf,pdf2htmlEx分析pdf转html失败！！
 [ERROR|2018-05-29 14:59:56] [MainThread|create_new_html|lz_pdf2html|513] - 错误解析完成:重大合同_data/1153.pdf,pdf2htmlEx分析pdf转html失败！！
+[ERROR|2018-06-06 09:50:27] [MainThread|create_new_html|lz_pdf2html|507] - 错误解析完成:股东增减持_1268061.pdf,pdf2htmlEx分析pdf转html失败！！
+[ERROR|2018-06-06 09:53:15] [MainThread|create_new_html|lz_pdf2html|507] - 错误解析完成:股东增减持_1268061.pdf,pdf2htmlEx分析pdf转html失败！！
+[ERROR|2018-06-06 09:54:16] [MainThread|create_new_html|lz_pdf2html|507] - 错误解析完成:股东增减持_1268061.pdf,pdf2htmlEx分析pdf转html失败！！
+[ERROR|2018-06-06 09:54:35] [MainThread|create_new_html|lz_pdf2html|507] - 错误解析完成:股东增减持_1268061.pdf,pdf2htmlEx分析pdf转html失败！！
+[ERROR|2018-06-06 09:55:01] [MainThread|create_new_html|lz_pdf2html|507] - 错误解析完成:股东增减持_1268061.pdf,pdf2htmlEx分析pdf转html失败！！
+[ERROR|2018-06-06 09:56:59] [MainThread|create_new_html|lz_pdf2html|507] - 错误解析完成:股东增减持_1268061.pdf,pdf2htmlEx分析pdf转html失败！！

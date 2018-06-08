@@ -16,7 +16,7 @@ from localtest.extr import Event_Extr
 from localtest.classifier import title2label
 from localtest.PDFtables import pdf_table
 from localtest.sentence_filter import sent_filter
-
+from localtest.Table import table_events
 
 ROOT = os.getcwd()
 SCHEMA_PATH = 'files/schema'
@@ -28,7 +28,7 @@ def supermind_format(docu, events, event_type):
     tables = pdf_table(docu['rawHtml'])
     events = add_table_info(events, tables)
     # 文档信息
-    raw = docu['crawOpt']['rawTxt']
+    raw = docu['rawHtml']
     html = docu['rawHtml']
     title = docu['title']
     url = docu['url']
@@ -40,20 +40,21 @@ def supermind_format(docu, events, event_type):
     hl.update(string.encode(encoding='utf-8'))
     uuid = hl.hexdigest()
     # 事件信息
-    # event_type = '股东' + labels['level1'] + labels['level2'] + '事件'
     mention_time = docu['publishTime']
     format_time = time.strftime('%Y-%m-%d %H:%M:%S', time.strptime(mention_time, '%Y-%m-%d'))
+    # format_time = ''
     stock_code = docu['crawOpt']['secCode']
     stock_name = docu['crawOpt']['secName']
+    # stock_code = ''
+    # stock_name = ''
     event_name = stock_name + '_' + event_type + '_' + time.strftime('%Y%m%d', time.strptime(mention_time, '%Y-%m-%d'))
+    # event_name = event_type + docu['title']
     for event in events:
         event['eventName'] = event_name
         event['externalInfo']['stockname'] = stock_name
         event['externalInfo']['stockcode'] = stock_code
         event['eventTime']['mention'] = mention_time
         event['eventTime']['formatTime'] = format_time
-        # for entity in event['entities']:
-        #     entity['type'] = event_type
 
     all_info = {
         "nafVer": {
@@ -207,7 +208,7 @@ def multi_event_extr(sent_lists, docu, event_type):
     all_entities = []
     for i, sent in enumerate(sent_lists):
         temp_list = []
-        infos = Event_Extr(docu['title'], sent, docu['url'], event_type, docu['crawOpt']['secName'])
+        infos = Event_Extr(docu['title'], sent, docu['url'], event_type, '.*')
         infos = json.loads(infos)
         # TODO 无模版容错
         for k in infos:
@@ -233,15 +234,16 @@ def pipeline(docu):
     docu = json.loads(docu)
     docu = json.loads(docu)
     # 公告分类
-    # labels = title2label(docu['title'])
-    # if labels['level1'] == '其他' or labels['level2'] == '其他':
-    #     print("文档未能找到合理分类：{}，{}".format(docu['title'], docu['url']))
-    #     return False
     event_type = title2label(docu['title'])
 
-    # 分句信息抽取
-    sentences = sent_filter(docu['rawHtml'])
-    event_info = multi_event_extr(sentences, docu, event_type)
+    if False:
+        # 分句信息抽取
+        sentences = sent_filter(docu['rawHtml'])
+        event_info = multi_event_extr(sentences, docu, event_type)
+    else:
+        # 表格信息抽取
+        event_info = table_events(docu['rawHtml'])
+
 
     # 重组格式
     result = supermind_format(docu, event_info, event_type)
@@ -252,32 +254,48 @@ if __name__ == '__main__':
 
     client = MongoClient('192.168.1.251')
     db = client.SecurityAnnouncement
-    # coll = db.test2
-    coll = db.jianchijihua
+    # coll = db.pledge
+    coll = db.pledge_filtered
 
-    temp_url = 'http://www.cninfo.com.cn/finalpage/2015-05-04/1200962085.PDF'
-    for index, document in enumerate(coll.find()):
-    # for document in coll.find({'crawOpt.secCode':'300379', 'title':{'$regex':'.*减持计划的公告$'}}):
+    temp_url = 'http://www.cninfo.com.cn/cninfo-new/disclosure/szse/bulletin_detail/true/1204625933'
+    # for index, document in enumerate(coll.find({'crawOpt.secName':'通鼎互联', 'title':{'$regex':'^[^解]*$'}})):
+    # for document in coll.find({'url':temp_url}):
+    for document in coll.find():
 
         print(document['title'], document['url'])
         document['rawId'] = str(document['_id'])
         del document['_id']
         # # temp
-        try:
-            temp = json.dumps(document)
-            temp = json.dumps(temp)
-            temp = pipeline(temp)
-            if temp:
-                res = json.loads(temp)
-                for outer_event in res['events']:
-                    for outer_entity in outer_event['entities']:
-                        print(outer_entity['role'], outer_entity['name'])
-                    print('\n')
-                print(res)
-            else:
-                pass
-        except Exception as e:
-            print(e)
+        # try:
+        #     temp = json.dumps(document)
+        #     temp = json.dumps(temp)
+        #     temp = pipeline(temp)
+        #     if temp:
+        #         res = json.loads(temp)
+        #         for outer_event in res['events']:
+        #             for outer_entity in outer_event['entities']:
+        #                 print(outer_entity['role'], outer_entity['name'])
+        #             print('\n')
+        #         print(res)
+        #     else:
+        #         pass
+        # except Exception as e:
+        #     print(e)
+
+        temp = json.dumps(document)
+        temp = json.dumps(temp)
+        temp = pipeline(temp)
+        if temp:
+            res = json.loads(temp)
+            for outer_event in res['events']:
+                for outer_entity in outer_event['entities']:
+                    print(outer_entity['role'], outer_entity['name'])
+                print('\n')
+            print(res)
+        else:
+            print('no output from pipeline')
+            pass
+
         # res = json.loads(pipeline(json.dumps(json.dumps(document))))
 
         # input()

@@ -10,17 +10,13 @@
 	"selectors": {
 		"fields": [
 		    {
-				"idCn": "股东名称",
-				"idTypeCn": "主体信息",
+				"idCn": "股东姓名",
+				"idTypeCn": "事件信息",
 				"textPattern": [
 					{
 						"findall": [
 						    {
-								"regex": "减持(?:人|主体|方|计划人|股东)[的]?(?:名称|姓名)?(?:\\s+|:|为|：)([\u4e00-\u9fa5]+)",
-								"confidence": "1"
-							},
-							{
-								"regex": "(?:股东|董事)[的]?(?:姓名|名称)(?:\\s+|:|为|：)([\u4e00-\u9fa5]+)",
+								"regex": "股东(?:姓名|名称)\\s*(?:[(（]\\s*名称\\s*[)）])?\\s*[:：]\\s*([\\w\\s\\(\\)（）]+)是否为\\s*控股股东",
 								"confidence": "1"
 							}
 						]
@@ -34,21 +30,17 @@
 						}
 					]
 				},
-				"idRoleCn": "股东名称",
+				"idRoleCn": "股东姓名",
 				"id": "Name"
 			},
 			{
-				"idCn": "持股数量",
-				"idTypeCn": "主体信息",
+				"idCn": "公司任职",
+				"idTypeCn": "事件信息",
 				"textPattern": [
 					{
 						"findall": [
 							{
-								"regex": "持有.*?(?:股票|股[\\s]?份|流通股).*?([\\d,\\.]+.{0,3}股)",
-								"confidence": "1"
-							},
-							{
-								"regex": "持股数量：?\\s*?([\\d,\\.]+.{0,3}[万]股)",
+								"regex": "公\\s*司任职\\s*(?:[(（]\\s*如有\\s*[)）])?\\s*[:：]\\s*([\\w\\s、]+)所持股份总数",
 								"confidence": "1"
 							}
 						]
@@ -62,17 +54,17 @@
 						}
 					]
 				},
-				"idRoleCn": "持股数量",
-				"id": "Stock quantity"
+				"idRoleCn": "公司任职",
+				"id": "Position"
 			},
 			{
-				"idCn": "持股比例",
-				"idTypeCn": "主体信息",
+				"idCn": "所持股份总数及占比",
+				"idTypeCn": "事件信息",
 				"textPattern": [
 					{
 						"findall": [
 							{
-								"regex": "持有.*?(?:股票|股[\\s]?份|流通股).*?([\\d\\.]+%)",
+								"regex": "所持股份总数(?:及占比：)?.*?(\\d.+?%)",
 								"confidence": "1"
 							}
 						]
@@ -86,45 +78,17 @@
 						}
 					]
 				},
-				"idRoleCn": "持股比例",
-				"id": "Stock ratio"
+				"idRoleCn": "所持股份总数及占比",
+				"id": "Stock number and ratio"
 			},
 			{
-				"idCn": "股份来源",
-				"idTypeCn": "主体信息",
-				"textPattern": [
-					{
-						"findall": [
-							{
-								"regex": "股份来源[于]?[\\s]*?：?([\\w]+)",
-								"confidence": "1"
-							},
-							{
-								"regex": "控股股东持股情况([^。]+)",
-								"confidence": "1"
-							}
-						]
-					}
-				],
-				"required": "true",
-				"selector": {
-					"rules": [
-						{
-							"xpath": "//*//text()"
-						}
-					]
-				},
-				"idRoleCn": "股份来源",
-				"id": "Stock source"
-			},
-			{
-				"idCn": "计划减持数量",
+				"idCn": "股份限售情况",
 				"idTypeCn": "事件信息",
 				"textPattern": [
 					{
 						"findall": [
 							{
-								"regex": "减持.*?数量(?:.+比例).*?([\\d].*?股)",
+								"regex": "股份限售\\s*(?:情况|数量及占比)\\s*[：:]\\s*(.*?)累计质押股数",
 								"confidence": "1"
 							}
 						]
@@ -138,17 +102,17 @@
 						}
 					]
 				},
-				"idRoleCn": "计划减持数量",
-				"id": "Planned reduction number"
+				"idRoleCn": "股份限售情况",
+				"id": "Situation of limit for share selling"
 			},
 			{
-				"idCn": "计划减持比例",
+				"idCn": "累计质押股数及占比",
 				"idTypeCn": "事件信息",
 				"textPattern": [
 					{
 						"findall": [
 							{
-								"regex": "减持.*?(?:数量).*?比例.*?([\\d\\.]+%)",
+								"regex": "累计质押股数(?:及占比)?(?:.包括本次.)?[:：]\\s*(.*?%)",
 								"confidence": "1"
 							}
 						]
@@ -162,21 +126,17 @@
 						}
 					]
 				},
-				"idRoleCn": "计划减持比例",
-				"id": "Planned reduction raito"
+				"idRoleCn": "累计质押股数及占比",
+				"id": "Cumulative number of pledge and proportion"
 			},
 			{
-				"idCn": "减持期间",
+				"idCn": "曾经股权质押情况",
 				"idTypeCn": "事件信息",
 				"textPattern": [
 					{
 						"findall": [
 							{
-								"regex": "[拟]?减持[期区时]间：(.*?)[；。]",
-								"confidence": "1"
-							},
-							{
-								"regex": "减持[期区时]间及数量[：]?(.*?)[；。]",
+								"regex": "曾经股权质押情况\\s*[：:](.+)?(?:三、|累计质押股数)",
 								"confidence": "1"
 							}
 						]
@@ -190,17 +150,17 @@
 						}
 					]
 				},
-				"idRoleCn": "减持期间",
-				"id": "Period of reduction"
+				"idRoleCn": "曾经股权质押情况",
+				"id": "Once equity pledge"
 			},
 			{
-				"idCn": "减持方式",
+				"idCn": "质押期限",
 				"idTypeCn": "事件信息",
 				"textPattern": [
 					{
 						"findall": [
 							{
-								"regex": "减持方式[：:]([\u4e00-\u9fa5]+)?",
+								"regex": "质押期限为([^,.，。；]+)",
 								"confidence": "1"
 							}
 						]
@@ -214,17 +174,17 @@
 						}
 					]
 				},
-				"idRoleCn": "减持方式",
-				"id": "Method of reduction"
+				"idRoleCn": "质押期限",
+				"id": "Period of pledge"
 			},
 			{
-				"idCn": "减持价格",
+				"idCn": "质押权人",
 				"idTypeCn": "事件信息",
 				"textPattern": [
 					{
 						"findall": [
 							{
-								"regex": "减持价格(?:区间)?：(.*?)[；。]",
+								"regex": "质押权人为([^,，.。；]+)",
 								"confidence": "1"
 							}
 						]
@@ -238,56 +198,8 @@
 						}
 					]
 				},
-				"idRoleCn": "减持价格",
-				"id": "Price range of reduction"
-			},
-			{
-				"idCn": "减持股份来源",
-				"idTypeCn": "事件信息",
-				"textPattern": [
-					{
-						"findall": [
-							{
-								"regex": "股[份票]来源：([^。]+)",
-								"confidence": "1"
-							}
-						]
-					}
-				],
-				"required": "true",
-				"selector": {
-					"rules": [
-						{
-							"xpath": "//*//text()"
-						}
-					]
-				},
-				"idRoleCn": "减持股份来源",
-				"id": "Stock source of reduction"
-			},
-			{
-				"idCn": "减持原因",
-				"idTypeCn": "事件信息",
-				"textPattern": [
-					{
-						"findall": [
-							{
-								"regex": "减持.*?(?:原因|目的)：?(\\w+)",
-								"confidence": "1"
-							}
-						]
-					}
-				],
-				"required": "true",
-				"selector": {
-					"rules": [
-						{
-							"xpath": "//*//text()"
-						}
-					]
-				},
-				"idRoleCn": "减持原因",
-				"id": "Reason of reduction"
+				"idRoleCn": "质押权人",
+				"id": "Pledgee"
 			}
 		]
 	}

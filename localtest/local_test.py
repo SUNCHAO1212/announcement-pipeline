@@ -48,4 +48,7 @@ if __name__ == '__main__':
     #     for filename in filenames:
     #         upload(filename)
 
-    print("setence".split())
+    # print("setence".split())
+
+    sent = '_'.join(['hala', 'fasd', 'sdg'])
+    print(sent)

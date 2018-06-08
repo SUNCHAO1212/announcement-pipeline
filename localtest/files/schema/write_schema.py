@@ -5,11 +5,10 @@
 import json
 
 schema = {
-    "主体信息":['股东名称', '股东身份', '持股数量', '持股比例', '股份来源'],
-    "减持计划":['股东名称', '计划减持数量', '计划减持比例', '减持期间', '减持方式', '减持合理价格区间', '拟减持股份来源', '拟减持原因']
+    "股权质押信息": ['股东名称', '是否为第一大股东及一致行动人', '质押股数', '质押开始日期', '解除质押日期', '本次质押占其所持股份比例', '质权人', '用途']
 }
 
 print(schema)
 
-with open('股东减持计划事件'+'.json', 'w') as fo:
-    fo.write(json.dumps(schema, ensure_ascii=False))
+with open('股东股权质押事件', 'w') as fo:
+    fo.write(json.dumps(schema, ensure_ascii=False, indent=4))
