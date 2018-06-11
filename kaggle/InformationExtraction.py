@@ -4,7 +4,7 @@
 
 import json
 import re
-
+import os
 from bs4 import BeautifulSoup
 
 from kaggle.extr import Event_Extr
@@ -12,24 +12,46 @@ from kaggle.Table import Table
 from kaggle.LzPdf2Html.create_new_html import lz_pdf2html
 
 SCHEMA_FILE = 'schema/schema.json'
+ROOT = 'data'
 
 
 class InformationExtraction:
     # 定义基本属性
+    label = ''
+    id = ''
     schema = {}
     html = ''
-    table_pat = re.compile('<table.+?</table>')
+    html_for_table = ''
     section_pats = []
     url = ''
     all_info = {}
+    # 私有属性
+    __table_pat = re.compile('<table.+?</table>')
+    __tables = []
+    __sections = []
+    __section_depth = 0
 
-    def __init__(self, pdf, label='重大合同'):
-        with open(SCHEMA_FILE) as f:
-            self.schema = json.loads(f.read())
-        self.html = self.pdf2html(pdf)
+    def __init__(self, filename, label='重大合同'):
         self.label = label
+        self.id = filename
+        self.get_schema()
+        self.get_html(filename)
         self.get_section_pats()
         self.url = 'http://www.cninfo.com.cn/xxx'
+        # 分段处理
+        self.__sections, self.__section_depth = self.get_section()
+        pass
+
+    def get_schema(self):
+        with open(SCHEMA_FILE) as f:
+            self.schema = json.loads(f.read())[self.label]
+
+    def get_html(self, filename):
+        pdf = os.path.join(ROOT, self.label, 'pdf', filename+'.pdf')
+        self.html = lz_pdf2html(pdf)
+        html = os.path.join(ROOT, self.label, 'html', filename+'.html')
+        with open(html) as f:
+            self.html_for_table = f.read()
 
     def get_section_pats(self):
         level1_tags_pat = re.compile('<div>([一二三四五六七八九十]+、.+?)</div>')
@@ -58,7 +80,7 @@ class InformationExtraction:
     def get_section(self):
 
         # 添加目录标志
-        html = re.sub(self.table_pat, '', self.html)
+        html = re.sub(self.__table_pat, '', self.html)
         find_res = {}
         section_levels = []
         for tag_idx, tags_pat in enumerate(self.section_pats):
@@ -93,19 +115,36 @@ class InformationExtraction:
         # self.section_depth = len(sorted_key_list)
         return sections, len(sorted_key_list)
 
-    def pdf2html(self, pdf):
-        html = lz_pdf2html(pdf)
-        return html
+    def text_extr(self, _input):
+        if isinstance(_input, list):
+            result = []
+            for item in _input:
+                result.append(self.text_extr(item))
+            return result
+        elif isinstance(_input, str):
+            infos = Event_Extr(title='', content=_input, url=self.url, column='', topic=self.label)
+            return infos
+        else:
+            print('[Type error]: 文本抽取类型错误')
 
-    @staticmethod
-    def read_file(filename):
-        with open(filename) as f:
-            return f.read()
+    def table_extr(self):
+        for table in self.__tables:
+            table_example = Table(table, self.label)
+
+    def filter_table(self):
+        bs = BeautifulSoup(self.html_for_table, 'lxml')
+        tables = bs.find_all('table')
+        for table in tables:
+            # TODO 保留需要的表格
+            if table:
+                self.__tables.append(table)
+            else:
+                print('Not useful table.')
 
 
 def main():
-    filename = 'data/重大合同/2379.pdf'
-    ie = InformationExtraction(filename)
+    filename = '2379'
+    ie = InformationExtraction(filename, '重大合同')
     print(ie)
 
 

@@ -20,7 +20,7 @@ zhaohui_list = [
 ]
 
 
-def Event_Extr(title,content,url,column,topic):
+def Event_Extr(title, content, url, column, topic):
     try:
         js = {
             "title":title,

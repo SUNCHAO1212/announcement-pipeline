@@ -218,6 +218,7 @@ def table_events(html):
         # table_example.show_array()
         return table_example.events
 
+
 if __name__ == '__main__':
     with open('data/股权质押/1.html') as f:
         html = f.read()

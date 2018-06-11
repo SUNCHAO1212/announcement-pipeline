@@ -28,6 +28,13 @@ with open('schema.json', 'w') as fo:
                 '合同金额下限': [],
                 '联合体成员': [],
             },
-        '定向增发': {},
+        '定向增发': {
+            '公告id': [],
+            '增发对象': [],
+            '增发数量': [],
+            '增发金额': [],
+            '锁定期': [],
+            '认购方式': [],
+        },
     }
     fo.write(json.dumps(temp, ensure_ascii=False, indent=4))

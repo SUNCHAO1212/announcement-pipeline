@@ -29,3 +29,4 @@
 [ERROR|2018-06-06 09:54:35] [MainThread|create_new_html|lz_pdf2html|507] - 错误解析完成:股东增减持_1268061.pdf,pdf2htmlEx分析pdf转html失败！！
 [ERROR|2018-06-06 09:55:01] [MainThread|create_new_html|lz_pdf2html|507] - 错误解析完成:股东增减持_1268061.pdf,pdf2htmlEx分析pdf转html失败！！
 [ERROR|2018-06-06 09:56:59] [MainThread|create_new_html|lz_pdf2html|507] - 错误解析完成:股东增减持_1268061.pdf,pdf2htmlEx分析pdf转html失败！！
+[ERROR|2018-06-11 10:47:52] [MainThread|create_new_html|lz_pdf2html|507] - 错误解析完成:data/重大合同/2379.pdf,pdf2htmlEx分析pdf转html失败！！

@@ -236,7 +236,7 @@ def pipeline(docu):
     # 公告分类
     event_type = title2label(docu['title'])
 
-    if False:
+    if event_type != '股东股权质押事件':
         # 分句信息抽取
         sentences = sent_filter(docu['rawHtml'])
         event_info = multi_event_extr(sentences, docu, event_type)
