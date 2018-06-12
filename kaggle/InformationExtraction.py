@@ -24,7 +24,11 @@ class InformationExtraction:
     html_for_table = ''
     section_pats = []
     url = ''
-    all_info = {}
+    table_examples = []
+    all_info = {
+        'info_num': 0,
+        'record': []
+    }
     # 私有属性
     __table_pat = re.compile('<table.+?</table>')
     __tables = []
@@ -38,9 +42,11 @@ class InformationExtraction:
         self.get_html(filename)
         self.get_section_pats()
         self.url = 'http://www.cninfo.com.cn/xxx'
-        # 分段处理
-        self.__sections, self.__section_depth = self.get_section()
-        pass
+        # 分段、表格处理
+        self.get_section()
+        self.filter_table()
+        # 抽取流程
+        self.extraction()
 
     def get_schema(self):
         with open(SCHEMA_FILE) as f:
@@ -60,22 +66,12 @@ class InformationExtraction:
         self.section_pats = [level1_tags_pat, level2_tags_pat, level3_tags_pat]
 
     def extraction(self):
-
-        # def section_extr(sections):
-        #     output = []
-        #     if isinstance(sections, list):
-        #         for section in sections:
-        #             output.append(section_extr(section))
-        #     else:
-        #         output = Event_Extr(title='', content=sections,
-        #                             url=self.url, column='', topic=self.label)
-        #     return output
-        # self.all_info = section_extr(self.sections)
+        if self.__tables:
+            self.table_extr()
+        else:
+            self.text_extr(self.__sections)
         # TODO 文本合并策略
-        output = Event_Extr(title='', content=self.html,
-                            url=self.url, column='', topic=self.label)
-        print("Information:\n{}".format(output))
-        return output
+        pass
 
     def get_section(self):
 
@@ -112,8 +108,8 @@ class InformationExtraction:
             return temp
 
         sections = html_split(sorted_key_list, html)
-        # self.section_depth = len(sorted_key_list)
-        return sections, len(sorted_key_list)
+        self.__section_depth = len(sorted_key_list)
+        self.__sections = sections
 
     def text_extr(self, _input):
         if isinstance(_input, list):
@@ -130,6 +126,7 @@ class InformationExtraction:
     def table_extr(self):
         for table in self.__tables:
             table_example = Table(table, self.label)
+            self.table_examples.append(table_example)
 
     def filter_table(self):
         bs = BeautifulSoup(self.html_for_table, 'lxml')

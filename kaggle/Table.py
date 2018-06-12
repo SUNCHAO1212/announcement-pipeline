@@ -10,10 +10,12 @@ import json
 from bs4 import BeautifulSoup
 
 SCHEMA_PATH = '/home/sunchao/code/project/local-test/localtest/files/schema'
-
+SCHEMA_FILE = 'schema/schema.json'
 
 # 表格内文本清洗
 space = re.compile('\s')
+
+
 def clean_sent(sent):
     sent = space.sub('', sent.strip())
     return sent
@@ -29,15 +31,16 @@ class Table:
     dic = {}
     schema = {}
     events = []
+    add_info = {}
 
     def __init__(self, html_table, event_type):
         self.html = html_table
         self.event_type = event_type
         self.len_row, self.len_col = self.table_size()
         self.array = self.save_array()
-        self.dic = self.get_key_value()
-        with open(os.path.join(SCHEMA_PATH, event_type)) as f:
-            self.schema = json.loads((f.read()))
+        self.dic = self.get_dic()
+        with open(SCHEMA_FILE) as f:
+            self.schema = json.loads(f.read())[self.event_type]
         self.events = self.events()
 
     def table_size(self):
@@ -91,6 +94,15 @@ class Table:
                             break
                         else:
                             pass
+        # 去除多余的行
+        if array[-1][0] == '合计' or array[-1][1] == '合计':
+            del array[-1]
+
+        for i_row, row in enumerate(array):
+            if row.count('/') > 1 or row.count('-') > 1 or row.count('') > 1:
+                del array[i_row:]
+                self.len_row = len(array)
+                break
         return array
 
     def show_array(self):
@@ -111,7 +123,7 @@ class Table:
                 print("<td[{}]>{}\t".format(i_td, re.sub('\s', '', td.text.strip())), end='\t')
             print('')
 
-    def get_key_value(self):
+    def get_dic(self):
         keys = copy.deepcopy(self.array[0])
         value_start = 0
         for index in range(self.len_row):
@@ -134,20 +146,34 @@ class Table:
 
     def new_entities(self, schema):
         entities = []
-        for sub_schema in schema:
-            for role in schema[sub_schema]:
-                entity = {
-                    "role": role,
-                    "type": sub_schema,
-                    "name": '',
-                    "externalReferences": [
-                        {
-                            "resource": "",
-                            "reference": ""
-                        }
-                    ]
-                }
-                entities.append(entity)
+        # for sub_schema in schema:
+        #     for role in schema[sub_schema]:
+        #         entity = {
+        #             "role": role,
+        #             "type": sub_schema,
+        #             "name": '',
+        #             "externalReferences": [
+        #                 {
+        #                     "resource": "",
+        #                     "reference": ""
+        #                 }
+        #             ]
+        #         }
+        #         entities.append(entity)
+
+        for role in schema:
+            entity = {
+                "role": role,
+                "type": self.event_type,
+                "name": '',
+                "externalReferences": [
+                    {
+                        "resource": "",
+                        "reference": ""
+                    }
+                ]
+            }
+            entities.append(entity)
         return entities
 
     def new_event(self, event_type):
@@ -206,6 +232,7 @@ class Table:
         return events
 
     def trans(self, key):
+        # TODO 外部维护文件，对应若干表述的key
         return key
 
 
@@ -213,13 +240,17 @@ def table_events(html):
     bs = BeautifulSoup(html, 'lxml')
     tables = bs.find_all('table')
     for table in tables:
-        # print(table.prettify())
-        table_example = Table(table, '股东股权质押事件')
-        # table_example.show_array()
+
+        table_example = Table(table, '股东增减持')
+
         return table_example.events
 
 
-if __name__ == '__main__':
-    with open('data/股权质押/1.html') as f:
+def main():
+    with open('data/股东增减持/html/6927.html') as f:
         html = f.read()
         table_events(html)
+
+
+if __name__ == '__main__':
+    main()
