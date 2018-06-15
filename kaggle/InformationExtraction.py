@@ -12,7 +12,8 @@ from kaggle.Table import Table
 from kaggle.LzPdf2Html.create_new_html import lz_pdf2html
 
 SCHEMA_FILE = 'schema/schema.json'
-ROOT = 'data'
+# ROOT = 'data'
+ROOT = '/home/sunchao/code/kaggle/round1_train_20180518'
 
 
 class InformationExtraction:
@@ -22,6 +23,7 @@ class InformationExtraction:
     schema = {}
     html = ''
     html_for_table = ''
+    text = ''
     section_pats = []
     url = ''
     table_examples = []
@@ -40,24 +42,30 @@ class InformationExtraction:
         self.id = filename
         self.get_schema()
         self.get_html(filename)
+        self.get_text()
         self.get_section_pats()
         self.url = 'http://www.cninfo.com.cn/xxx'
         # 分段、表格处理
-        self.get_section()
+        # self.get_section()
         self.filter_table()
         # 抽取流程
-        self.extraction()
+        # self.extraction()
 
     def get_schema(self):
         with open(SCHEMA_FILE) as f:
             self.schema = json.loads(f.read())[self.label]
 
     def get_html(self, filename):
-        pdf = os.path.join(ROOT, self.label, 'pdf', filename+'.pdf')
-        self.html = lz_pdf2html(pdf)
         html = os.path.join(ROOT, self.label, 'html', filename+'.html')
         with open(html) as f:
             self.html_for_table = f.read()
+        pdf = os.path.join(ROOT, self.label, 'pdf', filename+'.pdf')
+        # self.html = lz_pdf2html(pdf)
+        if not self.html:
+            self.html = self.html_for_table
+
+    def get_text(self):
+        pass
 
     def get_section_pats(self):
         level1_tags_pat = re.compile('<div>([一二三四五六七八九十]+、.+?)</div>')
@@ -76,7 +84,10 @@ class InformationExtraction:
     def get_section(self):
 
         # 添加目录标志
-        html = re.sub(self.__table_pat, '', self.html)
+        if self.__table_pat.search(self.html):
+            html = re.sub(self.__table_pat, '', self.html)
+        else:
+            html = self.html
         find_res = {}
         section_levels = []
         for tag_idx, tags_pat in enumerate(self.section_pats):

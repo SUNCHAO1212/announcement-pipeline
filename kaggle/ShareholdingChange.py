@@ -5,14 +5,19 @@ import re
 import copy
 
 from kaggle.InformationExtraction import InformationExtraction
+from kaggle.extr import Event_Extr
 
 
 class ShareholdingChange(InformationExtraction):
+
     format_table_0 = ''
     format_table_1 = ''
+    event_type = ''
 
     def __init__(self, filename, label='股东增减持'):
         InformationExtraction.__init__(self, filename, label)
+        self.classifier()
+        self.extraction()
         pass
 
     def get_section_pats(self):
@@ -21,16 +26,23 @@ class ShareholdingChange(InformationExtraction):
         self.section_pats = [level1_tags_pat, level2_tags_pat]
 
     def extraction(self):
+
         # TODO 现在只有减持的转换，后续添加增持
+
         # 获得表格信息
         self.table_extr()
+        self.table_classifier()
         # 表格信息处理
         if self.table_examples:
             self.table_procedure()
         # 文本抽取股东全称和对应的股东简称
+        self.name_extr()
+        # print(self.all_info)
 
-        print(self.all_info)
-        pass
+    def classifier(self):
+        increase = self.html.count('增持')
+        reduce = self.html.count('减持')
+        self.event_type = '增持' if increase > reduce else '减持'
 
     def table_procedure(self):
         # 第一个表格抽取["股东简称","变动截止日期","变动价格","变动数量",]
@@ -38,14 +50,18 @@ class ShareholdingChange(InformationExtraction):
         self.format_table_0 = self.table0(table_0)
 
         # 第二个表格抽取["股东简称","变动后持股数","变动后持股比例"]
-        if self.table_examples.__len__() > 1:
-            table_1 = self.table_examples[1]
-            self.format_table_1 = self.table1(table_1)
+        for table in self.table_examples:
+            if table.add_info and table.add_info['type'] == 'table_1':
+                self.format_table_1 = self.table1(table)
+                break
+        # if self.table_examples.__len__() > 1:
+        #     table_1 = self.table_examples[1]
+        #     self.format_table_1 = self.table1(table_1)
         # 表格信息格式化
         self.format_info()
         # 填入
         for key, values in self.format_table_0.dic.items():
-            if key in self.all_info['record'][0] or key == '变动比例':
+            if self.all_info['record'] and key in self.all_info['record'][0] or key == '变动比例':
                 for i, value in enumerate(values):
                     self.all_info['record'][i][key] = value
         # 合并
@@ -67,14 +83,40 @@ class ShareholdingChange(InformationExtraction):
                         last_info['ratio'] = self.format_table_1.dic['变动前持股比例'][index]
                     else:
                         print('[error] 股东不在表1中，请检查。')
-                record['变动后持股数'] = last_info['num'] - record['变动数量']
-                last_info['num'] = record['变动后持股数']
-                record['变动后持股比例'] = last_info['ratio'] - record['变动比例']
-                last_info['ratio'] = record['变动后持股比例']
+                # 减持计算结果
+                if self.event_type == '减持':
+                    record['变动后持股数'] = last_info['num'] - record['变动数量']
+                    last_info['num'] = record['变动后持股数']
+                    record['变动后持股比例'] = last_info['ratio'] - record['变动比例']
+                    last_info['ratio'] = record['变动后持股比例']
+                # 增持结果计算
+                elif self.event_type == '增持':
+                    record['变动后持股数'] = last_info['num'] + record['变动数量']
+                    last_info['num'] = record['变动后持股数']
+                    record['变动后持股比例'] = last_info['ratio'] + record['变动比例']
+                    last_info['ratio'] = record['变动后持股比例']
+                else:
+                    print('[Error]: 未能成功分类（减持，增持）')
+
         else:
             print('[warning]: 没有表格1')
         for record in self.all_info['record']:
             record['公告id'] = self.id
+
+    def table_classifier(self):
+        table_0_pt = re.compile('(?:.*减持期间.*|.*减持均价.*|.*减持股数.*|.*减持比例.*)')
+        table_1_pt = re.compile('(?:.*减持前.*|.*减持后.*|.*股份性质.*)')
+        for i, table in enumerate(self.table_examples):
+            for k, v in table.dic.items():
+                if table_0_pt.search(k):
+                    self.table_examples[i].add_info['type'] = 'table_0'
+                    break
+                elif table_1_pt.search(k):
+                    self.table_examples[i].add_info['type'] = 'table_1'
+                    break
+            else:
+                print('[Warning]: 错误的表格类别')
+        pass
 
     def table0(self, table):
         self.all_info['info_num'] += table.info_number
@@ -178,11 +220,9 @@ class ShareholdingChange(InformationExtraction):
             if key == '变动数量' or key == '变动后持股数' or key == '变动前持股数':
                 for i, v in enumerate(values):
                     values[i] = format_number(v)
-                    print(values)
             elif key == '变动比例' or key == '变动后持股比例' or key == '变动前持股比例':
                 for i, v in enumerate(values):
                     values[i] = format_ratio(v)
-                    print(values)
 
         # 表格1
         if self.format_table_1:
@@ -190,12 +230,31 @@ class ShareholdingChange(InformationExtraction):
                 if key == '变动数量' or key == '变动后持股数' or key == '变动前持股数':
                     for i, v in enumerate(values):
                         values[i] = format_number(v)
-                        print(values)
                 elif key == '变动比例' or key == '变动后持股比例' or key == '变动前持股比例':
                     for i, v in enumerate(values):
                         values[i] = format_ratio(v)
-                        print(values)
+
+    def name_extr(self):
+        """ 抽取股东全称和股东简称 """
+        temp = re.sub('<.*?>', '', self.html)
+        name_pt = re.compile('股东(?P<name>(?:[\u4e00-\u9fa5]+公司|[\w\s]+))[(（]以下简称["“]?(?P<abbr>(?:[\u4e00-\u9fa5]+|[\w\s]+))["”][)）]')
+        # name_pt = re.compile('股东RICH GOAL HOLDINGS LIMITED（以下简称“RICH GOAL”）')
+        res = name_pt.search(temp)
+        space_pt = re.compile('')
+
+        if res:
+            for i, record in enumerate(self.all_info['record']):
+                name = re.sub('\s', '', res.group('name'))
+                abbr = re.sub('\s', '', res.group('abbr'))
+                if record['股东简称'] == name or record['股东简称'] == abbr:
+                    record['股东全称'] = res.group('name')
+                    record['股东简称'] = res.group('abbr')
+        for i, record in enumerate(self.all_info['record']):
+            if record['股东简称'] and not record['股东全称']:
+                record['股东全称'], record['股东简称'] = record['股东简称'], ''
 
 
-SC = ShareholdingChange('10243', label='股东增减持')
-print(SC)
+if __name__ == '__main__':
+
+    SC = ShareholdingChange('10243', label='股东增减持')
+    print(SC)

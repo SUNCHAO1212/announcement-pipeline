@@ -1,0 +1,62 @@
+{
+	"eventInfo": {
+		"eventType": "减持_计划",
+		"triggerTerms": [
+			""
+		]
+	},
+	"selectedField": "title_content",
+	"feature": "http://www.cninfo.com.cn/.*_股东增减持",
+	"selectors": {
+		"fields": [
+		    {
+				"idCn": "股东全称",
+				"idTypeCn": "主体信息",
+				"textPattern": [
+					{
+						"findall": [
+						    {
+								"regex": "股东([\u4e00-\u9fa5]+?公司)[(（]以下简称[\"“]",
+								"confidence": "1"
+							}
+						]
+					}
+				],
+				"required": "false",
+				"selector": {
+					"rules": [
+						{
+							"xpath": "//*/text()"
+						}
+					]
+				},
+				"idRoleCn": "股东全称",
+				"id": "Name"
+			},
+			{
+				"idCn": "持股数量",
+				"idTypeCn": "主体信息",
+				"textPattern": [
+					{
+						"findall": [
+							{
+								"regex": "",
+								"confidence": "1"
+							}
+						]
+					}
+				],
+				"required": "false",
+				"selector": {
+					"rules": [
+						{
+							"xpath": "//*/text()"
+						}
+					]
+				},
+				"idRoleCn": "持股数量",
+				"id": "Stock quantity"
+			}
+		]
+	}
+}

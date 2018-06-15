@@ -50,5 +50,5 @@ if __name__ == '__main__':
 
     # print("setence".split())
 
-    sent = '_'.join(['hala', 'fasd', 'sdg'])
-    print(sent)
+    s = '股东减持计划减持结果减持进展增持公告'
+    print(s.count('减持'))

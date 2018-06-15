@@ -42,6 +42,7 @@ class Table:
         with open(SCHEMA_FILE) as f:
             self.schema = json.loads(f.read())[self.event_type]
         self.events = self.events()
+        self.add_info = copy.deepcopy({})
 
     def table_size(self):
         trs = self.html.find_all('tr')
@@ -97,31 +98,32 @@ class Table:
         # 去除多余的行
         if array[-1][0] == '合计' or array[-1][1] == '合计':
             del array[-1]
+            self.len_row -= 1
 
         for i_row, row in enumerate(array):
-            if row.count('/') > 1 or row.count('-') > 1 or row.count('') > 1:
+            if row.count('/') > 1 or row.count('-') > 1 or row.count('--') > 1 or row.count('') > 1:
                 del array[i_row:]
                 self.len_row = len(array)
                 break
         return array
 
-    def show_array(self):
-        for row in self.array:
-            for col in row:
-                if col:
-                    print(col, end='\t')
-                else:
-                    print('[void]', end='\t')
-            print('')
-
-    def show_table(self):
-        trs = self.html.tbody.find_all('tr')
-        for i_tr, tr in enumerate(trs):
-            print("<tr[{}]>".format(i_tr))
-            tds = tr.find_all('td')
-            for i_td, td in enumerate(tds):
-                print("<td[{}]>{}\t".format(i_td, re.sub('\s', '', td.text.strip())), end='\t')
-            print('')
+    # def show_array(self):
+    #     for row in self.array:
+    #         for col in row:
+    #             if col:
+    #                 print(col, end='\t')
+    #             else:
+    #                 print('[void]', end='\t')
+    #         print('')
+    #
+    # def show_table(self):
+    #     trs = self.html.tbody.find_all('tr')
+    #     for i_tr, tr in enumerate(trs):
+    #         print("<tr[{}]>".format(i_tr))
+    #         tds = tr.find_all('td')
+    #         for i_td, td in enumerate(tds):
+    #             print("<td[{}]>{}\t".format(i_td, re.sub('\s', '', td.text.strip())), end='\t')
+    #         print('')
 
     def get_dic(self):
         keys = copy.deepcopy(self.array[0])
