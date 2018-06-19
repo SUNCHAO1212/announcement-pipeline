@@ -14,24 +14,29 @@ SCHEMA_FILE = 'schema/schema.json'
 
 # 表格内文本清洗
 space = re.compile('\s')
+english = re.compile('^[a-zA-Z\s]+$')
 
 
 def clean_sent(sent):
+    # if english.search(sent):
+    #     sent = sent.strip()
+    # else:
+    #     sent = space.sub('', sent.strip())
     sent = space.sub('', sent.strip())
     return sent
 
 
-class Table:
+class Table(object):
     html = ''
     event_type = ''
     len_row = 0
     len_col = 0
     info_number = 0
-    array = []
-    dic = {}
-    schema = {}
-    events = []
-    add_info = {}
+    array = copy.deepcopy([])
+    dic = copy.deepcopy({})
+    schema = copy.deepcopy({})
+    events = copy.deepcopy([])
+    add_info = copy.deepcopy({})
 
     def __init__(self, html_table, event_type):
         self.html = html_table
@@ -126,25 +131,28 @@ class Table:
     #         print('')
 
     def get_dic(self):
-        keys = copy.deepcopy(self.array[0])
-        value_start = 0
-        for index in range(self.len_row):
-            keys_set = set(keys)
-            if len(keys_set) == self.len_col:
-                value_start = index + 1
-                break
-                # return keys
-            else:
-                for i in range(self.len_col):
-                    if keys[i] != self.array[index+1][i]:
-                        keys[i] += '_'+self.array[index+1][i]
-        temp_dict = {}
-        for i, key in enumerate(keys):
-            temp_dict[key] = []
-            for row in range(value_start, self.len_row):
-                temp_dict[key].append(self.array[row][i])
-        self.info_number = self.len_row - value_start
-        return temp_dict
+        if self.array and self.array.__len__() > 1:
+            keys = copy.deepcopy(self.array[0])
+            value_start = 0
+            for index in range(self.len_row):
+                keys_set = set(keys)
+                if len(keys_set) == self.len_col:
+                    value_start = index + 1
+                    break
+                    # return keys
+                else:
+                    for i in range(self.len_col):
+                        if keys[i] != self.array[index+1][i]:
+                            keys[i] += '_'+self.array[index+1][i]
+            temp_dict = {}
+            for i, key in enumerate(keys):
+                temp_dict[key] = []
+                for row in range(value_start, self.len_row):
+                    temp_dict[key].append(self.array[row][i])
+            self.info_number = self.len_row - value_start
+            return temp_dict
+        else:
+            return {}
 
     def new_entities(self, schema):
         entities = []

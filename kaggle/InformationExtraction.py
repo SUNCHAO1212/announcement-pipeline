@@ -5,6 +5,7 @@
 import json
 import re
 import os
+import copy
 from bs4 import BeautifulSoup
 
 from kaggle.extr import Event_Extr
@@ -16,30 +17,38 @@ SCHEMA_FILE = 'schema/schema.json'
 ROOT = '/home/sunchao/code/kaggle/round1_train_20180518'
 
 
-class InformationExtraction:
+class InformationExtraction(object):
     # 定义基本属性
     label = ''
     id = ''
-    schema = {}
+    schema = copy.deepcopy({})
     html = ''
     html_for_table = ''
     text = ''
-    section_pats = []
+    section_pats = copy.deepcopy([])
     url = ''
     table_examples = []
-    all_info = {
-        'info_num': 0,
-        'record': []
-    }
+    all_info = {}
+    auxiliary_info = {}
     # 私有属性
     __table_pat = re.compile('<table.+?</table>')
     __tables = []
-    __sections = []
+    __sections = copy.deepcopy([])
     __section_depth = 0
 
     def __init__(self, filename, label='重大合同'):
         self.label = label
         self.id = filename
+        self.table_examples = copy.deepcopy([])
+        self.all_info = copy.deepcopy(
+            {
+                'info_num': 0,
+                'record': []
+            }
+        )
+        self.__tables = copy.deepcopy([])
+        self.auxiliary_info = copy.deepcopy({})
+
         self.get_schema()
         self.get_html(filename)
         self.get_text()
@@ -137,7 +146,8 @@ class InformationExtraction:
     def table_extr(self):
         for table in self.__tables:
             table_example = Table(table, self.label)
-            self.table_examples.append(table_example)
+            if table_example.dic:
+                self.table_examples.append(table_example)
 
     def filter_table(self):
         bs = BeautifulSoup(self.html_for_table, 'lxml')
