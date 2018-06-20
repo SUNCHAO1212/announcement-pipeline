@@ -9,6 +9,14 @@ from kaggle.InformationExtraction import InformationExtraction
 from kaggle.extr import Event_Extr
 
 
+space_pt = re.compile('\s+')
+
+
+def clean_sent(sent):
+    sent = space_pt.sub('', sent)
+    return sent
+
+
 class ShareholdingChange(InformationExtraction):
 
     format_table_0 = ''
@@ -49,9 +57,10 @@ class ShareholdingChange(InformationExtraction):
         self.auxiliary_info['name'] = copy.deepcopy([])
         # 转为纯文本，后续可以加到父类中进行
         temp = re.sub('<.*?>', '', self.html)
+        temp = clean_sent(temp)
 
         name_pt_1 = re.compile('(?:接到|股东)(?P<name>[\u4e00-\u9fa5（）()]+(?:公司|（有限合伙）))[(（]以?下简?称["“]?(?P<abbr>[\u4e00-\u9fa5]+)["”]')
-        name_pt_2 = re.compile('股东[\u4e00-\u9fa5()（）""“”]+和(?P<name>[\u4e00-\u9fa5]+(?:公司|企业（有限合伙）))[(（]以?下简?称["“]?(?P<abbr>[\u4e00-\u9fa5]+)["”]')
+        name_pt_2 = re.compile('股东[\u4e00-\u9fa5()（）""“”]+[和、](?P<name>[\u4e00-\u9fa5]+(?:公司|企业（有限合伙）))[(（]以?下简?称["“]?(?P<abbr>[\u4e00-\u9fa5]+)["”]')
         name_pt_en = re.compile('股东(?P<name>[\w\s]+)[(（]以?下简?称["“]?(?P<abbr>[\w\s]+)["”]')
 
         res_1 = name_pt_1.search(temp)
@@ -74,13 +83,13 @@ class ShareholdingChange(InformationExtraction):
                 'abbr': res_en.group('abbr')
             })
 
-        def clean_sent(sent):
-            sent = re.sub('\s', '', sent.strip())
-            return sent
-
         for name_item in self.auxiliary_info['name']:
             name_item['name'] = clean_sent(name_item['name'])
             name_item['abbr'] = clean_sent(name_item['abbr'])
+
+    def date_extr(self):
+        # TODO 文本抽取时间，与表格对应
+        pass
 
     def table_classifier(self):
         table_0_pt = re.compile('(?:.*减持期间.*|.*减持均价.*|.*减持股数.*|.*减持比例.*)')
@@ -105,10 +114,8 @@ class ShareholdingChange(InformationExtraction):
         for table in self.table_examples:
             if table.add_info and table.add_info['type'] == 'table_1':
                 self.format_table_1 = self.table1(table)
-                break
             elif table.add_info and table.add_info['type'] == 'table_0':
                 self.format_table_0 = self.table0(table)
-                break
         # if self.table_examples.__len__() > 1:
         #     table_1 = self.table_examples[1]
         #     self.format_table_1 = self.table1(table_1)
@@ -183,10 +190,10 @@ class ShareholdingChange(InformationExtraction):
         reduced_num_pt = re.compile('[增减]持(?:股份|股数|数量).*')
         reduced_ratio_pt = re.compile('(?:[增减]持|占.*总股本).*比例.*')
 
-        before_num_pt = re.compile('^.*[增减]持.*前.*股份.*(?:股数|持有股份)[^比例]*$')
-        before_ratio_pt = re.compile('^.*[增减]持.*前.*股份.*比例.*$')
-        after_num_pt = re.compile('^.*[增减]持.*后.*股份.*(?:股数|持有股份)[^比例]*$')
-        after_ratio_pt = re.compile('^.*[增减]持.*后.*股份.*比例.*')
+        before_num_pt = re.compile('^.*[增减]持.*前.*(?:股份|持).*(?:股份?数|持有股份|数量)[^比例]*$')
+        before_ratio_pt = re.compile('^.*[增减]持.*前.*(?:股份|持).*(?:占总股本|比例).*$')
+        after_num_pt = re.compile('^.*[增减]持.*后.*(?:股份|持).*(?:股份?数|持有股份|数量)[^比例]*$')
+        after_ratio_pt = re.compile('^.*[增减]持.*后.*(?:股份|持).*(?:占总股本|比例).*')
 
         temp_dict = copy.deepcopy({})
         for key in table.dic:
@@ -318,27 +325,27 @@ class ShareholdingChange(InformationExtraction):
             pt1 = re.compile('.*(?P<year>\d{4})年.*(?P<month>\d+)月(?:(?P<day>\d+)日)?')
             pt2 = re.compile('.*(?P<year>\d{4}).*[.-](?P<month>\d+)[.-](?P<day>\d+)')
             pt3 = re.compile('.*(?P<year>\d{4}).*[\/](?P<month>\d+)[\/](?P<day>\d+)')
+            pt4 = re.compile('\d{8}')
 
             res1 = pt1.search(date)
             res2 = pt2.search(date)
             res3 = pt3.search(date)
+            res4 = pt4.search(date)
 
             year, month, day = 0, 0, 0
 
             if res1:
-                year = int(res1.group('year'))
+                if res1.group('year'):
+                    year = int(res1.group('year'))
                 month = int(res1.group('month'))
                 if res1.group('day'):
                     day = int(res1.group('day'))
-                else:
-                    day = 0
             elif res2:
-                year = int(res2.group('year'))
+                if res2.group('year'):
+                    year = int(res2.group('year'))
                 month = int(res2.group('month'))
                 if res2.group('day'):
                     day = int(res2.group('day'))
-                else:
-                    day = 0
             elif res3:
                 year = int(res3.group('year'))
                 month = int(res3.group('month'))
@@ -346,6 +353,11 @@ class ShareholdingChange(InformationExtraction):
                     day = int(res3.group('day'))
                 else:
                     day = 0
+            elif res4:
+                temp = res4.group()
+                year = int(temp[0:4])
+                month = int(temp[4:6])
+                day = int(temp[6:8])
             else:
                 print('[Error] 错误的日期')
             # 只有年月
@@ -386,6 +398,10 @@ class ShareholdingChange(InformationExtraction):
             if record['变动截止日期']:
                 record['变动截止日期'] = format_date(record['变动截止日期'])
             pass
+        for idx, record in enumerate(self.all_info['record']):
+            for k, v in record.items():
+                if v == []:
+                    record[k] = ''
 
     def __del__(self):
         # print('析构函数')

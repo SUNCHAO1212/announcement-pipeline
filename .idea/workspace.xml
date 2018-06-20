@@ -30,7 +30,7 @@
     <SUITE FILE_PATH="coverage/local_test$InformationExtraction.coverage" NAME="InformationExtraction Coverage Results" MODIFIED="1528696507189" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/kaggle" />
     <SUITE FILE_PATH="coverage/local_test$ShareholdingChange.coverage" NAME="ShareholdingChange Coverage Results" MODIFIED="1529053150610" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/kaggle" />
     <SUITE FILE_PATH="coverage/local_test$sender.coverage" NAME="sender Coverage Results" MODIFIED="1526368616690" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/localtest/referances" />
-    <SUITE FILE_PATH="coverage/local_test$main.coverage" NAME="main Coverage Results" MODIFIED="1529403164884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/kaggle" />
+    <SUITE FILE_PATH="coverage/local_test$main.coverage" NAME="main Coverage Results" MODIFIED="1529466499062" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/kaggle" />
     <SUITE FILE_PATH="coverage/local_test$kouliuzhaohui.coverage" NAME="kouliuzhaohui Coverage Results" MODIFIED="1525334387603" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/localtest/referances" />
     <SUITE FILE_PATH="coverage/local_test$receiver.coverage" NAME="receiver Coverage Results" MODIFIED="1526368599338" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/localtest/referances" />
     <SUITE FILE_PATH="coverage/local_test$change_name.coverage" NAME="change_name Coverage Results" MODIFIED="1528188868164" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/caitongPipeline" />
@@ -52,39 +52,49 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="InformationExtraction.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/kaggle/InformationExtraction.py">
+      <file leaf-file-name="ShareholdingChange.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/kaggle/ShareholdingChange.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
-              <caret line="145" column="8" lean-forward="false" selection-start-line="145" selection-start-column="8" selection-end-line="145" selection-end-column="8" />
+            <state relative-caret-position="133">
+              <caret line="373" column="0" lean-forward="true" selection-start-line="373" selection-start-column="0" selection-end-line="373" selection-end-column="0" />
               <folding>
-                <element signature="e#49#60#0" expanded="true" />
-                <element signature="e#1469#1556#0" expanded="false" />
-                <element signature="e#1994#2279#0" expanded="false" />
-                <element signature="e#2315#2455#0" expanded="false" />
-                <element signature="e#2493#3960#0" expanded="false" />
-                <element signature="e#3432#3819#0" expanded="false" />
+                <element signature="e#48#57#0" expanded="true" />
+                <element signature="e#622#755#0" expanded="false" />
+                <element signature="e#797#993#0" expanded="false" />
+                <element signature="e#1345#2717#0" expanded="false" />
+                <element signature="e#2752#2784#0" expanded="false" />
+                <element signature="e#2826#3470#0" expanded="false" />
+                <element signature="e#6599#6698#0" expanded="false" />
+                <element signature="e#6737#6788#0" expanded="false" />
+                <element signature="e#7981#8103#0" expanded="false" />
+                <element signature="e#8161#8477#0" expanded="false" />
+                <element signature="e#8537#8659#0" expanded="false" />
+                <element signature="e#8734#9566#0" expanded="false" />
+                <element signature="e#9619#9739#0" expanded="false" />
+                <element signature="e#9793#9909#0" expanded="false" />
+                <element signature="e#9971#10119#0" expanded="false" />
+                <element signature="e#10179#10491#0" expanded="false" />
+                <element signature="e#12368#12390#0" expanded="false" />
+                <element signature="e#12436#14070#0" expanded="false" />
+                <element signature="e#14117#14226#0" expanded="false" />
+                <element signature="e#14303#15308#0" expanded="false" />
+                <element signature="e#14462#14723#0" expanded="false" />
+                <element signature="e#14758#14837#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ShareholdingChange.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/kaggle/ShareholdingChange.py">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/kaggle/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="83">
-              <caret line="268" column="0" lean-forward="false" selection-start-line="268" selection-start-column="0" selection-end-line="268" selection-end-column="0" />
+            <state relative-caret-position="297">
+              <caret line="40" column="32" lean-forward="true" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
               <folding>
-                <element signature="e#48#57#0" expanded="true" />
-                <element signature="e#517#650#0" expanded="false" />
-                <element signature="e#692#888#0" expanded="false" />
-                <element signature="e#1240#2682#0" expanded="false" />
-                <element signature="e#2724#3368#0" expanded="false" />
-                <element signature="e#6341#6491#0" expanded="false" />
-                <element signature="e#6541#6640#0" expanded="false" />
-                <element signature="e#6679#6730#0" expanded="false" />
-                <element signature="e#11110#11244#0" expanded="false" />
-                <element signature="e#12258#12280#0" expanded="false" />
+                <element signature="e#49#58#0" expanded="true" />
+                <element signature="e#568#1410#0" expanded="false" />
+                <element signature="e#1549#1708#0" expanded="false" />
+                <element signature="e#1750#3075#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -93,29 +103,17 @@
       <file leaf-file-name="Table.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/kaggle/Table.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="25" selection-end-column="15" />
+            <state relative-caret-position="49">
+              <caret line="102" column="16" lean-forward="false" selection-start-line="102" selection-start-column="16" selection-end-line="102" selection-end-column="16" />
               <folding>
                 <element signature="e#48#57#0" expanded="true" />
                 <element signature="e#1228#1543#0" expanded="false" />
-                <element signature="e#3760#3783#0" expanded="false" />
-                <element signature="e#5372#6295#0" expanded="false" />
-                <element signature="e#5394#5421#0" expanded="false" />
-                <element signature="e#6343#7257#0" expanded="false" />
-                <element signature="e#7289#7909#0" expanded="false" />
-                <element signature="e#7945#7988#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/kaggle/main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="17" column="19" lean-forward="false" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
-              <folding>
-                <element signature="e#49#58#0" expanded="true" />
+                <element signature="e#3886#3909#0" expanded="false" />
+                <element signature="e#5498#6421#0" expanded="false" />
+                <element signature="e#5520#5547#0" expanded="false" />
+                <element signature="e#6469#7383#0" expanded="false" />
+                <element signature="e#7415#8035#0" expanded="false" />
+                <element signature="e#8071#8114#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -132,10 +130,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>event_type</find>
-      <find>print(</find>
-      <find>/</find>
-      <find>陈</find>
       <find>以下简称</find>
       <find>Error:</find>
       <find>lz</find>
@@ -153,15 +147,19 @@
       <find>'name</find>
       <find>股东</find>
       <find>name</find>
-      <find>name_extr</find>
       <find>trans</find>
-      <find>pre</find>
       <find>price</find>
       <find>format_</find>
       <find>pre_format</find>
       <find>3668689股</find>
       <find>get_dic</find>
       <find>format_all</find>
+      <find>name_extr</find>
+      <find>合计</find>
+      <find>date</find>
+      <find>pre</find>
+      <find>rowspan</find>
+      <find>pre_</find>
     </findStrings>
     <replaceStrings>
       <replace>temp</replace>
@@ -248,8 +246,8 @@
         <option value="$PROJECT_DIR$/localtest/local_test.py" />
         <option value="$PROJECT_DIR$/kaggle/InformationExtraction.py" />
         <option value="$PROJECT_DIR$/kaggle/Table.py" />
-        <option value="$PROJECT_DIR$/kaggle/ShareholdingChange.py" />
         <option value="$PROJECT_DIR$/kaggle/main.py" />
+        <option value="$PROJECT_DIR$/kaggle/ShareholdingChange.py" />
       </list>
     </option>
   </component>
@@ -311,17 +309,12 @@
               <item name="local-test" type="b2602c69:ProjectViewProjectNode" />
               <item name="local-test" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="local-test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="local-test" type="462c0819:PsiDirectoryNode" />
-              <item name="kaggle" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -497,27 +490,26 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="202" y="162" width="1377" height="912" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32904884" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37660667" sideWeight="0.50262564" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34575835" sideWeight="0.49737436" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32904884" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34575835" sideWeight="0.49737436" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32904884" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22280571" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22580644" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32904884" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24981245" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.43059126" sideWeight="0.49737436" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4151671" sideWeight="0.49737436" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32904884" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -557,7 +549,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/kaggle/InformationExtraction.py</url>
-          <line>165</line>
+          <line>166</line>
           <option name="timeStamp" value="272" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -592,7 +584,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/kaggle/InformationExtraction.py</url>
-          <line>95</line>
+          <line>96</line>
           <option name="timeStamp" value="419" />
         </line-breakpoint>
       </breakpoints>
@@ -603,18 +595,11 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="550" />
+      <option name="time" value="586" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/localtest/tmpl/减持.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="26" lean-forward="false" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/caitongPipeline/data/[临时公告]股权质押：英文:标题" />
     <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/site-packages/pdfminer/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -920,7 +905,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="308" column="0" lean-forward="false" selection-start-line="308" selection-start-column="0" selection-end-line="308" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -929,7 +913,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="855">
             <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -939,67 +922,89 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
           <caret line="43" column="52" lean-forward="true" selection-start-line="43" selection-start-column="52" selection-end-line="43" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/kaggle/InformationExtraction.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="145" column="8" lean-forward="false" selection-start-line="145" selection-start-column="8" selection-end-line="145" selection-end-column="8" />
+        <state relative-caret-position="171">
+          <caret line="65" column="58" lean-forward="true" selection-start-line="65" selection-start-column="58" selection-end-line="65" selection-end-column="58" />
           <folding>
             <element signature="e#49#60#0" expanded="true" />
-            <element signature="e#1469#1556#0" expanded="false" />
-            <element signature="e#1994#2279#0" expanded="false" />
-            <element signature="e#2315#2455#0" expanded="false" />
-            <element signature="e#2493#3960#0" expanded="false" />
-            <element signature="e#3432#3819#0" expanded="false" />
+            <element signature="e#1531#1618#0" expanded="false" />
+            <element signature="e#2048#2333#0" expanded="false" />
+            <element signature="e#2369#2509#0" expanded="false" />
+            <element signature="e#2547#4014#0" expanded="false" />
+            <element signature="e#3486#3873#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/kaggle/Table.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="25" selection-end-column="15" />
+        <state relative-caret-position="49">
+          <caret line="102" column="16" lean-forward="false" selection-start-line="102" selection-start-column="16" selection-end-line="102" selection-end-column="16" />
           <folding>
             <element signature="e#48#57#0" expanded="true" />
             <element signature="e#1228#1543#0" expanded="false" />
-            <element signature="e#3760#3783#0" expanded="false" />
-            <element signature="e#5372#6295#0" expanded="false" />
-            <element signature="e#5394#5421#0" expanded="false" />
-            <element signature="e#6343#7257#0" expanded="false" />
-            <element signature="e#7289#7909#0" expanded="false" />
-            <element signature="e#7945#7988#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kaggle/ShareholdingChange.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="268" column="0" lean-forward="false" selection-start-line="268" selection-start-column="0" selection-end-line="268" selection-end-column="0" />
-          <folding>
-            <element signature="e#48#57#0" expanded="true" />
-            <element signature="e#517#650#0" expanded="false" />
-            <element signature="e#692#888#0" expanded="false" />
-            <element signature="e#1240#2682#0" expanded="false" />
-            <element signature="e#2724#3368#0" expanded="false" />
-            <element signature="e#6341#6491#0" expanded="false" />
-            <element signature="e#6541#6640#0" expanded="false" />
-            <element signature="e#6679#6730#0" expanded="false" />
-            <element signature="e#11110#11244#0" expanded="false" />
-            <element signature="e#12258#12280#0" expanded="false" />
+            <element signature="e#3886#3909#0" expanded="false" />
+            <element signature="e#5498#6421#0" expanded="false" />
+            <element signature="e#5520#5547#0" expanded="false" />
+            <element signature="e#6469#7383#0" expanded="false" />
+            <element signature="e#7415#8035#0" expanded="false" />
+            <element signature="e#8071#8114#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/kaggle/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="17" column="19" lean-forward="false" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+        <state relative-caret-position="297">
+          <caret line="40" column="32" lean-forward="true" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
           <folding>
             <element signature="e#49#58#0" expanded="true" />
+            <element signature="e#568#1410#0" expanded="false" />
+            <element signature="e#1549#1708#0" expanded="false" />
+            <element signature="e#1750#3075#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kaggle/zengjianchi.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kaggle/ShareholdingChange.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="373" column="0" lean-forward="true" selection-start-line="373" selection-start-column="0" selection-end-line="373" selection-end-column="0" />
+          <folding>
+            <element signature="e#48#57#0" expanded="true" />
+            <element signature="e#622#755#0" expanded="false" />
+            <element signature="e#797#993#0" expanded="false" />
+            <element signature="e#1345#2717#0" expanded="false" />
+            <element signature="e#2752#2784#0" expanded="false" />
+            <element signature="e#2826#3470#0" expanded="false" />
+            <element signature="e#6599#6698#0" expanded="false" />
+            <element signature="e#6737#6788#0" expanded="false" />
+            <element signature="e#7981#8103#0" expanded="false" />
+            <element signature="e#8161#8477#0" expanded="false" />
+            <element signature="e#8537#8659#0" expanded="false" />
+            <element signature="e#8734#9566#0" expanded="false" />
+            <element signature="e#9619#9739#0" expanded="false" />
+            <element signature="e#9793#9909#0" expanded="false" />
+            <element signature="e#9971#10119#0" expanded="false" />
+            <element signature="e#10179#10491#0" expanded="false" />
+            <element signature="e#12368#12390#0" expanded="false" />
+            <element signature="e#12436#14070#0" expanded="false" />
+            <element signature="e#14117#14226#0" expanded="false" />
+            <element signature="e#14303#15308#0" expanded="false" />
+            <element signature="e#14462#14723#0" expanded="false" />
+            <element signature="e#14758#14837#0" expanded="false" />
           </folding>
         </state>
       </provider>

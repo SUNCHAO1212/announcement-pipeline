@@ -101,12 +101,12 @@ class Table(object):
                         else:
                             pass
         # 去除多余的行
-        if array[-1][0] == '合计' or array[-1][1] == '合计':
+        if array[-1][0] == '合计' or array[-1][1] == '合计' or array[-1][2] == '合计' or array[-1][0] == '累计减持情况' or array[-1][1] == '累计减持情况' or array[-1][2] == '累计减持情况':
             del array[-1]
             self.len_row -= 1
 
         for i_row, row in enumerate(array):
-            if row.count('/') > 1 or row.count('-') > 1 or row.count('--') > 1 or row.count('') > 1:
+            if row.count('/') > 1 or row.count('-') > 1 or row.count('--') > 1 or row.count('') > 1 or row.count('—'):
                 del array[i_row:]
                 self.len_row = len(array)
                 break

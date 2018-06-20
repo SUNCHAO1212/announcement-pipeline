@@ -13,8 +13,9 @@ from kaggle.Table import Table
 from kaggle.LzPdf2Html.create_new_html import lz_pdf2html
 
 SCHEMA_FILE = 'schema/schema.json'
-# ROOT = 'data'
+
 ROOT = '/home/sunchao/code/kaggle/round1_train_20180518'
+ROOT = '/home/sunchao/code/kaggle/FDDC_announcements_round1_test_a_20180605'
 
 
 class InformationExtraction(object):
@@ -65,7 +66,7 @@ class InformationExtraction(object):
             self.schema = json.loads(f.read())[self.label]
 
     def get_html(self, filename):
-        html = os.path.join(ROOT, self.label, 'html', filename+'.html')
+        html = os.path.join(ROOT, self.label, 'html', filename)
         with open(html) as f:
             self.html_for_table = f.read()
         pdf = os.path.join(ROOT, self.label, 'pdf', filename+'.pdf')
