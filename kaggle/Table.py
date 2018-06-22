@@ -1,7 +1,6 @@
 # -*- coding:UTF-8 -*-
 #!/usr/bin/env python3
 
-
 import re
 import copy
 import os
@@ -36,7 +35,7 @@ class Table(object):
     dic = copy.deepcopy({})
     schema = copy.deepcopy({})
     events = copy.deepcopy([])
-    add_info = copy.deepcopy({})
+    add_info = {}
 
     def __init__(self, html_table, event_type):
         self.html = html_table

@@ -11,7 +11,7 @@ from kaggle.ShareholdingChange import ShareholdingChange
 
 
 def main():
-    # ROOT = '/home/sunchao/code/kaggle/round1_train_20180518/股东增减持'
+
     ROOT = '/home/sunchao/code/kaggle/FDDC_announcements_round1_test_a_20180605/股东增减持'
     for root, _, filenames in os.walk(os.path.join(ROOT, 'pdf')):
         records = []
@@ -43,10 +43,29 @@ def main():
 
 
 def test():
-    key = '本次减持计划完成前持有股份_占总股数比例'
-    before_num_pt = re.compile('.*[增减]持.*前.*持有的?股份.*(?:股数|持有股份)[^比]*$')
-    res = before_num_pt.search(key)
-    print(res.group())
+    ROOT = '/home/sunchao/code/kaggle/FDDC_announcements_round1_test_a_20180605/股东增减持'
+    for root, _, filenames in os.walk(os.path.join(ROOT, 'pdf')):
+        records = []
+        row_1 = '公告id	股东全称	股东简称	变动截止日期	变动价格	变动数量	变动后持股数	变动后持股比例'
+        records.append(row_1)
+        for i, filename in enumerate(filenames):
+
+            filename = filename.split('.pdf')[0]
+            print('处理第{}篇文档：{}'.format(i, filename))
+
+            # filename = '1629269'
+
+            SC = ShareholdingChange(filename)
+
+            if SC.all_info['record']:
+                print(SC.all_info)
+                for item in SC.all_info['record']:
+                    result = '{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}'.format(item['公告id'],item['股东全称'],item['股东简称'],
+                                                                     item['变动截止日期'],item['变动价格'],item['变动数量'],
+                                                                     item['变动后持股数'],item['变动后持股比例'],)
+                    records.append(result)
+            else:
+                print('No info')
 
 
 def format_date(date='20161122'):
@@ -97,7 +116,24 @@ def format_date(date='20161122'):
     return date
 
 
+def fc():
+    def match(matched):
+        temp = matched.group(0)
+        print(matched.group(0), matched.group(1))
+        temp = re.sub(matched.group(0), matched.group(1), temp)
+        print(temp)
+        return temp
+    sent = 'asdf8976kjh'
+    pt = re.compile('.*?(\d+).*')
+    # res = re.sub('.*??(\d+).*', match, sent)
+    res = pt.sub(match, sent)
+    print(res)
+
+
 if __name__ == '__main__':
-    main()
     # format_date()
+
+    # main()
     # test()
+
+    fc()

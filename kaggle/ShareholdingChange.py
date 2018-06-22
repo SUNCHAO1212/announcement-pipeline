@@ -43,7 +43,7 @@ class ShareholdingChange(InformationExtraction):
         # 文本抽取股东全称和对应的股东简称
         self.name_extr()
         # 获得表格信息
-        self.table_extr()
+        # self.table_extr()
         self.table_classifier()
         # 表格信息处理
         if self.table_examples:
